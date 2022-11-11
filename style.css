@@ -234,7 +234,7 @@ span .hora-post{
 }
 .botao-ver-roda{
     width: 100px;
-    margin: 9px 210px;
+    margin: 9px auto;
 }
 .botao-ver-roda button{
     padding: 6px 14px;
@@ -252,7 +252,7 @@ span .hora-post{
 }
 .botao-ver-pro{
     width: 200px;
-    margin: 0 145px;
+    margin: 0 auto;
 }
 .botao-ver-pro button{
     padding: 6px 14px;
@@ -422,8 +422,11 @@ span .hora-post{
 }
 
 .anuncio{
-    width: 400px;
-    margin: 15px 15px;
+    width: 92,5%;
+    margin: 10px 15px;
+}
+.anuncio img{
+    width: 100%;
 }
 
 footer{
@@ -724,4 +727,5 @@ footer{
     .swiper-button-prev.swiper-navBtn::after, .swiper-button-next.swiper-navBtn::after {
         display: none;
     }
+    
 }

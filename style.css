@@ -60,6 +60,18 @@ display: none;
     width: 480px;
     height: 200px;
 }
+.doar{
+    width: 100%;
+    height: 417px;
+    background-image: url(imagem/psicologo\ doar.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.doar-content{
+    padding: 100px 0 0 30px;
+    color: #fff;
+}
 .como-fun{
     background-image: url(imagem/k.webp);
     background-size:cover;

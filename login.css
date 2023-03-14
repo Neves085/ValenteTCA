@@ -18,7 +18,8 @@ body{
 main{
     
     background-color:#FFF8E9 ;
-    width: 480px;
+    width: 100%;
+    height: 100%;
     
     display: flex;
     flex-direction: column;

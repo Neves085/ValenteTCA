@@ -18,7 +18,7 @@ body{
 main{
     
     background-color:#FFF8E9 ;
-    width: 480px;
+    width: 100%;
     
     display: flex;
     flex-direction: column;
@@ -82,16 +82,17 @@ main form input{
     width: 300px;
     height: 40px;
     padding: 0 0.5rem;
-    margin-top: 1rem;
+    margin-top: 8px;
     outline: #fff;
     font-size: 1rem;
     border-radius: 10px;
-    border: 1px solid #7e5d2df8;
+    border: 1px solid black;
 }
 
 main form input[type="submit"]{
     cursor: pointer;
     width: 40%;
+    margin-bottom: 2rem;
     margin-top: 2rem;
     border-radius: 30px;
     color: black;
@@ -166,4 +167,18 @@ main h5{
 .conta-nova button:hover{
     opacity: 0.8;
 }
+.cartoes{
+    padding-right: 110px;
+    display: flex;
+    flex-direction: column;
+}
+.cartoes span{
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+    .cartoes img{
+       height: 28px;
+        margin-top: 5px;
+        filter: drop-shadow(0 0 1px #000);
+    }
 }

@@ -62,16 +62,44 @@ display: none;
 }
 .doar{
     width: 100%;
-    height: 417px;
-    background-image: url(imagem/psicologo\ doar.jpg);
+    height: 250px;
+    background-image: url(imagem/psicologia.jpg);
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 .doar-content{
-    padding: 100px 0 0 30px;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(1.5px);
+    padding: 70px 0 0 30px;
     color: #fff;
 }
+.doar-content h1{
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+.doar-content h4{
+    font-weight: 500;
+    font-size: 12px;
+}
+.doar-content button {
+
+    border: none;
+    padding: 3px 8px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    background-color: #f7931e;
+    margin: 10px auto;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+
+
 .como-fun{
     background-image: url(imagem/k.webp);
     background-size:cover;

@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,500;1,600&family=Righteous&family=Sarala:wght@700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+@media screen and (max-width:600px){
+body{
+    display: flex;
+    background-color:aliceblue ;
+    font-weight: 500;
+    
+}
+
+main{
+    
+    background-color:#FFF8E9 ;
+    width: 480px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h1{
+    padding-top: 20px;
+    color: black;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+main h2{
+    font-weight: 400;
+    padding-top: 15px;
+    color:#7e5d2df8;
+    font-size: 22px;
+    
+}
+main .social-medias{
+    display: flex;
+    align-items: center;
+}
+
+main.social-medias a{
+    text-decoration: none;
+}
+
+main .social-medias img{
+    width: 36px;
+    margin-left: 3rem;
+}
+main .social-medias img:hover{
+    opacity: 0.8;
+}
+
+main .social-medias a:first-child img{
+    margin-left: 0;
+}
+
+main form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main form label{
+    display: flex;
+    flex-direction: column;
+}
+main form label span{
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+main form input{
+    background: white;
+    width: 300px;
+    height: 40px;
+    padding: 0 0.5rem;
+    margin-top: 1rem;
+    outline: #fff;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #7e5d2df8;
+}
+
+main form input[type="submit"]{
+    cursor: pointer;
+    width: 40%;
+    margin-top: 2rem;
+    border-radius: 30px;
+    color: black;
+    background-color: #7e5d2df8;
+}
+main form input[type="submit"]:hover{
+    opacity: 0.8;
+}
+
+main .alternative{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+main .alternative span{
+    font-weight: 400;
+    color: black;
+    position: relative;
+}
+main .alternative span::before{
+    position: absolute;
+    content: '';
+    height: 1px;
+    bottom: 50%;
+    width: 100px;
+    background: black;
+    right: 50px;
+
+}
+main .alternative span::after{
+    left: 50px;
+    position: absolute;
+    content: '';
+    height: 1px;
+    bottom: 50%;
+    width: 100px;
+    background: black;
+}
+.hoteis{
+    color: #FFF8E9;
+    font-size: 3rem;
+    padding-top: 15px;
+}
+.logo{
+    width: 300px;
+    margin: 20px auto;
+}
+.logo img{
+    width: 100%;
+}
+main h5{
+    font-weight: 500;
+    padding-top: 10px;
+    width: 300px;
+    text-align: center;
+}
+.conta-nova{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.conta-nova button{
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    color: black;
+    background-color: #7e5d2df8;
+}
+.conta-nova button:hover{
+    opacity: 0.8;
+}
+}

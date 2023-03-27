@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,500;1,600&family=Righteous&family=Sarala:wght@700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+@media screen and (max-width:600px){
+body{
+    display: flex;
+    background-color:aliceblue ;
+    font-weight: 500;
+    
+}
+
+main{
+    
+    background-color:#FFF ;
+    width: 480px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    width: 300px;
+    margin: 20px auto;
+}
+.logo img{
+    width: 100%;
+}
+
+main h1{
+    padding-top: 20px;
+    color: black;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.roda-conversa{
+
+    margin:0 15px;
+    background-color:#FFF8E9 ;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+.roda-img1{
+    margin-bottom: 40px;
+    gap: 25px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+.roda-img{
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.roda-content{
+    display: flex;
+    flex-direction: column;
+    
+}
+.roda-titulo{
+
+    display: flex;
+    align-items: center;
+    
+    padding: 0;
+}
+.roda-titulo h5{
+    font-weight: 700;
+}
+
+.roda-subtitulo{
+    opacity: 0.8;
+    
+    padding-top:10px ;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+ .roda-botao{
+    
+    font-size: 18px;
+    
+    width: 100px;
+    height: 30px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    background-color: #7e5d2df8;
+}
+.botao-ver-roda{
+    width: 100px;
+    margin: 20px auto;
+}
+
+
+}

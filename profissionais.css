@@ -7,7 +7,7 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-@media screen and (max-width:600px){
+@media screen and (max-width:1000px){
 body{
     display: flex;
     background-color:aliceblue ;
@@ -18,7 +18,7 @@ body{
 main{
     
     background-color:#FFF ;
-    width: 480px;
+    width: 100%;
     
     display: flex;
     flex-direction: column;
@@ -72,6 +72,8 @@ main h1{
 }
 
 .roda-content{
+
+    justify-content: center;
     display: flex;
     flex-direction: column;
     

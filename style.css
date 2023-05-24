@@ -35,7 +35,7 @@ nav li:hover, button:hover{
 }
 nav li:last-child{
     color: #fff;
-    background-color: #7e5d2df8;
+    background-color: #f7931e;
     border-radius: 30px;
     width: 142px;
 }
@@ -63,15 +63,15 @@ display: none;
 .doar{
     width: 100%;
     height: 250px;
-    background-image: url(imagem/psicologia.jpg);
+    background-image: url(imgs/iStock-1334410357-min.jpg);
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 .doar-content{
-    width: 100%;
+    
     height: 100%;
-    backdrop-filter: blur(1.5px);
+    backdrop-filter: blur(1.2px);
     padding: 70px 0 0 30px;
     color: #fff;
 }
@@ -111,22 +111,7 @@ display: none;
     background-color: #000;
 }
 
-.modal{
-    
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-}
-.modal .fechrsobre{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-.modal .fechrsobre:hover{
-    cursor: pointer;
-    opacity: 0.7;
-}
+
 .desabafos{
     padding: 17px;
     text-align: center;
@@ -168,13 +153,11 @@ display: none;
     gap: 5px;
 }
 .hora-post{
-    color:#c1272d;
+    
     font-weight: 300;
     font-size: 0.9rem;
 }
-span .hora-post{
-    color: #c1272d;
-}
+
 .post-text{
     
     font-family: 'Roboto', sans-serif;
@@ -283,7 +266,9 @@ span .hora-post{
     margin: 0 auto;
 }
 .botao-ver-pro button{
-    padding: 6px 14px;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 20px;
     border: none;
     font-size: 16px;
     color: white;
@@ -661,8 +646,8 @@ footer{
         gap: 5px;
     }
     .hora-post{
-        color: #c1272d;
-        font-weight: 300;
+        
+        font-weight: 100;
         font-size: 0.9rem;
     }
     .post-text{

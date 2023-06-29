@@ -9,7 +9,7 @@ class Autenticacao {
             telefone,
             senha
         } = req.body;
-        const salt = Number(process.env.SALT_ROUNDS);
+        const salt = Number(process.env.SALT);
 
         try {
             const senhaEncriptada = await bcrypt.hash(senha, salt);

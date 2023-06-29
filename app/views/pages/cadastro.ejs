@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cadastro</title>
+		<link rel="stylesheet" href="/css/cadastro.css" />
+        <%- include("../templates/head.ejs") %>
+	</head>
+	<body>
+        <%- include("../templates/header.ejs") %>
+		<main>
+			<div class="logo">
+				<img src="/images/fotos/logo_deitado-removebg-preview.png" />
+			</div>
+			<h1>Faça login ou crie uma conta</h1>
+			<h2>Acesse sua conta</h2>
+
+			<form action="/cadastro" method="post">
+                <%- data.errors && data.errors.sistema_error ? `<span class='erro-mensagem'>${data.errors.sistema_error.msg}</span>` : "" %>
+
+				<label for="name">
+					<span>Nome completo</span>
+					<input type="text" id="name" name="nome"
+                    <%- data.input_values ? `value="${data.input_values.nome}"` : "" %>
+                    <%- data.errors && data.errors.nome_error ? `class="erro"` : "" %>
+                    />
+				</label>
+
+                <%- data.errors && data.errors.nome_error ? `<span class='erro-mensagem'>${data.errors.nome_error.msg}</span>` : "" %>
+
+				<label for="email">
+					<span>E-mail</span>
+					<input type="email" id="email" name="email"
+                    <%- data.input_values ? `value="${data.input_values.email}"` : "" %>
+                    <%- data.errors && data.errors.email_error ? `class="erro"` : "" %>
+                    />
+				</label>
+
+                <%- data.errors && data.errors.email_error ? `<span class='erro-mensagem'>${data.errors.email_error.msg}</span>` : "" %>
+
+				<label for="tel">
+					<span>Telefone</span>
+					<input type="tel" id="tel" name="telefone"
+                    <%- data.input_values ? `value="${data.input_values.telefone}"` : "" %>
+                    <%- data.errors && data.errors.telefone_error ? `class="erro"` : "" %>
+                    />
+				</label>
+
+                <%- data.errors && data.errors.telefone_error ? `<span class='erro-mensagem'>${data.errors.telefone_error.msg}</span>` : "" %>
+
+				<label for="password">
+					<span>Senha</span>
+					<input type="password" id="password" name="senha"
+                    <%- data.input_values ? `value="${data.input_values.senha}"` : "" %>
+                    <%- data.errors && data.errors.senha_error ? `class="erro"` : "" %>
+                    />
+				</label>
+
+                <%- data.errors && data.errors.senha_error ? `<span class='erro-mensagem'>${data.errors.senha_error.msg}</span>` : "" %>
+
+				<label for="password">
+					<span>Confirmar senha</span>
+					<input type="password" id="password" name="confirmacao_senha"
+                    <%- data.input_values ? `value="${data.input_values.confirmacao_senha}"` : "" %>
+                    <%- data.errors && data.errors.confirmacao_senha_error ? `class="erro"` : "" %>
+                    />
+				</label>
+
+                <%- data.errors && data.errors.confirmacao_senha_error ? `<span class='erro-mensagem'>${data.errors.confirmacao_senha_error.msg}</span>` : "" %>
+
+				<input type="submit" value="Cadastrar" />
+			</form>
+			<div class="alternative">
+				<span>OU</span>
+			</div>
+
+			<div class="social-medias">
+				<a href="#">
+					<img src="/images/logos/facebook.png" />
+				</a>
+				<a href="#">
+					<img src="/images/logos/google.png" />
+				</a>
+				<a href="#">
+					<img src="/images/logos/linkedin.png" />
+				</a>
+			</div>
+			<div><h5>Ao acessar você terá de acertar nossas politicas de privacidade e nossos termos de uso</h5></div>
+			<div class="alternative">
+				<span>OU</span>
+			</div>
+			<div class="conta-nova">
+				<h2>Sou profissional</h2>
+				<button>Crie uma</button>
+			</div>
+		</main>
+        <%- include("../templates/footer.ejs") %>
+	</body>
+</html>

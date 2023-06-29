@@ -89,6 +89,17 @@ main form input{
     border: 1px solid #7e5d2df8;
 }
 
+main form input.erro {
+    border-color: red;
+}
+
+main form span.erro-mensagem {
+    width: 300px;
+    margin-top: 10px;
+    font-size: .8rem;
+    color: red;
+}
+
 main form input[type="submit"]{
     cursor: pointer;
     width: 40%;
@@ -167,3 +178,6 @@ main h5{
     opacity: 0.8;
 }
 }
+
+
+

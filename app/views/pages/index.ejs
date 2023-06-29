@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%- data.page %></title>
+
+        <%- include("../templates/head.ejs") %>
+	</head>
+	<body>
+		<%- include("../templates/header.ejs") %>
+		<main>
+			<section class="doar">
+				<div class="doar-content">
+					<h1>Nos ajude à ajudar o próximo</h1>
+					<h4>
+						<strong>
+							Lorem ipsum dolor sit amet, consectetur <br />
+							adipisicing elit. Minus, neque aspernatur <br />
+							sequi</strong
+						>
+					</h4>
+					<a href="/doacao"> <button>Doe já</button></a>
+				</div>
+			</section>
+
+			<div class="anuncio">
+				<img src="/images/logos/anuncio.png" alt="" />
+			</div>
+
+			<h2 class="desabafos">Desabafos</h2>
+			<div class="desabafar">
+				<div class="user-avatar"><img src="/images/fotos/image-removebg-preview (1).png" /></div>
+				<input class="desabafar-text" type="text" placeholder="Desabafe..." />
+				<div class="microfone"><img src="/images/fotos/image-removebg-preview (4).png" /></div>
+			</div>
+			<div class="posts">
+				<div class="post">
+					<div class="post-user-info">
+						<div class="user-avatar"><img src="/images/fotos/image-removebg-preview (1).png" /></div>
+						<div class="user1">
+							<h4>Ayrton Senna</h4>
+							<span class="hora-post">- 12:07</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam praesentium non ex ab atque consequatur, necessitatibus maiores suscipit libero, nulla asperiores eum culpa hic laboriosam exercitationem a error corporis voluptatem?</p>
+					</div>
+					<div class="post-icons">
+						<div class="like">
+							<img src="/images/fotos/image-removebg-preview (2).png" />
+							Curtir
+						</div>
+						<div class="comentar">
+							<img src="/images/fotos/image-removebg-preview (3).png" />
+							Comentar
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="posts">
+				<div class="post">
+					<div class="post-user-info">
+						<div class="user-avatar"><img src="/images/fotos/image-removebg-preview (1).png" /></div>
+						<div class="user2">
+							<h4>Freddy Mercury</h4>
+							<span class="hora-post">- 12:07</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam praesentium non ex ab atque consequatur, necessitatibus maiores suscipit libero, nulla asperiores eum culpa hic laboriosam exercitationem a error corporis voluptatem?</p>
+					</div>
+					<div class="post-icons">
+						<div class="like">
+							<img src="/images/fotos/image-removebg-preview (2).png" />
+							Curtir
+						</div>
+						<div class="comentar">
+							<img src="/images/fotos/image-removebg-preview (3).png" />
+							Comentar
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="anuncio">
+				<img src="/images/logos/anuncio.png" alt="" />
+			</div>
+
+			<h2 class="roda-conversa-titulo">Rodas de conversas</h2>
+			<div class="roda-conversa">
+				<div class="">
+					<img class="roda-img" src="/images/fotos/image-removebg-preview (13).png" />
+				</div>
+				<div class="roda-content">
+					<div class="roda-titulo">
+						<h5>Roda de conversa de Luciano</h5>
+					</div>
+					<div class="roda-subtitulo">
+						<h6>Inicio: 15:00</h6>
+						<h6>4/10 Pessoas</h6>
+					</div>
+					<button class="roda-botao">Entrar</button>
+				</div>
+			</div>
+
+			<div class="roda-conversa">
+				<div class="">
+					<img class="roda-img" src="/images/fotos/image-removebg-preview (12).png" />
+				</div>
+				<div class="roda-content">
+					<div class="roda-titulo">
+						<h5>Roda de conversa de Rogério</h5>
+					</div>
+					<div class="roda-subtitulo">
+						<h6>Inicio: 02:37</h6>
+						<h6>23/70 Pessoas</h6>
+					</div>
+					<button class="roda-botao">Entrar</button>
+				</div>
+			</div>
+
+			<div class="roda-conversa">
+				<div class="">
+					<img class="roda-img" src="/images/fotos/image-removebg-preview (14).png" />
+				</div>
+				<div class="roda-content">
+					<div class="roda-titulo">
+						<h5>Roda de conversa de Maria</h5>
+					</div>
+					<div class="roda-subtitulo">
+						<h6>Inicio: 15:00</h6>
+						<h6>4/10 Pessoas</h6>
+					</div>
+					<button class="roda-botao">Entrar</button>
+				</div>
+			</div>
+			<div class="botao-ver-roda">
+				<a href="/roda-de-conversa"><button>Ver mais</button></a>
+			</div>
+
+			<div class="anuncio">
+				<img src="/images/logos/anuncio.png" alt="" />
+			</div>
+
+			<h2 class="pro-titulo">Profissionais em destaque</h2>
+			<section class="slider">
+				<div class="slide-container swiper">
+					<div class="slide-content">
+						<div class="card-wrapper swiper-wrapper">
+							<div class="card swiper-slide">
+								<div class="image-content">
+									<span class="overlay"></span>
+
+									<div class="card-image">
+										<img src="/images/fotos/image-removebg-preview (16).png" alt="" class="card-img" />
+									</div>
+								</div>
+
+								<div class="card-content">
+									<div class="media-icons">
+										<i class="fa-brands fa-facebook"></i>
+										<i class="fa-brands fa-whatsapp"></i>
+										<i class="fa-brands fa-twitter"></i>
+									</div>
+									<h3 class="nome">Angela</h3>
+									<p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus illum officia, rem ea itaque vero quas voluptates reiciendis quaerat ad eos ut eum, nemo eius accusamus autem inventore quam.</p>
+									<button class="botao-card">Agendar</button>
+								</div>
+							</div>
+
+							<div class="card swiper-slide">
+								<div class="image-content">
+									<span class="overlay"></span>
+
+									<div class="card-image">
+										<img src="/images/fotos/image-removebg-preview (16).png" alt="" class="card-img" />
+									</div>
+								</div>
+
+								<div class="card-content">
+									<div class="media-icons">
+										<i class="fa-brands fa-facebook"></i>
+										<i class="fa-brands fa-whatsapp"></i>
+										<i class="fa-brands fa-twitter"></i>
+									</div>
+									<h3 class="nome">Angela</h3>
+									<p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus illum officia, rem ea itaque vero quas voluptates reiciendis quaerat ad eos ut eum, nemo eius accusamus autem inventore quam.</p>
+									<button class="botao-card">Agendar</button>
+								</div>
+							</div>
+
+							<div class="card swiper-slide">
+								<div class="image-content">
+									<span class="overlay"></span>
+
+									<div class="card-image">
+										<img src="/images/fotos/image-removebg-preview (16).png" alt="" class="card-img" />
+									</div>
+								</div>
+
+								<div class="card-content">
+									<div class="media-icons">
+										<i class="fa-brands fa-facebook"></i>
+										<i class="fa-brands fa-whatsapp"></i>
+										<i class="fa-brands fa-twitter"></i>
+									</div>
+									<h3 class="nome">Angela</h3>
+									<p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus illum officia, rem ea itaque vero quas voluptates reiciendis quaerat ad eos ut eum, nemo eius accusamus autem inventore quam.</p>
+									<button class="botao-card">Agendar</button>
+								</div>
+							</div>
+
+							<div class="card swiper-slide">
+								<div class="image-content">
+									<span class="overlay"></span>
+
+									<div class="card-image">
+										<img src="/images/fotos/image-removebg-preview (16).png" alt="" class="card-img" />
+									</div>
+								</div>
+
+								<div class="card-content">
+									<div class="media-icons">
+										<i class="fa-brands fa-facebook"></i>
+										<i class="fa-brands fa-whatsapp"></i>
+										<i class="fa-brands fa-twitter"></i>
+									</div>
+									<h3 class="nome">Angela</h3>
+									<p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus illum officia, rem ea itaque vero quas voluptates reiciendis quaerat ad eos ut eum, nemo eius accusamus autem inventore quam.</p>
+									<button class="botao-card">Agendar</button>
+								</div>
+							</div>
+
+							<div class="card swiper-slide">
+								<div class="image-content">
+									<span class="overlay"></span>
+
+									<div class="card-image">
+										<img src="/images/fotos/image-removebg-preview (16).png" alt="" class="card-img" />
+									</div>
+								</div>
+
+								<div class="card-content">
+									<div class="media-icons">
+										<i class="fa-brands fa-facebook"></i>
+										<i class="fa-brands fa-whatsapp"></i>
+										<i class="fa-brands fa-twitter"></i>
+									</div>
+									<h3 class="nome">Angela</h3>
+									<p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus illum officia, rem ea itaque vero quas voluptates reiciendis quaerat ad eos ut eum, nemo eius accusamus autem inventore quam.</p>
+									<button class="botao-card">Agendar</button>
+								</div>
+							</div>
+
+							<div class="card swiper-slide">
+								<div class="image-content">
+									<span class="overlay"></span>
+
+									<div class="card-image">
+										<img src="/images/fotos/image-removebg-preview (16).png" alt="" class="card-img" />
+									</div>
+								</div>
+
+								<div class="card-content">
+									<div class="media-icons">
+										<i class="fa-brands fa-facebook"></i>
+										<i class="fa-brands fa-whatsapp"></i>
+										<i class="fa-brands fa-twitter"></i>
+									</div>
+									<h3 class="nome">Angela</h3>
+									<p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus illum officia, rem ea itaque vero quas voluptates reiciendis quaerat ad eos ut eum, nemo eius accusamus autem inventore quam.</p>
+									<button class="botao-card">Agendar</button>
+								</div>
+							</div>
+
+							<div class="card swiper-slide">
+								<div class="image-content">
+									<span class="overlay"></span>
+
+									<div class="card-image">
+										<img src="/images/fotos/image-removebg-preview (16).png" alt="" class="card-img" />
+									</div>
+								</div>
+
+								<div class="card-content">
+									<div class="media-icons">
+										<i class="fa-brands fa-facebook"></i>
+										<i class="fa-brands fa-whatsapp"></i>
+										<i class="fa-brands fa-twitter"></i>
+									</div>
+									<h3 class="nome">Angela</h3>
+									<p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus illum officia, rem ea itaque vero quas voluptates reiciendis quaerat ad eos ut eum, nemo eius accusamus autem inventore quam.</p>
+									<button class="botao-card">Agendar</button>
+								</div>
+							</div>
+
+							<div class="card swiper-slide">
+								<div class="image-content">
+									<span class="overlay"></span>
+
+									<div class="card-image">
+										<img src="/images/fotos/image-removebg-preview (16).png" alt="" class="card-img" />
+									</div>
+								</div>
+
+								<div class="card-content">
+									<div class="media-icons">
+										<i class="fa-brands fa-facebook"></i>
+										<i class="fa-brands fa-whatsapp"></i>
+										<i class="fa-brands fa-twitter"></i>
+									</div>
+									<h3 class="nome">Angela</h3>
+									<p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus illum officia, rem ea itaque vero quas voluptates reiciendis quaerat ad eos ut eum, nemo eius accusamus autem inventore quam.</p>
+									<button class="botao-card">Agendar</button>
+								</div>
+							</div>
+
+							<div class="card swiper-slide">
+								<div class="image-content">
+									<span class="overlay"></span>
+
+									<div class="card-image">
+										<img src="/images/fotos/image-removebg-preview (16).png" alt="" class="card-img" />
+									</div>
+								</div>
+
+								<div class="card-content">
+									<div class="media-icons">
+										<i class="fa-brands fa-facebook"></i>
+										<i class="fa-brands fa-whatsapp"></i>
+										<i class="fa-brands fa-twitter"></i>
+									</div>
+									<h3 class="nome">Angela</h3>
+									<p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus illum officia, rem ea itaque vero quas voluptates reiciendis quaerat ad eos ut eum, nemo eius accusamus autem inventore quam.</p>
+									<button class="botao-card">Agendar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="swiper-button-next swiper-navBtn"></div>
+					<div class="swiper-button-prev swiper-navBtn"></div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</section>
+
+			<div class="botao-ver-pro">
+				<a href="/profissionais"><button>Outros profissionais</button></a>
+			</div>
+		</main>
+		<%- include("../templates/footer.ejs") %>
+	</body>
+</html>

@@ -5,7 +5,7 @@ const session = require('express-session');
 const path = require('path');
 const router = require('./app/routes/router');
 const app = express();
-const port = process.env.PORT 
+const port = process.env.PORT  
 
 app.use(express.static(path.join(__dirname, "app", "public")));
 

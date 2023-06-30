@@ -105,8 +105,8 @@ main form input[type="submit"]{
     width: 40%;
     margin-top: 2rem;
     border-radius: 30px;
-    color: black;
-    background-color: #7e5d2df8;
+    color: white;
+    background-color: #f7931e;
 }
 main form input[type="submit"]:hover{
     opacity: 0.8;
@@ -171,8 +171,8 @@ main h5{
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 30px;
-    color: black;
-    background-color: #7e5d2df8;
+    color: white;
+    background-color: #f7931e;
 }
 .conta-nova button:hover{
     opacity: 0.8;

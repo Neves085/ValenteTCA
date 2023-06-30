@@ -27,3 +27,19 @@ var swiper = new Swiper(".slide-content", {
     },
   },
 });
+
+const button = document.querySelector(".botao-fot")
+const modal = document.querySelector("dialog", "modal-roda")
+const buttonClose = document.querySelector("dialog button")
+button.onclick = function(){
+  modal.showModal()
+}
+
+buttonClose.onclick = function (){
+  modal.close()
+}
+
+function toggleLike(){
+  var button = document.getElementById("curtido");
+  button.classList.toggle("liked");
+}

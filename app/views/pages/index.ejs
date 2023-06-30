@@ -228,11 +228,6 @@
     <h2 class="roda-conversa-titulo">Rodas de conversas</h2>
     
     <div class="container-roda">
-        
-        <div class="entra-roda">
-        <i class="fa-brands fa-discord" style="color: #000000;"></i>
-        <button class="fechar-roda"></button>
-        </div>
     
     <button class="card-roda" href="index.html"><div class="card1">
         <div class="tema">
@@ -259,7 +254,7 @@
         <a href="/roda-de-conversa"><button>Ver mais</button></a>
     </div>
 
-   <h2 class="desabafos">Desabafos</h2>
+	<h2 class="desabafos">Desabafos</h2>
     <div class="desabafar">
         <div class="user-avatar"><img src="imgs/image-removebg-preview (1).png"></div>
             <input class="desabafar-text" type="text" placeholder="Desabafe..."></input>
@@ -272,7 +267,7 @@
            <div class="post-user-info">
               <div class="user-avatar"><img src="imgs/image-removebg-preview (1).png"></div>
                 <div class="user1">
-                    <h4>Ayrton Senna</h4>
+                    <h4>Simone de Oliveira</h4>
                 <span class="hora-post">- 12:07</span>
             </div>
                 </div> 
@@ -282,8 +277,8 @@
             </div>
             <div class="post-icons">
                 <div class="like">
-                <img src="imgs/image-removebg-preview (2).png">
-                Curtir</div>
+                    <button id="curtido" class="curtido" onclick="toggleLike()"><i class="fa-solid fa-heart"></i></button>
+                </div>
                 
          </div>
         </div>
@@ -291,12 +286,13 @@
      
     
     <div class="posts">
+        
         <div class="post">
             
            <div class="post-user-info">
               <div class="user-avatar"><img src="imgs/image-removebg-preview (1).png"></div>
-                <div class="user2">
-                    <h4>Freddy Mercury</h4>
+                <div class="user1">
+                    <h4>Willian Carvalho</h4>
                 <span class="hora-post">- 12:07</span>
             </div>
                 </div> 
@@ -306,10 +302,10 @@
             </div>
             <div class="post-icons">
                 <div class="like">
-                    <img src="imgs/image-removebg-preview (2).png">
-                    Curtir</div>
-                    
-            </div>
+                    <button id="curtido" class="curtido" onclick="toggleLike()"><i class="fa-solid fa-heart"></i></button>
+                </div>
+                
+         </div>
         </div>
     </div>
 		</main>

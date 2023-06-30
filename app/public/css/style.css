@@ -204,6 +204,67 @@ nav button {
 	font-family: "Poppins", sans-serif;
 	font-weight: 700;
 }
+
+.container-roda{
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card-roda{
+    margin: auto 0;
+    width: 95%;
+}
+.card1{
+    background-image: url(imgsroda/alcoolismo-nas-empresas-prejudica-a-qualidade-de-vida.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+    height: 220px;
+}
+.card2{
+    background-image: url(imgsroda/ansiedade-1920x954.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+    height: 220px;
+}
+.card3{
+    background-image: url(imgsroda/SITE-UNIAD-3-1280x720.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+    height: 220px;
+}
+
+.tema h1{
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    margin-top:20px;
+}
+
+.tema{
+  margin-top: 130px;
+  height: 90px;
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+  
+  background: rgb(27,27,27,.5);
+  color: white;
+  
+}
+.card:hover{
+    cursor:pointer;
+}
 .roda-conversa {
 	margin: 0 15px;
 	background-color: #f8f2e9;

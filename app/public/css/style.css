@@ -64,54 +64,54 @@ nav button {
 	width: 480px;
 	height: 200px;
 }
-.doar{
-    width: 100%;
-    height: 250px;
-    background-image: url(/app/public/images/fotos/iStock-1334410357-min.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: relative;
-}
-.overlay-doar{
-    position: absolute;
-    opacity: 0.3;
-    width: 100%;
-    height: 100%;
-    background-color: #f7931e;
-}
-.container-doar{
-    padding: 70px 30px 0;
-}
-.doar-content{
-    
-    height: 100%;
-    backdrop-filter: blur(0.1px);
-    
-    color: #fff;
-}
-.doar-content h1{
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
-    font-size: 22px;
-}
-.doar-content h4{
-    font-weight: 500;
-    font-size: 12px;
-}
-.doar-content button {
-
-    border: none;
-    padding: 3px 8px;
-    border: none;
-    font-size: 16px;
-    color: white;
-    background-color: #f7931e;
-    margin: 10px auto;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.3 ease;
-}
+	.doar{
+		width: 100%;
+		height: 250px;
+		background-image: url(/images/fotos/iStock-1334410357-min.jpg);
+		background-size:cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		position: relative;
+	}
+	.overlay-doar{
+		position: absolute;
+		opacity: 0.3;
+		width: 100%;
+		height: 100%;
+		background-color: #f7931e;
+	}
+	.container-doar{
+		padding: 70px 30px 0;
+	}
+	.doar-content{
+		
+		height: 100%;
+		backdrop-filter: blur(0.1px);
+		
+		color: #fff;
+	}
+	.doar-content h1{
+		font-weight: 700;
+		font-family: 'Poppins', sans-serif;
+		font-size: 22px;
+	}
+	.doar-content h4{
+		font-weight: 500;
+		font-size: 12px;
+	}
+	.doar-content button {
+	
+		border: none;
+		padding: 3px 8px;
+		border: none;
+		font-size: 16px;
+		color: white;
+		background-color: #f7931e;
+		margin: 10px auto;
+		border-radius: 2px;
+		cursor: pointer;
+		transition: all 0.3 ease;
+	}
 #modalfun:checked + .modal {
 	display: block;
 }

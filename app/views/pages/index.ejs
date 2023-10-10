@@ -303,9 +303,7 @@
             </div>
             <div class="post-icons">
                 <div class="like">
-                    <!-- Renderização do botão de curtir com um atributo data-post-id -->
-                    <button class="like-button" data-post-id="<%= post.id %>">Curtir</button>
-                    <i class="fa-solid fa-heart"></i>
+                    <button id="curtido" class="curtido" onclick="toggleLike()"><i class="fa-solid fa-heart"></i></button>
                 </div>
                 
          </div>
@@ -314,31 +312,4 @@
 		</main>
 		<%- include("../templates/footer.ejs") %>
 	</body>
-    <script>
-        document.querySelectorAll('.like-button').forEach(button => {
-          button.addEventListener('click', async (event) => {
-            const postId = event.target.dataset.postId;
-      
-            try {
-              const response = await fetch('/likes', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ postId }),
-              });
-      
-              if (response.ok) {
-                // A curtida foi adicionada com sucesso, atualize a interface do usuário
-                event.target.innerText = 'Curtido';
-                event.target.disabled = true; // Opcional: desativar o botão após a curtida
-              } else {
-                console.error('Erro ao curtir a postagem:', response.statusText);
-              }
-            } catch (error) {
-              console.error('Erro ao curtir a postagem:', error);
-            }
-          });
-        });
-      </script>
 </html>

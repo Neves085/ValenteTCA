@@ -2,6 +2,7 @@ const {Router} = require("express");
 const router = Router();
 
 const indexControllerRead = require("../controllers/indexControllerRead");
+const perfilControllerRead = require("../controllers/perfilControllerRead");
 const doacaoControllerRead = require("../controllers/doacaoController/doacaoControllerRead");
 const profissionaisControllerRead = require("../controllers/profissionaisController/profissionaisControllerRead");
 const rodaConversaControllerRead = require("../controllers/rodaConversaController/rodaConversaControllerRead");
@@ -17,6 +18,8 @@ const cadastroControllerRead = require("../controllers/cadastroController/cadast
 const cadastroControllerCreate = require("../controllers/cadastroController/cadastroControllerCreate");
 
 router.get("/", indexControllerRead.returnPage);
+
+router.get("/perfil", perfilControllerRead.returnPage);
 
 router.get("/doacao", doacaoControllerRead.returnPage);
 

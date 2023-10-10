@@ -223,7 +223,7 @@ nav button {
     width: 95%;
 }
 .card1{
-    background-image: url(/images/imgsroda/alcoolismo-nas-empresas-prejudica-a-qualidade-de-vida.jpg);
+    background-image: url(/images/imgsroda/alcool.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -241,11 +241,11 @@ nav button {
     height: 220px;
 }
 .card3{
-    background-image: url(/images/imgsroda/SITE-UNIAD-3-1280x720.webp);
+    background-image: url(/images/imgsroda/depression.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    box-shadow: 5px 5px 20px black;
+    box-shadow: 5px 5px 20px white;
     overflow: hidden;
     height: 220px;
 }

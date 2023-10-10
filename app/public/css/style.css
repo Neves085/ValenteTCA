@@ -264,7 +264,7 @@ nav button {
   padding: 6px;
   box-sizing: border-box;
   
-  background: rgba(241, 236, 236, 0.644);
+  background: transparent;
   color: white;
   
 }

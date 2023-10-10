@@ -245,7 +245,7 @@ nav button {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    box-shadow: 5px 5px 20px white;
+    box-shadow: 5px 5px 20px Red;
     overflow: hidden;
     height: 220px;
 }

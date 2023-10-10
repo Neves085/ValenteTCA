@@ -2,7 +2,7 @@ const {Router} = require("express");
 const router = Router();
 
 const indexControllerRead = require("../controllers/indexControllerRead");
-const perfilControllerRead = require("../controllers/perfilControllerRead");
+const perfilControllerRead = require("../controllers/perfilController/perfilControllerRead");
 const doacaoControllerRead = require("../controllers/doacaoController/doacaoControllerRead");
 const profissionaisControllerRead = require("../controllers/profissionaisController/profissionaisControllerRead");
 const rodaConversaControllerRead = require("../controllers/rodaConversaController/rodaConversaControllerRead");

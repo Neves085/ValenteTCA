@@ -219,6 +219,9 @@ nav button {
     flex-direction: column;
 }
 .card-roda{
+	
+    border:solid 2px #f8f2e9;
+    border-radius: 15px;
     margin: auto 0;
     width: 95%;
 }
@@ -227,7 +230,7 @@ nav button {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    
+    border-radius: 15px;
     overflow: hidden;
     height: 220px;
 }
@@ -236,7 +239,7 @@ nav button {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    
+    border-radius: 15px;
     overflow: hidden;
     height: 220px;
 }
@@ -248,6 +251,7 @@ nav button {
     /* box-shadow: 5px 5px 20px Red; */
     overflow: hidden;
     height: 220px;
+	border-radius: 15px;
 }
 
 .tema h1{
@@ -264,7 +268,7 @@ nav button {
   padding: 6px;
   box-sizing: border-box;
 
-  background: transparent blu;
+  background: rgba(0,0,0,.2);
   color: white;
   
 }

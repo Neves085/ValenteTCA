@@ -22,6 +22,8 @@ router.get("/", indexControllerRead.returnPage);
 
 router.get("/perfil", perfilControllerRead.returnPage);
 
+router.get("/perfil", agendamentoControllerRead.returnPage);
+
 router.get("/doacao", doacaoControllerRead.returnPage);
 
 router.get("/profissionais", profissionaisControllerRead.returnPage);

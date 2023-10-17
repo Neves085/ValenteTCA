@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
 </head>
 <body>
-
-    <%- include("../templates/header.ejs") %>
+    <header>
+        <%- include("../templates/header.ejs") %>
+    </header>
 
     <main class="main-perfil">
         <div class="perfil-container">
@@ -28,7 +29,7 @@
             <div class="perfil-info">
                 <div class="dados">
                     <li><i class="fa-regular fa-calendar-days" style="color: #000000;"></i>16 de Dezembro de 2005</li>
-                    <li><i class="fa-regular fa-calendar-days" style="color: #000000;"></i>16 de Dezembro de 2005</li>
+                    <li><i class="fa-regular fa-calendar-days" style="color: #000000;"></i></li>
                 </div>
                 <div class="dados">
                     <li><i class="fa-regular fa-calendar-days" style="color: #000000;"></i>16 de Dezembro de 2005</li>
@@ -40,5 +41,8 @@
         </div>
 
     </main>
+    <footer>
+        <%- include("../templates/footer.ejs") %>
+    </footer>
 
-    <%- include("../templates/footer.ejs") %>
+</body>

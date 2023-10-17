@@ -18,9 +18,15 @@
         <div class="perfil-container">
         <div class="perfil-usuario">
             <div class="perfil-avatar">
-                <img src="/images/fotos/image-removebg-preview (13).png" alt="imagem-avatar">
+            <!-- Exibição da imagem atual -->
+            <img id="profile-image" src="/images/fotos/image-removebg-preview (13).png" alt="Foto de Perfil Atual">
+            <!-- Formulário para fazer upload de uma nova imagem -->
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="profile-image" accept="image/*">
+                <input type="submit" value="Enviar Imagem">
+            </form>
             </div>
-        </div>
+            </div>
     </div>
         <div class="perfil-body">
             <div class="perfil-bio">

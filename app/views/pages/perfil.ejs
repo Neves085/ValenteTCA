@@ -17,9 +17,11 @@
     <main class="main-perfil">
         <div class="perfil-container">
         <div class="perfil-usuario">
-            <div class="perfil-avatar">
-                <img src="/images/fotos/image-removebg-preview (13).png" alt="imagem-avatar">
-            </div>
+            <label id="logo-nome">
+                <label>Selecione uma imagem de perfil:</label>
+                <input type="file" id="img-perfil" accept="image/*">
+                <img src="/images/fotos/image-removebg-preview (13).png" alt="Foto de Perfil Atual">
+            </label>
         </div>
     </div>
         <div class="perfil-body">
@@ -47,5 +49,29 @@
     <footer>
         <%- include("../templates/footer.ejs") %>
     </footer>
+    <script>
+        let labelImg = document.querySelector('#logo-nome>label>img') 
+        let userFile = document.querySelector('#img-perfil') 
+        userFile.addEventListener('change', (e)=>{ 
+            labelImg.src='img/perfil_cliente.png' 
+            const userTarget = e.target 
+            const file = userTarget.files[0] 
+        
+            const reader = new FileReader() 
+        
+            reader.addEventListener('load', (e)=>{ 
+                const readerTarget = e.target 
+                var previewImage = document.createElement('img') 
+                labelImg.src=readerTarget.result 
+            }) 
+        
+            reader.readAsDataURL(file) 
+        
+            // let previewImage = document.createElement('img') 
+            // previewImage.setAttribute('src', logo.value) 
+            // previewImage.setAttribute('class', 'imgLogo') 
+            // boxLogo.appendChild(previewImage) 
+        })
+    </script>
 
 </body>

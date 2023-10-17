@@ -43,3 +43,14 @@ function toggleLike(){
   var button = document.getElementById("curtido");
   button.classList.toggle("liked");
 }
+
+function agendar() {
+  const datePicker = document.getElementById("datePicker");
+  const timeSlot = document.getElementById("timeSlot");
+  const confirmation = document.getElementById("confirmation");
+
+  const selectedDate = datePicker.value;
+  const selectedTime = timeSlot.value;
+
+  confirmation.innerHTML = `Agendamento confirmado para ${selectedDate} às ${selectedTime}.`;
+}

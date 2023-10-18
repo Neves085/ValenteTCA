@@ -5,6 +5,7 @@ const indexControllerRead = require("../controllers/indexControllerRead");
 const agendamentoControllerRead = require("../controllers/agendamentoController/agendamentoControllerRead");
 const perfilControllerRead = require("../controllers/perfilController/perfilControllerRead");
 const privacidadeControllerRead = require("../controllers/privacidadeController/privacidadeControllerRead");
+const termosControllerRead = require("../controllers/termosController/termosControllerRead");
 const doacaoControllerRead = require("../controllers/doacaoController/doacaoControllerRead");
 const profissionaisControllerRead = require("../controllers/profissionaisController/profissionaisControllerRead");
 const rodaConversaControllerRead = require("../controllers/rodaConversaController/rodaConversaControllerRead");
@@ -25,6 +26,8 @@ const deletaController = require('../controllers/perfilController/perfilControll
 router.get("/", indexControllerRead.returnPage);
 
 router.get("/privacidade", privacidadeControllerRead.returnPage);
+
+router.get("/termos", termosControllerRead.returnPage);
 
 router.get("/perfil", perfilControllerRead.returnPage);
 

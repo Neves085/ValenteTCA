@@ -32,12 +32,3 @@ app.listen(port, () => {
     console.log(`Servidor aberto em http://localhost:${port}`);
 })
 
-app.post('/perfil/delete', (req, res) => {
-    // Lógica para excluir o usuário do banco de dados Prisma
-    // Redirecione o usuário para a página de perfil após a exclusão
-    res.redirect('/perfil');
-  });
-  
-  app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
-  });

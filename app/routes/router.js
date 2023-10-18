@@ -7,6 +7,7 @@ const perfilControllerRead = require("../controllers/perfilController/perfilCont
 const doacaoControllerRead = require("../controllers/doacaoController/doacaoControllerRead");
 const profissionaisControllerRead = require("../controllers/profissionaisController/profissionaisControllerRead");
 const rodaConversaControllerRead = require("../controllers/rodaConversaController/rodaConversaControllerRead");
+const perfilControllerDeletar = require('./perfilControllerDeletar');
 
 const autenticacaoMiddleware = require("../middlewares/autenticacaoMiddleware");
 const regrasValidacaoMiddleware = require("../middlewares/regrasValidacaoMiddleware");
@@ -31,6 +32,8 @@ router.get("/profissionais", profissionaisControllerRead.returnPage);
 router.get("/rodas-de-conversa",
 autenticacaoMiddleware.validateJWT,
 rodaConversaControllerRead.returnPage);
+
+router.get('/perfilControllerDeletar', perfilControllerDeletar.deletarUsuario);
 
 router.get("/cadastro", cadastroControllerRead.returnPage);
 router.post("/cadastro",

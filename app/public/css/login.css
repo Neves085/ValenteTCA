@@ -8,12 +8,16 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
+@media screen and (max-width:680px){
+    main{
+        width: 100%;
+    }
+    }
 
 main{
     
     background-color:#FFF8E9 ;
-    width: 100%;
+    width: 60%;
     
     display: flex;
     flex-direction: column;

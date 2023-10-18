@@ -98,6 +98,7 @@ main form span.erro-mensagem {
 main form input[type="submit"]{
     cursor: pointer;
     width: 40%;
+    border: none;
     margin-top: 2rem;
     border-radius: 30px;
     color: white;

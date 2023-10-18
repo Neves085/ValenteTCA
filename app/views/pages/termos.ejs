@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
@@ -10,18 +11,7 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href=""><img class="logo" src="imgs/logo_deitado-removebg-preview.png"></a>
-                <button class="menu">&#9776;</button>
-            <ul class="menu-mobile">
-                <li><a href="rodadecnvs.html">Rodas de conversas</a></li>
-                <li><a href="profissionais.html">Nossos profissionais</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a>Modo Anônimo <img class="" src="imgs/anonimo.png"></a></li>
-            </ul>
-        </nav>
-    </header>
+    <%- include("../templates/header.ejs") %>
 <div class="priv">
 <h2>
     
@@ -100,35 +90,6 @@ A utilização deste website acarreta a adesão aos presentes Termos de Uso e a 
         Caso você tenha qualquer dúvida sobre os Termos de Uso, por favor, entre em contato pelo e-mail valentetcc0@gmail.com.
     </span></p></section>
 </div>
-    <footer>
-        <div class="fot-content">
-            <div class="logo-fot">
-                <img src="imgs/logo_deitado-removebg-preview.png">
-            </div>
-            <div class="medias-fot">
-                <a><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://instagram.com/tcc_valente?igshid=NTc4MTIwNjQ2YQ=="><i class="fa-brands fa-instagram" style="color: #000000;"></i></a>
-                <a><i class="fa-brands fa-twitter"></i></a>
-            </div>
-            <div class="button-fot">
-                <button class="botao-fot">Sobre nós</button>
-                 <dialog class="sobre-nos">
-                    <div class="sobre-content">
-                    <h1>Sobre nós</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati sunt doloremque culpa? Iure suscipit eum, eos possimus debitis provident dolorem quaerat blanditiis harum ut error magnam accusantium, impedit facere aut?</p>
-                    <button class="fechar-botao">Ok</button>
-                </div>
-                </dialog>
-                
-            </div>
-            <div class="fot-email">
-                <h4>E-mail:</h4>
-                <ul class="infos-fot">
-                    <li><a href="#">Valente@gmail.com</a></li>
-                    <li><a href="#">Central de atendimento</a></li>
-                    <li> <a href="privacidade.html">Política de Privacidade</a> e <a href="termos.html">Termos de Uso</a></li>
-                    <li><a href="#">(11)0000-0000</a></li>
-                </ul>
-            </div>        
-        </div>
-    </footer>
+<%- include("../templates/footer.ejs") %>
+</body>
+</html>

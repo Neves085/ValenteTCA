@@ -19,23 +19,25 @@
     const { PrismaClient } = require("@prisma/client")
 
     // Função para buscar o valor de usuario.ativo no banco de dados
-    async function buscarAtivoDoUsuario() {
-        try {
-            // Substitua 'idDoUsuario' pelo ID do usuário específico que você deseja consultar
-            const usuario = await prisma.usuario.findUnique({
-                where: {
-                    id: userId
-                }
-            });
+async function buscarAtivoDoUsuario() {
+    try {
+        // Substitua 'idDoUsuario' pelo ID do usuário específico que você deseja consultar
+        const usuario = await prisma.usuario.findUnique({
+            where: {
+                id: userId
+            }
+        });
 
-            // Verifique o valor de usuario.ativo
-            if (usuario.ativo === 1) {
-                // Atualize o estilo do elemento HTML para 'block'
-                document.getElementById("usu").style.display = "none";
-            } 
-        } catch (error) {
-            console.error("Erro na consulta ao banco de dados: " + error);
+        // Verifique o valor de usuario.ativo
+        if (usuario && usuario.ativo === 1) {
+            // Atualize o estilo do elemento HTML para 'block'
+            document.getElementById("usu").style.display = "block";
+        } else {
+            // Atualize o estilo do elemento HTML para 'none'
+            document.getElementById("usu").style.display = "none";
         }
+    } catch (error) {
+        console.error("Erro na consulta ao banco de dados: " + error);
     }
-    buscarAtivoDoUsuario();
+}
 </script>

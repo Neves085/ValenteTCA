@@ -4,6 +4,7 @@ const router = Router();
 const indexControllerRead = require("../controllers/indexControllerRead");
 const agendamentoControllerRead = require("../controllers/agendamentoController/agendamentoControllerRead");
 const perfilControllerRead = require("../controllers/perfilController/perfilControllerRead");
+const privacidadeControllerRead = require("../controllers/privacidadeController/privacidadeControllerRead");
 const doacaoControllerRead = require("../controllers/doacaoController/doacaoControllerRead");
 const profissionaisControllerRead = require("../controllers/profissionaisController/profissionaisControllerRead");
 const rodaConversaControllerRead = require("../controllers/rodaConversaController/rodaConversaControllerRead");
@@ -31,7 +32,7 @@ router.get("/doacao", doacaoControllerRead.returnPage);
 
 router.get("/profissionais", profissionaisControllerRead.returnPage);
 
-router.delete("perfil/delete", deletaController.deletarUsuario )
+router.delete("/delete", deletaController.deletarUsuario )
 
 router.get("/rodas-de-conversa",
 autenticacaoMiddleware.validateJWT,

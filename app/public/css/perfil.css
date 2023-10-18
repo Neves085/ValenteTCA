@@ -15,11 +15,8 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
-.testedel{
-    list-style: circle;
-}
 ul{
-    
+    list-style: none;
     padding: 0;
 }
 a{

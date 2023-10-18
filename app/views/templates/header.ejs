@@ -41,7 +41,18 @@ async function buscarAtivoDoUsuario() {
     }
 }
 
-if(login = 1){
-    document.getElementsByClassName('usu').style.display = "none";
+window.onload = function() {
+	// Obtém a parte da consulta da URL
+    const query = window.location.search;
+
+    // Analisa os parâmetros da URL
+    const params = new URLSearchParams(query);
+
+    // Verifica se o parâmetro "hidden" existe e tem o valor "1"
+    if (params.has("hidden") && params.get("hidden") === "1") {
+        // O parâmetro "hidden" é igual a 1, faça algo
+        document.getElementsByClassName('usu')[0].style.display = "none"; // Use [0] para acessar o primeiro elemento com a classe 'usu'
+    }
 }
+
 </script>

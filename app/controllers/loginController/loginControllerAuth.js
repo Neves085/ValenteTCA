@@ -2,7 +2,7 @@ class LoginController {
     async autorizarUsuario(req, res) {
         var login = 1;
 
-        return res.redirect("/rodas-de-conversa");
+        return res.redirect("/rodas-de-conversa?hidden=1");
     }
 }
 

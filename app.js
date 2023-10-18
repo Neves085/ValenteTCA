@@ -31,3 +31,4 @@ app.use("/", router);
 app.listen(port, () => {
     console.log(`Servidor aberto em http://localhost:${port}`);
 })
+

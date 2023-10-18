@@ -22,8 +22,6 @@ router.get("/", indexControllerRead.returnPage);
 
 router.get("/perfil", perfilControllerRead.returnPage);
 
-app.delete('/perfil/deletar', perfilController.deletarUsuario);
-
 router.get("/agendamento", agendamentoControllerRead.returnPage);
 
 router.get("/doacao", doacaoControllerRead.returnPage);

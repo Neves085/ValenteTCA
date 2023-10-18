@@ -24,6 +24,8 @@ const deletaController = require('../controllers/perfilController/perfilControll
 
 router.get("/", indexControllerRead.returnPage);
 
+router.get("/privacidade", privacidadeControllerRead.returnPage);
+
 router.get("/perfil", perfilControllerRead.returnPage);
 
 router.get("/agendamento", agendamentoControllerRead.returnPage);

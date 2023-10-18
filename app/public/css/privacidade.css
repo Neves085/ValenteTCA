@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,500;1,600&family=Righteous&family=Roboto:wght@100;300;400;500;700&family=Sarala:wght@700&display=swap");
+*{
+    font-family: "Poppins", sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2{
+    padding-top: 20px;
+}
+.part2{
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(0,0 ,0 ,.2);
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.part3{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(0,0 ,0 ,.2);
+    
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.part1{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(0,0 ,0 ,.2);
+    
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.priv{
+    padding: 0 20px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+p{
+    gap: 10px;
+    display: flex;
+    font-size: 20px;
+}
+li{
+    font-size: 18px;
+}

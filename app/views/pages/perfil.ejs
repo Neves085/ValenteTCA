@@ -35,9 +35,10 @@
                     <li><i class="fa-regular fa-calendar-days" style="color: #000000;"></i>16 de Dezembro de 2005</li>
                     <li><i class="fa-regular fa-calendar-days" style="color: #000000;"></i>16 de Dezembro de 2005</li>
                 </div>
-                <form action="perfil/delete" method="POST">
-                    <button type="submit">Deletar Usuário</button>
-                </form>
+                <button id="deleteUserButton">Deletar Usuário</button>
+
+                
+                
             </div>
         </div>
             
@@ -47,5 +48,29 @@
     <footer>
         <%- include("../templates/footer.ejs") %>
     </footer>
-
+    <script>
+        document.getElementById('deleteUserButton').addEventListener('click', function () {
+          const confirmation = confirm("Tem certeza de que deseja excluir seu perfil?");
+          if (confirmation) {
+            fetch('/perfil/deletar', {
+              method: 'DELETE',
+            })
+              .then(response => response.json())
+              .then(data => {
+                if (data.error) {
+                  console.error(data.error);
+                  alert('Erro ao excluir o usuário');
+                } else {
+                  alert('Usuário excluído com sucesso');
+                  // Redirecionar para a página desejada após a exclusão
+                  window.location.href = '/outra_pagina'; // Substitua com a página desejada
+                }
+              })
+              .catch(error => {
+                console.error(error);
+                alert('Erro ao excluir o usuário');
+              });
+          }
+        });
+      </script>
 </body>

@@ -17,7 +17,8 @@ class CadastroController {
                     nome,
                     email,
                     telefone,
-                    senha: senhaCriptografada
+                    senha: senhaCriptografada,
+                    ativo: true
                 }
             })
 

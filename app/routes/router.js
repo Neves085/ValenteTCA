@@ -18,6 +18,9 @@ const loginControllerAuth = require("../controllers/loginController/loginControl
 const cadastroControllerRead = require("../controllers/cadastroController/cadastroControllerRead.js");
 const cadastroControllerCreate = require("../controllers/cadastroController/cadastroControllerCreate");
 
+
+const deletaController = require('../controllers/perfilController/perfilControllerDeletar'); 
+
 router.get("/", indexControllerRead.returnPage);
 
 router.get("/perfil", perfilControllerRead.returnPage);
@@ -27,6 +30,8 @@ router.get("/agendamento", agendamentoControllerRead.returnPage);
 router.get("/doacao", doacaoControllerRead.returnPage);
 
 router.get("/profissionais", profissionaisControllerRead.returnPage);
+
+router.delete("perfil/delete", deletaController.deletarUsuario )
 
 router.get("/rodas-de-conversa",
 autenticacaoMiddleware.validateJWT,
@@ -43,5 +48,6 @@ router.get("/login", loginControllerRead.returnPage);
 router.post("/login",
 validacaoFormulariosMiddleware.validacaoLogin,
 loginControllerAuth.autorizarUsuario)
+
 
 module.exports = router;

@@ -84,7 +84,7 @@ main form input{
     outline: #fff;
     font-size: 1rem;
     border-radius: 10px;
-    border: none;
+    border: solid 1px #f7931e;
 }
 
 main form input[type="submit"]{

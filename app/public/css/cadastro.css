@@ -7,13 +7,6 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-@media screen and (max-width:1000px){
-body{
-    display: flex;
-    background-color:aliceblue ;
-    font-weight: 500;
-    
-}
 
 main{
     
@@ -176,5 +169,4 @@ main h5{
 }
 .conta-nova button:hover{
     opacity: 0.8;
-}
 }

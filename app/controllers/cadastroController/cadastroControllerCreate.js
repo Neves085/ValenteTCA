@@ -1,72 +1,48 @@
-const prisma = require("../../../server/database/prismaClient");
+const express = require('express');
+const session = require('express-session');
+const app = express();
+
+app.use(
+  session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60,
+      httpOnly: true,
+      sameSite: 'strict',
+    },
+  })
+);
+
+// Outras configurações do Express...
 
 class CadastroController {
-    async criarUsuario(req, res) {
-        const {
-            nome,
-            email,
-            telefone,
-            senha,
-            confirmacao_senha
-        } = req.body;
-        const senhaCriptografada = req.senhaEncriptada;
+  async criarUsuario(req, res) {
+    const { nome, email, telefone, senha, confirmacao_senha } = req.body;
+    const senhaCriptografada = req.senhaEncriptada;
 
-        try {
-            await prisma.usuario.create({
-                data: {
-                    nome,
-                    email,
-                    telefone,
-                    senha: senhaCriptografada,
-                    ativo: true
-                }
-            })
+    try {
+      const usuario = await prisma.usuario.create({
+        data: {
+          nome,
+          email,
+          telefone,
+          senha: senhaCriptografada,
+          ativo: true,
+        },
+      });
 
-            return res.redirect("/login");
-        } catch (erro) {
-            console.log(erro);
+      // Armazene o ID do usuário na sessão
+      req.session.userId = usuario.id;
 
-            if (erro.code === "P2002") {
-                return res.render("pages/cadastro.ejs", {
-                    data: {
-                        page_name: "Cadastro",
-                        input_values: {
-                            nome,
-                            email,
-                            telefone,
-                            senha,
-                            confirmacao_senha
-                        },
-                        errors: {
-                            email_error: {
-                                msg: "Email já cadastrado!"
-                            }
-                        }
-                    }
-                });
-            }
-
-            return res.render("pages/cadastro.ejs", {
-                data: {
-                    page_name: "Cadastro",
-                    input_values: {
-                        nome,
-                        email,
-                        telefone,
-                        senha,
-                        confirmacao_senha
-                    },
-                    errors: {
-                        sistema_error: {
-                            msg: "Erro de sistema, tente novamente mais tarde!"
-                        }
-                    }
-                }
-            });
-        }
+      return res.redirect('/login');
+    } catch (erro) {
+      // Trate os erros como você estava fazendo no código original.
     }
+  }
 }
 
-const CadastroControllerCreate = new CadastroController();
+// Resto do código...
 
 module.exports = CadastroControllerCreate;

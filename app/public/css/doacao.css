@@ -17,7 +17,7 @@ main{
 main{
     
     background-color:#FFF8E9 ;
-    width: 60%;
+    padding: 30px;
     
     display: flex;
     flex-direction: column;

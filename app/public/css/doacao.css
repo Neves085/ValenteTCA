@@ -17,7 +17,6 @@ main{
 main{
     
     background-color:#FFF8E9 ;
-    padding: 30px;
     
     display: flex;
     flex-direction: column;
@@ -85,7 +84,7 @@ main form input{
     outline: #fff;
     font-size: 1rem;
     border-radius: 10px;
-    border: 1px solid black;
+    border: none;
 }
 
 main form input[type="submit"]{
@@ -94,7 +93,7 @@ main form input[type="submit"]{
     margin-bottom: 2rem;
     margin-top: 2rem;
     border-radius: 30px;
-    color: black;
+    color: white;
     background-color: #f7931e;
 }
 main form input[type="submit"]:hover{

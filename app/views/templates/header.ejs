@@ -31,10 +31,10 @@ async function buscarAtivoDoUsuario() {
         // Verifique o valor de usuario.ativo
         if (usuario && usuario.ativo === 1) {
             // Atualize o estilo do elemento HTML para 'block'
-            document.getElementById("usu").style.display = "block";
+            document.getElementById("usu").style.display = "none";
         } else {
             // Atualize o estilo do elemento HTML para 'none'
-            document.getElementById("usu").style.display = "none";
+            document.getElementById("usu").style.display = "block";
         }
     } catch (error) {
         console.error("Erro na consulta ao banco de dados: " + error);

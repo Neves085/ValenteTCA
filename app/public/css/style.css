@@ -226,7 +226,7 @@ nav button {
     width: 95%;
 }
 .card1{
-    background-image: url(/images/imgsroda/alcool.jpeg);
+    background-image: url(/images/imgsroda/foto1.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -235,7 +235,7 @@ nav button {
     height: 220px;
 }
 .card2{
-    background-image: url(/images/imgsroda/ansiedade-1920x954.gif);
+    background-image: url(/images/imgsroda/foto2.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -244,7 +244,7 @@ nav button {
     height: 220px;
 }
 .card3{
-    background-image: url(/images/imgsroda/depression.jpeg);
+    background-image: url(/images/imgsroda/foto3.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

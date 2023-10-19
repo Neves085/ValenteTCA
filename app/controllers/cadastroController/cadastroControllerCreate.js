@@ -2,9 +2,9 @@ const usuarioModel = require("../../models/Usuario");
 
 class CadastroController {
     constructor() {
-		this.criarUsuario = this.criarUsuario.bind(this);
+		this.createUsuario = this.createUsuario.bind(this);
 	}
-    async criarUsuario(req, res) {
+    async createUsuario(req, res) {
         const {
             nome,
             email,
@@ -15,7 +15,7 @@ class CadastroController {
         const senhaCriptografada = req.senhaEncriptada;
 
         try {
-            await usuarioModel.usuario.create({
+            await usuarioModel.createUsuario({
                 data: {
                     nome,
                     email,

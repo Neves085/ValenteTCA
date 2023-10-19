@@ -2,12 +2,18 @@ const {Router} = require("express");
 const router = Router();
 
 const indexControllerRead = require("../controllers/indexControllerRead");
+
 const agendamentoControllerRead = require("../controllers/agendamentoController/agendamentoControllerRead");
+
 const perfilControllerRead = require("../controllers/perfilController/perfilControllerRead");
+
 const privacidadeControllerRead = require("../controllers/privacidadeController/privacidadeControllerRead");
 const termosControllerRead = require("../controllers/termosController/termosControllerRead");
+
 const doacaoControllerRead = require("../controllers/doacaoController/doacaoControllerRead");
+
 const profissionaisControllerRead = require("../controllers/profissionaisController/profissionaisControllerRead");
+
 const rodaConversaControllerRead = require("../controllers/rodaConversaController/rodaConversaControllerRead");
 
 const autenticacaoMiddleware = require("../middlewares/autenticacaoMiddleware");
@@ -19,6 +25,9 @@ const loginControllerAuth = require("../controllers/loginController/loginControl
 
 const cadastroControllerRead = require("../controllers/cadastroController/cadastroControllerRead.js");
 const cadastroControllerCreate = require("../controllers/cadastroController/cadastroControllerCreate");
+
+const editarPerfilControllerRead = require("../controllers/perfilControllers/editarPerfilControllerRead");
+const editarPerfilControllerUpdate = require("../controllers/perfilControllers/editarPerfilControllerUpdate");
 
 
 const deletaController = require('../controllers/perfilController/perfilControllerDeletar'); 
@@ -54,6 +63,16 @@ router.get("/login", loginControllerRead.returnPage);
 router.post("/login",
 validacaoFormulariosMiddleware.validacaoLogin,
 loginControllerAuth.autorizarUsuario)
+
+router.get("/editar-perfil",
+autenticacaoMiddleware.validateJWT,
+editarPerfilControllerRead.getPage);
+
+router.post("/editar-perfil",
+autenticacaoMiddleware.validateJWT,
+validacaoRegrasMiddleware.editarPerfilValidationRules,
+validacaoFormulariosMiddleware.editarPerfilValidation,
+editarPerfilControllerUpdate.editUser);
 
 
 module.exports = router;

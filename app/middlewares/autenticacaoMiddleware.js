@@ -39,11 +39,19 @@ class Autenticacao {
         }
     }
 
-    validateJWT(req, res, next) {
+    async validateJWT(req, res, next) {
         const token = req.session.token;
         req.session.loginRedirectUrl = req.url;
 
         if (!token) {
+            return res.redirect("/login");
+        }
+
+        const {userId} = jwt.decode(token, process.env.SECRET);
+
+        const user = await usuarioModel.findUserById(userId);
+
+        if (user.bloqueado) {
             return res.redirect("/login");
         }
 
@@ -53,7 +61,6 @@ class Autenticacao {
             return next();
         } catch (erro) {
             console.log(erro);
-
             return res.redirect("/login");
         }
     }

@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+
 class LoginController {
     async autorizarUsuario(req, res) {
         const token = jwt.sign({ userId:use.id},process.env.SECRET);

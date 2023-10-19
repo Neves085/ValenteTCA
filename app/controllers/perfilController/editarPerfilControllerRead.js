@@ -5,6 +5,7 @@ class EditarPerfilController {
     async getPage(req, res) {
         const token = req.session.token;
         const {userId} = jwt.decode(token, process.env.SECRET);
+
         const user = await usuarioModel.findUserById(userId);
 
 

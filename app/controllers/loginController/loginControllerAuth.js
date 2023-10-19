@@ -1,6 +1,8 @@
 class LoginController {
     async autorizarUsuario(req, res) {
-        return res.redirect("/rodas-de-conversa");
+        const loginRedirectUrl = req.session.loginRedirectUrl ? req.session.loginRedirectUrl : "/rodas-de-conversa";
+        req.session.loginRedirectUrl = null;
+        return res.redirect(loginRedirectUrl);
     }
 }
 

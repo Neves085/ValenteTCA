@@ -41,6 +41,7 @@ class Autenticacao {
 
     validateJWT(req, res, next) {
         const token = req.session.token;
+        req.session.loginRedirectUrl = req.url;
 
         if (!token) {
             return res.redirect("/login");

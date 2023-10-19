@@ -12,7 +12,7 @@ class EditarPerfilController {
 
     return res.render("pages/editar-perfil.ejs", {
         data: {
-          page_name: "Editar_Perfil",
+          page_name: "EditarPerfil",
           input_values: {
             nome: user.nome,
             email: user.email,

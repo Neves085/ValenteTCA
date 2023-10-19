@@ -1,8 +1,8 @@
 class LoginController {
-    returnPage(req, res) {
+    getPage(req, res) {
         return res.render("pages/login.ejs", {
             data: {
-                page: "Login"
+                page_name: "Login"
             }
         })
     }

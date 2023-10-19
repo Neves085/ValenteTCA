@@ -63,7 +63,7 @@ validacaoFormulariosMiddleware.validacaoCadastro,
 autenticacaoMiddleware.encriptarSenha,
 cadastroControllerCreate.createUsuario);
 
-router.get("/login", loginControllerRead.returnPage);
+router.get("/login", loginControllerRead.getPage);
 router.post("/login",
 validacaoFormulariosMiddleware.validacaoLogin,
 loginControllerAuth.autorizarUsuario)

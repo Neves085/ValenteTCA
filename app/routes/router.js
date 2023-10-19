@@ -9,8 +9,8 @@ const agendamentoControllerRead = require("../controllers/agendamentoController/
 
 const perfilControllerRead = require("../controllers/homeperfilController/perfilControllerRead");
 
-const editarPerfilControllerRead = require("../controllers/perfilController/editarPerfilControllerRead");
-const editarPerfilControllerUpdate = require("../controllers/perfilController/editarPerfilControllerUpdate");
+const editarPerfilControllerRead = require("../controllers/perfilController/editarPerfilControllerRead.js");
+const editarPerfilControllerUpdate = require("../controllers/perfilController/editarPerfilControllerUpdate.js");
 
 const privacidadeControllerRead = require("../controllers/privacidadeController/privacidadeControllerRead");
 const termosControllerRead = require("../controllers/termosController/termosControllerRead");
@@ -42,7 +42,7 @@ router.get("/privacidade", privacidadeControllerRead.returnPage);
 
 router.get("/termos", termosControllerRead.returnPage);
 
-router.get("/perfil", perfilControllerRead.returnPage);
+// router.get("/perfil", perfilControllerRead.getPage);
 
 router.get("/agendamento", agendamentoControllerRead.returnPage);
 
@@ -80,7 +80,7 @@ editarPerfilControllerUpdate.editUser);
 
 router.get("/perfil",
 autenticacaoMiddleware.validateJWT,
-perfilControllerRead.returnPage);
+perfilControllerRead.getPage);
 
 
 module.exports = router;

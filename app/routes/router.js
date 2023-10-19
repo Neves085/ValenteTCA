@@ -7,7 +7,7 @@ const indexControllerRead = require("../controllers/indexControllerRead");
 
 const agendamentoControllerRead = require("../controllers/agendamentoController/agendamentoControllerRead");
 
-const perfilControllerRead = require("../controllers/homePerfilController/perfilControllerRead");
+const perfilControllerRead = require("../controllers/homeperfilController/perfilControllerRead");
 
 const editarPerfilControllerRead = require("../controllers/perfilController/editarPerfilControllerRead");
 const editarPerfilControllerUpdate = require("../controllers/perfilController/editarPerfilControllerUpdate");

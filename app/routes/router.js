@@ -34,7 +34,7 @@ const cadastroControllerCreate = require("../controllers/cadastroController/cada
 
 
 
-const deletaController = require('../controllers/perfilController/perfilControllerDeletar'); 
+// const deletaController = require('../controllers/perfilController/perfilControllerDeletar'); 
 
 router.get("/", indexControllerRead.returnPage);
 
@@ -42,7 +42,7 @@ router.get("/privacidade", privacidadeControllerRead.returnPage);
 
 router.get("/termos", termosControllerRead.returnPage);
 
-router.get("/perfil", perfilControllerRead.getPage);
+// router.get("/perfil", perfilControllerRead.getPage);
 
 router.get("/agendamento", agendamentoControllerRead.returnPage);
 
@@ -50,7 +50,7 @@ router.get("/doacao", doacaoControllerRead.returnPage);
 
 router.get("/profissionais", profissionaisControllerRead.returnPage);
 
-router.delete("/delete", deletaController.deletarUsuario )
+// router.delete("/delete", deletaController.deletarUsuario )
 
 router.get("/rodas-de-conversa",
 autenticacaoMiddleware.validateJWT,

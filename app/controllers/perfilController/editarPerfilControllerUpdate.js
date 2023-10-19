@@ -24,7 +24,7 @@ class EditarPerfilController {
 			console.log(erro);
 
 			if (erro.code === "P2002") {
-				return res.render("pages/editar-perfil.ejs", {
+				return res.render("pages/editar-perfil", {
 					data: {
 						page_name: "Editar perfil",
 						input_values: {
@@ -41,7 +41,7 @@ class EditarPerfilController {
 				});
 			}
 
-			return res.render("pages/editar-perfil.ejs", {
+			return res.render("pages/editar-perfil", {
 				data: {
 					page_name: "Editar perfil",
 					input_values: {

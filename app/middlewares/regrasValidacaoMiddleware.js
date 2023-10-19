@@ -22,6 +22,22 @@ const regrasValidacao = {
         })
         .withMessage("Use uma senha forte com números, letras (maiúsculas e minúsculas), e símbolos (!, $, %, ...). Mínimo de 8 caracteres.")
     ],
+    editarPerfilValidationRules: [
+        body("nome")
+        .trim()
+        .isLength({min: 3, max: 255})
+        .withMessage("Insira seu nome completo!"),
+        body("email")
+        .isEmail()
+        .withMessage("Insira seu email completo!"),
+        body("telefone")
+        .trim()
+        .isLength({min: 15, max: 15})
+        .withMessage("Insira seu número de telefone! (Apenas números)"),
+ 
+    ],
 }
+
+
 
 module.exports = regrasValidacao;

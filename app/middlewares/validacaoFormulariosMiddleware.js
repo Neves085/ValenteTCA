@@ -132,6 +132,38 @@ class ValidacaoFormularios {
 			});
 		}
 	}
+
+	editarPerfilValidation(req, res, next) {
+		const errors = validationResult(req);
+
+		if (!errors.isEmpty()) {
+			const {nome, email, telefone} = req.body;
+
+			const nome_error = errors.errors.find((error) => error.path === "nome");
+			const email_error = errors.errors.find((error) => error.path === "email");
+			const telefone_error = errors.errors.find((error) => error.path === "telefone");
+            
+
+			return res.render("pages/editar-perfil.ejs", {
+				data: {
+					page_name: "Editar perfil",
+					input_values: {
+						nome,
+                        email,
+                        telefone
+                        
+					},
+					errors: {
+						nome_error,
+						email_error,
+						telefone_error
+					},
+				},
+			});
+		}
+
+		return next();
+	}
 }
 
 const validacaoFormulariosMiddleware = new ValidacaoFormularios();

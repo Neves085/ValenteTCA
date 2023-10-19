@@ -12,16 +12,7 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href=""><img class="logo" src="imgs/logo_deitado-removebg-preview.png"></a>
-                <button class="menu">&#9776;</button>
-            <ul class="menu-mobile">
-                <li><a href="rodadecnvs.html">Rodas de conversas</a></li>
-                <li><a href="profissionais.html">Nossos profissionais</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a>Modo Anônimo <img class="" src="imgs/anonimo.png"></a></li>
-            </ul>
-        </nav>
+        <%- include("../templates/header.ejs") %>
     </header>
 <div class="priv">
 <h2>
@@ -48,8 +39,8 @@
     </p></section>
 
     <section class="part1">
-    <p><span style="color: rgb(68, 68, 68);">Seção 2 - Adesão em conjunto com a Política de Privacidade
-A utilização deste website acarreta a adesão aos presentes Termos de Uso e a versão mais atualizada da Política de Privacidade de Valente.
+    <p><span style="color: rgb(68, 68, 68);">Seção 2 - Adesão em conjunto com a Política de Privacidade 
+        A utilização deste website acarreta a adesão aos presentes Termos de Uso e a versão mais atualizada da Política de Privacidade de Valente.
     </span>
     </p></section>
     <section class="part1">
@@ -82,7 +73,7 @@ A utilização deste website acarreta a adesão aos presentes Termos de Uso e a 
     <section class="part1">
     <p><span style="color: rgb(68, 68, 68);">Seção 6 - Links para sites de terceiros
         Este website poderá, de tempos a tempos, conter links de hipertexto que redirecionará você para sites das redes dos nossos parceiros, anunciantes, fornecedores etc. Se você clicar em um desses links para qualquer um desses sites, lembre-se que cada site possui as suas próprias práticas de privacidade e que não somos responsáveis por essas políticas. Consulte as referidas políticas antes de enviar quaisquer Dados Pessoais para esses sites.
-        
+ 
         Não nos responsabilizamos pelas políticas e práticas de coleta, uso e divulgação (incluindo práticas de proteção de dados) de outras organizações, tais como Facebook, Apple, Google, Microsoft, ou de qualquer outro desenvolvedor de software ou provedor de aplicativo, loja de mídia social, sistema operacional, prestador de serviços de internet sem fio ou fabricante de dispositivos, incluindo todos os Dados Pessoais que divulgar para outras organizações por meio dos aplicativos, relacionadas a tais aplicativos, ou publicadas em nossas páginas em mídias sociais. Nós recomendamos que você se informe sobre a política de privacidade e termos de uso de cada site visitado ou de cada prestador de serviço utilizado.
     </span></p>
 </section>
@@ -102,34 +93,5 @@ A utilização deste website acarreta a adesão aos presentes Termos de Uso e a 
     </span></p></section>
 </div>
     <footer>
-        <div class="fot-content">
-            <div class="logo-fot">
-                <img src="imgs/logo_deitado-removebg-preview.png">
-            </div>
-            <div class="medias-fot">
-                <a><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://instagram.com/tcc_valente?igshid=NTc4MTIwNjQ2YQ=="><i class="fa-brands fa-instagram" style="color: #000000;"></i></a>
-                <a><i class="fa-brands fa-twitter"></i></a>
-            </div>
-            <div class="button-fot">
-                <button class="botao-fot">Sobre nós</button>
-                 <dialog class="sobre-nos">
-                    <div class="sobre-content">
-                    <h1>Sobre nós</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati sunt doloremque culpa? Iure suscipit eum, eos possimus debitis provident dolorem quaerat blanditiis harum ut error magnam accusantium, impedit facere aut?</p>
-                    <button class="fechar-botao">Ok</button>
-                </div>
-                </dialog>
-                
-            </div>
-            <div class="fot-email">
-                <h4>E-mail:</h4>
-                <ul class="infos-fot">
-                    <li><a href="#">Valente@gmail.com</a></li>
-                    <li><a href="#">Central de atendimento</a></li>
-                    <li> <a href="privacidade.html">Política de Privacidade</a> e <a href="termos.html">Termos de Uso</a></li>
-                    <li><a href="#">(11)0000-0000</a></li>
-                </ul>
-            </div>        
-        </div>
+        <%- include("../templates/footer.ejs") %>
     </footer>

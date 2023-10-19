@@ -6,6 +6,8 @@ const indexControllerRead = require("../controllers/indexControllerRead");
 const agendamentoControllerRead = require("../controllers/agendamentoController/agendamentoControllerRead");
 
 const perfilControllerRead = require("../controllers/perfilController/perfilControllerRead");
+const editarPerfilControllerRead = require("../controllers/perfilController/editarPerfilControllerRead");
+const editarPerfilControllerUpdate = require("../controllers/perfilController/editarPerfilControllerUpdate");
 
 const privacidadeControllerRead = require("../controllers/privacidadeController/privacidadeControllerRead");
 const termosControllerRead = require("../controllers/termosController/termosControllerRead");
@@ -62,6 +64,16 @@ router.get("/login", loginControllerRead.returnPage);
 router.post("/login",
 validacaoFormulariosMiddleware.validacaoLogin,
 loginControllerAuth.autorizarUsuario)
+
+router.get("/editar-perfil",
+autenticacaoMiddleware.validateJWT,
+editarPerfilControllerRead.getPage);
+
+router.post("/editar-perfil",
+autenticacaoMiddleware.validateJWT,
+validacaoRegrasMiddleware.editarPerfilValidationRules,
+validacaoFormulariosMiddleware.editarPerfilValidation,
+editarPerfilControllerUpdate.editUser);
 
 
 module.exports = router;

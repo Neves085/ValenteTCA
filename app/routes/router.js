@@ -42,7 +42,7 @@ router.get("/privacidade", privacidadeControllerRead.returnPage);
 
 router.get("/termos", termosControllerRead.returnPage);
 
-// router.get("/perfil", perfilControllerRead.returnPage);
+router.get("/perfil", perfilControllerRead.returnPage);
 
 router.get("/agendamento", agendamentoControllerRead.returnPage);
 
@@ -78,9 +78,9 @@ regrasValidacaoMiddleware.editarPerfilValidationRules,
 validacaoFormulariosMiddleware.editarPerfilValidation,
 editarPerfilControllerUpdate.editUser);
 
-router.get("/perfil",
-autenticacaoMiddleware.validateJWT,
-perfilControllerRead.getPage);
+// router.get("/perfil",
+// autenticacaoMiddleware.validateJWT,
+// perfilControllerRead.getPage);
 
 
 module.exports = router;

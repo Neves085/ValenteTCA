@@ -56,8 +56,9 @@ p{
     display: flex;
     font-size: 17px;
 }
-li{
-    logo {
+li{font-size: 15px;
+}
+    .logo {
         width: 200px;
     }
     nav {
@@ -108,7 +109,7 @@ li{
         height: 190px;
     }
     
-    font-size: 15px;
+    
 
     footer{
         margin-top:20px ;
@@ -218,7 +219,7 @@ li{
     .sobre-nos h1, p{
         text-align: center;
     }
-}@media screen and (max-width: 950px) {
+@media screen and (max-width: 950px) {
 	nav,
 	ul {
 		flex-direction: column;

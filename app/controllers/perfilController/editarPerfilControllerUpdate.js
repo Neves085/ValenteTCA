@@ -11,8 +11,7 @@ class EditarPerfilController {
     const {userId} = jwt.decode(token, process.env.SECRET);
     const user = await usuarioModel.findUserById(userId);
 
-    const {nome, nome_de_usuario, email, telefone, logradouro, numero_residencial, bairro, 
-        cidade, estado, cep } = req.body;
+    const {nome, email, telefone} = req.body;
 
     try {
 		await usuarioModel.updatePerfil({

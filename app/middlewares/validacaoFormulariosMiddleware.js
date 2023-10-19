@@ -51,7 +51,7 @@ class ValidacaoFormularios {
 	async validacaoLogin(req, res, next) {
 		const { email, senha } = req.body;
 
-		const user = await this.#usuarioBanco(email);
+		const user = await usuarioModel.findUserByEmail(email);
 
 		if (!user) {
 			return res.render("pages/login.ejs", {
@@ -114,15 +114,15 @@ class ValidacaoFormularios {
 			});
 	}
 
-    async #usuarioBanco(email) {
-		const user = await prisma.usuario.findUnique({
-			where: {
-				email,
-			},
-		});
+    // async #usuarioBanco(email) {
+	// 	const user = await prisma.usuario.findUnique({
+	// 		where: {
+	// 			email,
+	// 		},
+	// 	});
 
-		return user;
-	}
+	// 	return user;
+	// }
 
     #validacaoConfirmarSenha(confirmacao_senha, senha, errors) {
 		if (confirmacao_senha !== senha) {

@@ -1,10 +1,11 @@
 const jwt = require("jsonwebtoken");
 
 class LoginController {
-    async autorizarUsuario(req, res) {
-        const token = jwt.sign({ userId:use.id},process.env.SECRET);
-        const loginRedirectUrl = req.session.loginRedirectUrl ? req.session.loginRedirectUrl : "/rodas-de-conversa";
-        req.session.token = token;
+    async authUser(req, res) {
+        const token = req.session.token;
+        const {userId} = jwt.decode(token, process.env.SECRET);
+
+        const loginRedirectUrl = req.session.loginRedirectUrl ? req.session.loginRedirectUrl : "/perfil";
         req.session.loginRedirectUrl = null;
         return res.redirect(loginRedirectUrl);
     }

@@ -61,7 +61,7 @@ router.post("/cadastro",
 regrasValidacaoMiddleware.cadastroValidationRules,
 validacaoFormulariosMiddleware.validacaoCadastro,
 autenticacaoMiddleware.encriptarSenha,
-cadastroControllerCreate.criarUsuario);
+cadastroControllerCreate.createUsuario);
 
 router.get("/login", loginControllerRead.returnPage);
 router.post("/login",

@@ -1,6 +1,6 @@
 class RodaDeConversaController {
     returnPage(req, res) {
-        return res.render("pages/roda-de-conversa.ejs", {
+        return res.render("pages/rodas-de-conversa", {
             data: {
                 page: "Roda de conversa"
             }

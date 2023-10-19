@@ -1,7 +1,7 @@
 const usuarioModel = require("../../models/Usuario");
 const jwt = require("jsonwebtoken");
 
-class PerfilController {
+class perfilController {
     async getPage(req, res) {
         const token = req.session.token;
         const {userId} = jwt.decode(token, process.env.SECRET);
@@ -17,6 +17,6 @@ class PerfilController {
     }
 }
 
-const perfilControllerRead = new PerfilController();
+const perfilControllerRead = new perfilController();
 
 module.exports = perfilControllerRead;

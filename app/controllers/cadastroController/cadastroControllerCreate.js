@@ -16,12 +16,10 @@ class CadastroController {
 
         try {
             await usuarioModel.createUsuario({
-                data: {
-                    nome,
-                    email,
-                    telefone,
-                    senha: senhaCriptografada
-                }
+                nome,
+                email,
+                telefone,
+                senha: senhaCriptografada
             })
 
             return res.redirect("/login");

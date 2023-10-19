@@ -7,6 +7,7 @@ class ValidacaoFormularios {
     constructor() {
         this.validacaoCadastro = this.validacaoCadastro.bind(this);
         this.validacaoLogin = this.validacaoLogin.bind(this);
+		this.editarPerfilValidation = this.editarPerfilValidation.bind(this);
     }
 
     validacaoCadastro(req, res, next) {

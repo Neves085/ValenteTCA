@@ -226,7 +226,7 @@ nav button {
     width: 95%;
 }
 .card1{
-    background-image: url(/images/imgsroda/foto1.jpeg);
+    background-image: url(/images/fotos/foto1.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -235,7 +235,7 @@ nav button {
     height: 220px;
 }
 .card2{
-    background-image: url(/images/imgsroda/foto2.jpeg);
+    background-image: url(/images/fotos/foto2.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -244,7 +244,7 @@ nav button {
     height: 220px;
 }
 .card3{
-    background-image: url(/images/imgsroda/foto3.jpeg);
+    background-image: url(/images/fotos/foto3.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

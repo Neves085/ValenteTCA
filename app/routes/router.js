@@ -7,7 +7,7 @@ const indexControllerRead = require("../controllers/indexControllerRead");
 
 const agendamentoControllerRead = require("../controllers/agendamentoController/agendamentoControllerRead");
 
-const perfilControllerRead = require("../controllers/perfilController/perfilControllerRead");
+const perfilControllerRead = require("../controllers/homeperfilController/perfilControllerRead");
 
 const editarPerfilControllerRead = require("../controllers/perfilController/editarPerfilControllerRead");
 const editarPerfilControllerUpdate = require("../controllers/perfilController/editarPerfilControllerUpdate");
@@ -42,7 +42,7 @@ router.get("/privacidade", privacidadeControllerRead.returnPage);
 
 router.get("/termos", termosControllerRead.returnPage);
 
-// router.get("/perfil", perfilControllerRead.getPage);
+router.get("/perfil", perfilControllerRead.getPage);
 
 router.get("/agendamento", agendamentoControllerRead.returnPage);
 

@@ -78,7 +78,7 @@ class ValidacaoFormularios {
 
 					req.session.token = token;
 
-					req.session.premium = user.premium;
+					
 
 					return next();
 				}

@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
 const usuarioModel = require("../../models/Usuario");
-const prisma = new PrismaClient();
 
 class PerfilController {
     async deletarUsuario(req, res) {

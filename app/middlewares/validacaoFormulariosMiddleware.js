@@ -1,4 +1,4 @@
-const prisma = require("../../server/database/prismaClient");
+const usuarioModel = require("../models/Usuario");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { validationResult } = require("express-validator");

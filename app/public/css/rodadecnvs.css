@@ -119,9 +119,9 @@
         margin: 10px;
         height: 200px;
     }
-    /* .card1:hover{
+    .card1:hover{
         transform: scale(50%);
-    } */
+    }
     .card2{
         background-image: url(/images/imgsroda/ansiedade-1920x954.gif);
         background-repeat: no-repeat;

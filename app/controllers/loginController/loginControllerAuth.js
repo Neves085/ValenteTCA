@@ -1,7 +1,7 @@
 class LoginController {
     async autorizarUsuario(req, res) {
 
-        return res.redirect("/perfil");
+        return res.redirect("/editar-perfil");
     }
 }
 

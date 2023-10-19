@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Usuario {
-    id Int @id @default(autoincrement())
+    id String @id @default(uuid())
     customer_id  String? @unique
     nome String @db.VarChar(255)
     email String @unique @db.VarChar(160)
@@ -24,4 +24,4 @@ model Token {
     created_at DateTime @default(now())
 
     email Usuario @relation(fields: [user_email], references: [email], onDelete: Cascade, onUpdate: Cascade)
-}-
+}

@@ -1,11 +1,14 @@
 const {Router} = require("express");
 const router = Router();
 
+const jwt = require("jsonwebtoken")
+
 const indexControllerRead = require("../controllers/indexControllerRead");
 
 const agendamentoControllerRead = require("../controllers/agendamentoController/agendamentoControllerRead");
 
 const perfilControllerRead = require("../controllers/perfilController/perfilControllerRead");
+
 const editarPerfilControllerRead = require("../controllers/perfilController/editarPerfilControllerRead");
 const editarPerfilControllerUpdate = require("../controllers/perfilController/editarPerfilControllerUpdate");
 
@@ -71,9 +74,13 @@ editarPerfilControllerRead.getPage);
 
 router.post("/editar-perfil",
 autenticacaoMiddleware.validateJWT,
-validacaoRegrasMiddleware.editarPerfilValidationRules,
+regrasValidacaoMiddleware.editarPerfilValidationRules,
 validacaoFormulariosMiddleware.editarPerfilValidation,
 editarPerfilControllerUpdate.editUser);
+
+router.get("/perfil",
+autenticacaoMiddleware.validateJWT,
+perfilControllerRead.getPage);
 
 
 module.exports = router;

@@ -22,6 +22,7 @@ const regrasValidacao = {
         })
         .withMessage("Use uma senha forte com números, letras (maiúsculas e minúsculas), e símbolos (!, $, %, ...). Mínimo de 8 caracteres.")
     ],
+
     editarPerfilValidationRules: [
         body("nome")
         .trim()
@@ -33,7 +34,7 @@ const regrasValidacao = {
         body("telefone")
         .trim()
         .isLength({min: 15, max: 15})
-        .withMessage("Insira seu número de telefone! (Apenas números)"),
+        .withMessage("Insira seu número de telefone! (Apenas números)")
  
     ],
 }

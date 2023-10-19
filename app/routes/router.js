@@ -26,9 +26,6 @@ const loginControllerAuth = require("../controllers/loginController/loginControl
 const cadastroControllerRead = require("../controllers/cadastroController/cadastroControllerRead.js");
 const cadastroControllerCreate = require("../controllers/cadastroController/cadastroControllerCreate");
 
-const editarPerfilControllerRead = require("../controllers/perfilController/editarPerfilControllerRead");
-const editarPerfilControllerUpdate = require("../controllers/perfilController/editarPerfilControllerUpdate");
-
 
 const deletaController = require('../controllers/perfilController/perfilControllerDeletar'); 
 
@@ -63,16 +60,6 @@ router.get("/login", loginControllerRead.returnPage);
 router.post("/login",
 validacaoFormulariosMiddleware.validacaoLogin,
 loginControllerAuth.autorizarUsuario)
-
-router.get("/editar-perfil",
-autenticacaoMiddleware.validateJWT,
-editarPerfilControllerRead.getPage);
-
-router.post("/editar-perfil",
-autenticacaoMiddleware.validateJWT,
-validacaoRegrasMiddleware.editarPerfilValidationRules,
-validacaoFormulariosMiddleware.editarPerfilValidation,
-editarPerfilControllerUpdate.editUser);
 
 
 module.exports = router;

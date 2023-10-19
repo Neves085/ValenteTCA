@@ -17,7 +17,6 @@ class EditarPerfilController {
     try {
 		await usuarioModel.updatePerfil({
             nome,
-            nome_de_usuario,
             email,
             telefone
 		}, userId);
@@ -31,15 +30,8 @@ class EditarPerfilController {
 						page_name: "Editar perfil",
 						input_values: {
                             nome,
-                            nome_de_usuario,
                             email,
-                            telefone,
-                            logradouro,
-                            numero_residencial,
-                            bairro,
-                            cidade,
-                            estado,
-                            cep
+                            telefone
 						},
 						errors: {
 							email_error: {
@@ -55,15 +47,8 @@ class EditarPerfilController {
 					page_name: "Editar perfil",
 					input_values: {
                         nome,
-                        nome_de_usuario,
                         email,
-                        telefone,
-                        logradouro,
-                        numero_residencial,
-                        bairro,
-                        cidade,
-                        estado,
-                        cep
+                        telefone
 					},
 					errors: {
 						sistema_error: {

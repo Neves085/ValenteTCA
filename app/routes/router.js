@@ -68,10 +68,6 @@ router.post("/login",
 validacaoFormulariosMiddleware.validacaoLogin,
 loginControllerAuth.autorizarUsuario)
 
-router.get("/perfil",
-autenticacaoMiddleware.validateJWT,
-perfilControllerRead.getPage);
-
 router.get("/editar-perfil",
 autenticacaoMiddleware.validateJWT,
 editarPerfilControllerRead.getPage);
@@ -82,7 +78,9 @@ regrasValidacaoMiddleware.editarPerfilValidationRules,
 validacaoFormulariosMiddleware.editarPerfilValidation,
 editarPerfilControllerUpdate.editUser);
 
-
+router.get("/perfil",
+autenticacaoMiddleware.validateJWT,
+perfilControllerRead.getPage);
 
 
 module.exports = router;

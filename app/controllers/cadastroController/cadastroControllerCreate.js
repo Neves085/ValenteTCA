@@ -1,4 +1,4 @@
-const prisma = require("../../../server/database/prismaClient");
+const usuarioModel = require("../../models/Usuario");
 
 class CadastroController {
     async criarUsuario(req, res) {

@@ -44,23 +44,23 @@
 
 				<label for="numbe-rcard">
 					<span>Número do cartão</span>
-					<input type="number" id="number" maxlength="16" name="name" />
+					<input type="number" id="numbercard" maxlength="16" name="name" />
 				</label>
 				<label for="valor">
 					<span>Nome do Titular</span>
-					<input type="number" id="name" name="name" />
+					<input type="text" id="Titular" name="name" />
 				</label>
 				<label for="valor">
 					<span>Validade</span>
-					<input type="number" id="number" name="name" />
+					<input type="number" id="Validade" name="name" />
 				</label>
 				<label for="valor">
 					<span>CVV</span>
-					<input type="number" id="number" maxlength="4" name="name" />
+					<input type="number" id="Cvv" maxlength="4" name="name" />
 				</label>
 				<label for="valor">
 					<span>Valor da contribuição</span>
-					<input type="number" id="number" name="name" />
+					<input type="number" id="contribuição" name="name" />
 				</label>
 
 				<input type="submit" value="Doar" />
@@ -68,4 +68,31 @@
 		</main>
         <%- include("../templates/footer.ejs") %>
 	</body>
+	<script type="text/javascript">
+		/* Máscaras ER */
+		function mascara(o,f){
+			v_obj=o
+			v_fun=f
+			setTimeout("execmascara()",1)
+		}
+		function execmascara(){
+			v_obj.value=v_fun(v_obj.value)
+		}
+		function mcc(v){
+			v=v.replace(/\D/g,"");
+			v=v.replace(/^(\d{4})(\d)/g,"$1 $2");
+			v=v.replace(/^(\d{4})\s(\d{4})(\d)/g,"$1 $2 $3");
+			v=v.replace(/^(\d{4})\s(\d{4})\s(\d{4})(\d)/g,"$1 $2 $3 $4");
+			return v;
+		}
+		function id( el ){
+		  return document.getElementById( el );
+		}
+		window.onload = function(){
+		  id('Validade').onkeypress = function(){
+			mascara( this, mcc );
+		  }
+		}
+		</script>
+		
 </html>

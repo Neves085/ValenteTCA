@@ -99,6 +99,7 @@ main form input[type="submit"]{
     margin-top: 2rem;
     border-radius: 30px;
     color: white;
+    border: none;
     background-color: #f7931e;
 }
 main form input[type="submit"]:hover{

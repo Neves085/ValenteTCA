@@ -232,6 +232,7 @@ footer{
 }
 .main-perfil .perfil-info{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   padding: 10px;

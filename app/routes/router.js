@@ -80,7 +80,7 @@ editarPerfilControllerUpdate.editUser);
 
 router.get("/perfil",
 autenticacaoMiddleware.validateJWT,
-perfilControllerRead.returnPage);
+perfilControllerRead.getPage);
 
 
 module.exports = router;

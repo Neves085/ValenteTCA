@@ -1,22 +1,14 @@
-const usuarioModel = require("../../models/Usuario");
 const jwt = require("jsonwebtoken");
-
-class perfilController {
-    async returnPage(req, res) {
-        const token = req.session.token;
-        const {userId} = jwt.decode(token, process.env.SECRET);
-        const usuario = await usuarioModel.findUserById(userId);
-
-
-        return res.render("pages/perfil.ejs", {
-            data: {
-                page_name: "Perfil",                
-                usuario
-            }
-        })
+class LoginController {
+    async autorizarUsuario(req, res) {
+        const token = jwt.sign({ userId:use.id},process.env.SECRET);
+        const loginRedirectUrl = req.session.loginRedirectUrl ? req.session.loginRedirectUrl : "/perfil";
+        req.session.token = token;
+        req.session.loginRedirectUrl = null;
+        return res.redirect(loginRedirectUrl);
     }
 }
 
-const perfilControllerRead = new perfilController();
+const LoginControllerReadAuth = new LoginController();
 
-module.exports = perfilControllerRead;
+module.exports = LoginControllerReadAuth;

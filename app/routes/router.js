@@ -26,8 +26,8 @@ const loginControllerAuth = require("../controllers/loginController/loginControl
 const cadastroControllerRead = require("../controllers/cadastroController/cadastroControllerRead.js");
 const cadastroControllerCreate = require("../controllers/cadastroController/cadastroControllerCreate");
 
-const editarPerfilControllerRead = require("../controllers/perfilControllers/editarPerfilControllerRead");
-const editarPerfilControllerUpdate = require("../controllers/perfilControllers/editarPerfilControllerUpdate");
+const editarPerfilControllerRead = require("../controllers/perfilController/editarPerfilControllerRead");
+const editarPerfilControllerUpdate = require("../controllers/perfilController/editarPerfilControllerUpdate");
 
 
 const deletaController = require('../controllers/perfilController/perfilControllerDeletar'); 

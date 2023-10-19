@@ -9,8 +9,8 @@ const agendamentoControllerRead = require("../controllers/agendamentoController/
 
 const perfilControllerRead = require("../controllers/homeperfilController/perfilControllerRead");
 
-const editarPerfilControllerRead = require("../controllers/perfilController/editarPerfilControllerRead.js");
-const editarPerfilControllerUpdate = require("../controllers/perfilController/editarPerfilControllerUpdate.js");
+const editarPerfilControllerRead = require("../controllers/perfilController/editarPerfilControllerRead");
+const editarPerfilControllerUpdate = require("../controllers/perfilController/editarPerfilControllerUpdate");
 
 const privacidadeControllerRead = require("../controllers/privacidadeController/privacidadeControllerRead");
 const termosControllerRead = require("../controllers/termosController/termosControllerRead");
@@ -63,7 +63,7 @@ validacaoFormulariosMiddleware.validacaoCadastro,
 autenticacaoMiddleware.encriptarSenha,
 cadastroControllerCreate.createUsuario);
 
-router.get("/login", loginControllerRead.getPage);
+router.get("/login", loginControllerRead.returnPage);
 router.post("/login",
 validacaoFormulariosMiddleware.validacaoLogin,
 loginControllerAuth.autorizarUsuario)

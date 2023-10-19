@@ -52,9 +52,7 @@ router.get("/profissionais", profissionaisControllerRead.returnPage);
 
 router.delete("/delete", deletaController.deletarUsuario )
 
-router.get("/roda-de-conversa",
-autenticacaoMiddleware.validateJWT,
-rodaConversaControllerRead.returnPage);
+router.get("/roda-de-conversa", rodaConversaControllerRead.returnPage);
 
 router.get("/cadastro", cadastroControllerRead.returnPage);
 router.post("/cadastro",

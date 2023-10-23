@@ -7,8 +7,12 @@
             <li><a href="/perfil">Meu perfil</a></li>
             <!-- <div class="usu" id="usu" style="display: 
             block;"> -->
-            <li><a href="/login">Login</a></li>
-            <li><a href="/cadastro">Cadastre-se</a></li>
+            <% if (!data.usuarioLogado) { %>
+                <li><a href="/login">Login</a></li>
+            <% } %>
+            <% if (!data.usuarioLogado) { %>
+                <li><a href="/cadastro">Cadastre-se</a></li>
+            <% } %>
         <!-- </div> -->
         </ul>
     </nav>

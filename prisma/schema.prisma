@@ -1,21 +1,22 @@
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+    provider = "mysql"
+    url      = env("DATABASE_URL")
 }
 
 model Usuario {
-    id String @id @default(uuid())
-    customer_id  String? @unique
-    nome String @db.VarChar(255)
-    email String @unique @db.VarChar(160)
-    telefone String @unique @db.Char(11)
-    senha String @db.Char(60)
-    
-    tokens Token []
+    id          String  @id @default(uuid())
+    customer_id String? @unique
+    nome        String  @db.VarChar(255)
+    email       String  @unique @db.VarChar(160)
+    telefone    String  @unique @db.Char(11)
+    senha       String  @db.Char(60)
+
+    tokens    Token[]
+    desabafos Desabafo[]
 }
 
 model Token {
@@ -24,4 +25,13 @@ model Token {
     created_at DateTime @default(now())
 
     email Usuario @relation(fields: [user_email], references: [email], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model Desabafo {
+    id         String   @id @default(uuid())
+    user_id    String
+    mensagem   String   @db.LongText
+    created_at DateTime @default(now())
+
+    user Usuario @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }

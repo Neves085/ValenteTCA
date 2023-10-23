@@ -1,8 +1,16 @@
 class ProfissionaisController {
     returnPage(req, res) {
+        const token = req.session.token;
+        let usuarioLogado = false;
+
+        if (token) {
+            usuarioLogado = true;
+        }
+
         return res.render("pages/profissionais.ejs", {
             data: {
-                page: "Profissionais"
+                page: "Profissionais",
+                usuarioLogado
             }
         })
     }

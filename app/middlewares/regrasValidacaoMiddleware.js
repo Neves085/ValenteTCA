@@ -37,6 +37,13 @@ const regrasValidacao = {
         .withMessage("Insira seu número de telefone! (Apenas números)")
  
     ],
+
+    desabafoValidationRules: [
+        body("desabafo")
+        .trim()
+        .isLength({min: 3})
+        .withMessage("Por favor escreva pelo menos 3 caracteres.")
+    ]
 }
 
 

@@ -27,23 +27,45 @@ class CadastroController {
             console.log(erro);
 
             if (erro.code === "P2002") {
-                return res.render("pages/cadastro.ejs", {
-                    data: {
-                        page_name: "Cadastro",
-                        input_values: {
-                            nome,
-                            email,
-                            telefone,
-                            senha,
-                            confirmacao_senha
-                        },
-                        errors: {
-                            email_error: {
-                                msg: "Email já cadastrado!"
+                if (erro.meta.target === "Usuario_email_key") {
+                    return res.render("pages/cadastro.ejs", {
+                        data: {
+                            page_name: "Cadastro",
+                            input_values: {
+                                nome,
+                                email,
+                                telefone,
+                                senha,
+                                confirmacao_senha
+                            },
+                            errors: {
+                                email_error: {
+                                    msg: "Email já cadastrado!"
+                                }
                             }
                         }
-                    }
-                });
+                    });
+                }
+
+                if (erro.meta.target === "Usuario_telefone_key") {
+                    return res.render("pages/cadastro.ejs", {
+                        data: {
+                            page_name: "Cadastro",
+                            input_values: {
+                                nome,
+                                email,
+                                telefone,
+                                senha,
+                                confirmacao_senha
+                            },
+                            errors: {
+                                telefone_error: {
+                                    msg: "Telefone já cadastrado!"
+                                }
+                            }
+                        }
+                    });
+                }
             }
 
             return res.render("pages/cadastro.ejs", {

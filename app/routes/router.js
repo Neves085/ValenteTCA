@@ -66,7 +66,7 @@ cadastroControllerCreate.createUsuario);
 router.get("/login", loginControllerRead.getPage);
 router.post("/login",
 validacaoFormulariosMiddleware.validacaoLogin,
-loginControllerAuth.autorizarUsuario)
+loginControllerAuth.autorizarUsuario);
 
 router.get("/editar-perfil",
 autenticacaoMiddleware.validateJWT,

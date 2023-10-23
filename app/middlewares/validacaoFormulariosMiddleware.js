@@ -8,6 +8,31 @@ class ValidacaoFormularios {
         this.validacaoCadastro = this.validacaoCadastro.bind(this);
         this.validacaoLogin = this.validacaoLogin.bind(this);
 		this.editarPerfilValidation = this.editarPerfilValidation.bind(this);
+        this.validacaoDesabafo = this.validacaoDesabafo.bind(this);
+    }
+
+    validacaoDesabafo(req, res, next) {
+        const errors = validationResult(req);
+
+		if (!errors.isEmpty()) {
+			const { desabafo } = req.body;
+
+			const desabafo_error = errors.errors.find((error) => error.path === "desabafo");
+
+			return res.render("pages/index.ejs", {
+				data: {
+					page_name: "Valente",
+					input_values: {
+						desabafo
+					},
+					errors: {
+						desabafo_error
+					},
+				},
+			});
+		}
+
+		return next();
     }
 
     validacaoCadastro(req, res, next) {
@@ -77,8 +102,6 @@ class ValidacaoFormularios {
 					const token = jwt.sign({ userEmail: user.email }, process.env.SECRET);
 
 					req.session.token = token;
-
-					
 
 					return next();
 				}

@@ -255,6 +255,19 @@ footer{
     font-size: 1rem;
 }
 
+    .conta-nova button li a{
+        cursor: pointer;
+        width: 150px;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-radius: 30px;
+        color: white;
+        background-color: #f7931e;
+    }
+    .conta-nova button:hover{
+        opacity: 0.8;
+    }
 
 
 @media screen and (max-width:950px){

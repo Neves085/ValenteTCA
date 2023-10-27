@@ -6,7 +6,7 @@
 
 */
 -- AlterTable
-ALTER TABLE `usuario` DROP PRIMARY KEY,
+ALTER TABLE `Usuario` DROP PRIMARY KEY,
     ADD COLUMN `customer_id` VARCHAR(191) NULL,
     MODIFY `id` VARCHAR(191) NOT NULL,
     ADD PRIMARY KEY (`id`);

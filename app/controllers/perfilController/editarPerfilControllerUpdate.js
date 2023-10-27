@@ -11,13 +11,14 @@ class EditarPerfilController {
     const {userId} = jwt.decode(token, process.env.SECRET);
     const user = await usuarioModel.findUserById(userId);
 
-    const {nome, email, telefone} = req.body;
+    const {nome, email, telefone, descricao} = req.body;
 
     try {
 		await usuarioModel.updatePerfil({
             nome,
             email,
-            telefone
+            telefone,
+            descricao
 		}, userId);
 		return res.redirect("/perfil");
 		} catch (erro) {

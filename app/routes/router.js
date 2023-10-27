@@ -31,7 +31,7 @@ const loginControllerAuth = require("../controllers/loginController/loginControl
 const cadastroControllerRead = require("../controllers/cadastroController/cadastroControllerRead.js");
 const cadastroControllerCreate = require("../controllers/cadastroController/cadastroControllerCreate");
 
-
+const cadastroDesabafoControllerRead = require("../controllers/desabafoController/desabafoControllerCreate");
 
 
 const deletaController = require('../controllers/perfilController/perfilControllerDeletar'); 
@@ -42,7 +42,9 @@ router.get("/privacidade", privacidadeControllerRead.returnPage);
 
 router.get("/termos", termosControllerRead.returnPage);
 
-router.get("/perfil", perfilControllerRead.returnPage);
+router.get("/perfil",
+autenticacaoMiddleware.validateJWT,
+perfilControllerRead.returnPage);
 
 router.get("/agendamento", agendamentoControllerRead.returnPage);
 
@@ -50,7 +52,9 @@ router.get("/doacao", doacaoControllerRead.returnPage);
 
 router.get("/profissionais", profissionaisControllerRead.returnPage);
 
-router.delete("/delete", deletaController.deletarUsuario )
+router.get("/deletar-perfil",
+autenticacaoMiddleware.validateJWT,
+deletaController.deletarUsuario);
 
 router.get("/rodas-de-conversa",
 autenticacaoMiddleware.validateJWT,
@@ -77,6 +81,16 @@ autenticacaoMiddleware.validateJWT,
 regrasValidacaoMiddleware.editarPerfilValidationRules,
 validacaoFormulariosMiddleware.editarPerfilValidation,
 editarPerfilControllerUpdate.editUser);
+
+router.post("/cadastrar-desabafo",
+autenticacaoMiddleware.validateJWT,
+regrasValidacaoMiddleware.desabafoValidationRules,
+validacaoFormulariosMiddleware.validacaoDesabafo,
+cadastroDesabafoControllerRead.cadastrarDesabafo);
+
+router.get("/cadastrar-desabafo",
+autenticacaoMiddleware.validateJWT,
+indexControllerRead.returnPage);
 
 // router.get("/perfil",
 // autenticacaoMiddleware.validateJWT,

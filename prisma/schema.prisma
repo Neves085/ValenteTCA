@@ -14,6 +14,7 @@ model Usuario {
     email       String  @unique @db.VarChar(160)
     telefone    String  @unique @db.Char(11)
     senha       String  @db.Char(60)
+    descricao   String?  @db.VarChar(255)
 
     tokens    Token[]
     desabafos Desabafo[]

@@ -33,9 +33,15 @@ const regrasValidacao = {
         .withMessage("Insira seu email completo!"),
         body("telefone")
         .trim()
-        .isLength({min: 15, max: 15})
-        .withMessage("Insira seu número de telefone! (Apenas números)")
- 
+        .isLength({min: 11, max: 11})
+        .withMessage("Insira seu número de telefone! (Apenas números)"),
+        body("descricao")
+        .optional({values: "falsy"})
+        .trim()
+        .isLength({min: 3})
+        .withMessage("Sua descrição deve ter pelo menos 3 caracteres!")
+        .isLength({max: 255})
+        .withMessage("Sua descrição não pode ter mais de 255 caracteres!")
     ],
 
     desabafoValidationRules: [
@@ -43,7 +49,7 @@ const regrasValidacao = {
         .trim()
         .isLength({min: 3})
         .withMessage("Por favor escreva pelo menos 3 caracteres.")
-    ]
+    ],
 }
 
 

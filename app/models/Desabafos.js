@@ -8,7 +8,11 @@ class Desabafo {
     }
 
     async findAllDesabafos() {
-        return await prisma.desabafo.findMany();
+        return await prisma.desabafo.findMany({
+            include: {
+                user: true
+            }
+        });
     }
 }
 

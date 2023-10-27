@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TCA</title>
-    <link rel="stylesheet" href="/css/perfil.css" >  
+    <link rel="stylesheet" href="/css/perfil.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
 </head>
+
 <body>
     <header>
         <%- include("../templates/header.ejs") %>
@@ -16,41 +18,36 @@
 
     <main class="main-perfil">
         <div class="perfil-container">
-        <div class="perfil-usuario">
-            <div class="perfil-avatar">
-                <img src="/images/fotos/image-removebg-preview (13).png" alt="imagem-avatar">
+            <div class="perfil-usuario">
+                <div class="perfil-avatar">
+                    <img src="/images/fotos/image-removebg-preview (13).png" alt="imagem-avatar">
+                </div>
             </div>
         </div>
-    </div>
         <div class="perfil-body">
             <div class="perfil-bio">
-                <h3 class="nome">Gabriel Albano Santana de Lira</h3>
-                <p class="texto-bio">Sou um adolecente de 18 anos, eu tenho dificuldade em falar com as pessoas e sou muito inseguro comigo mesmo.</p>
-            <div class="perfil-info">
-                <div class="dados">
-                    <li><i style="color: #000000;"></i>Tel:11994430173</li>
-                    
+                <h3 class="nome"><%- data.user.nome %></h3>
+                <p class="texto-bio"><%- data.user.descricao ? data.user.descricao : "Sem descrição ainda!" %></p>
+                <div class="perfil-info">
+                    <div class="dados">
+                        <li><i style="color: #000000;"></i>Tel: <%- data.user.telefone %></li>
+
+                    </div>
+                    <div class="dados">
+
+                        <li><%- data.user.email %></li>
+                    </div>
+                    <div class="dados">
+                        <li><a href="/editar-perfil"><i class="fa-solid fa-plus" style="color: #000000;"></i>Editar perfil</a></li>
+                    </div>
+
+
+                    <!-- <a href="/editar-perfil"><button type="submit">Deletar Usuário</button></a>  -->
+
+
                 </div>
-                <div class="dados">
-                    
-                    <li>gabrielalbano.lira@gmail.com</li>
-                </div>
-                <div class="dados">
-                    <li><i class="fa-solid fa-plus" style="color: #000000;"></i>A adicionar </li>
-                    
-                </div>
-                <div class="dados">
-                    
-                    <li><i class="fa-solid fa-plus" style="color: #000000;"></i>A adicionar</li>
-                </div>
-                
-            
-                   <!-- <a href="/editar-perfil"><button type="submit">Deletar Usuário</button></a>  -->
-                
-               
             </div>
-        </div>
-            
+
         </div>
 
     </main>
@@ -59,4 +56,5 @@
     </footer>
 
 </body>
+
 </html>

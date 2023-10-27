@@ -4,15 +4,15 @@ const jwt = require("jsonwebtoken");
 const { validationResult } = require("express-validator");
 
 class ValidacaoFormularios {
-    constructor() {
-        this.validacaoCadastro = this.validacaoCadastro.bind(this);
-        this.validacaoLogin = this.validacaoLogin.bind(this);
+	constructor() {
+		this.validacaoCadastro = this.validacaoCadastro.bind(this);
+		this.validacaoLogin = this.validacaoLogin.bind(this);
 		this.editarPerfilValidation = this.editarPerfilValidation.bind(this);
-        this.validacaoDesabafo = this.validacaoDesabafo.bind(this);
-    }
+		this.validacaoDesabafo = this.validacaoDesabafo.bind(this);
+	}
 
-    validacaoDesabafo(req, res, next) {
-        const errors = validationResult(req);
+	validacaoDesabafo(req, res, next) {
+		const errors = validationResult(req);
 
 		if (!errors.isEmpty()) {
 			const { desabafo } = req.body;
@@ -23,19 +23,19 @@ class ValidacaoFormularios {
 				data: {
 					page_name: "Valente",
 					input_values: {
-						desabafo
+						desabafo,
 					},
 					errors: {
-						desabafo_error
+						desabafo_error,
 					},
 				},
 			});
 		}
 
 		return next();
-    }
+	}
 
-    validacaoCadastro(req, res, next) {
+	validacaoCadastro(req, res, next) {
 		const errors = validationResult(req);
 		const { senha, confirmacao_senha } = req.body;
 
@@ -99,7 +99,7 @@ class ValidacaoFormularios {
 			.compare(senha, user.senha)
 			.then((auth) => {
 				if (auth) {
-					const token = jwt.sign({ userEmail: user.email }, process.env.SECRET);
+					const token = jwt.sign({ userId: user.id }, process.env.SECRET);
 
 					req.session.token = token;
 
@@ -138,7 +138,7 @@ class ValidacaoFormularios {
 			});
 	}
 
-    // async #usuarioBanco(email) {
+	// async #usuarioBanco(email) {
 	// 	const user = await prisma.usuario.findUnique({
 	// 		where: {
 	// 			email,
@@ -148,7 +148,7 @@ class ValidacaoFormularios {
 	// 	return user;
 	// }
 
-    #validacaoConfirmarSenha(confirmacao_senha, senha, errors) {
+	#validacaoConfirmarSenha(confirmacao_senha, senha, errors) {
 		if (confirmacao_senha !== senha) {
 			errors.errors.push({
 				msg: "As senhas devem ser iguais!",
@@ -161,26 +161,27 @@ class ValidacaoFormularios {
 		const errors = validationResult(req);
 
 		if (!errors.isEmpty()) {
-			const {nome, email, telefone} = req.body;
+			const { nome, email, telefone, descricao } = req.body;
 
 			const nome_error = errors.errors.find((error) => error.path === "nome");
 			const email_error = errors.errors.find((error) => error.path === "email");
 			const telefone_error = errors.errors.find((error) => error.path === "telefone");
-            
+            const descricao_error = errors.errors.find((error) => error.path === "descricao");
 
 			return res.render("pages/editar-perfil.ejs", {
 				data: {
 					page_name: "Editar perfil",
 					input_values: {
 						nome,
-                        email,
-                        telefone
-                        
+						email,
+						telefone,
+                        descricao
 					},
 					errors: {
 						nome_error,
 						email_error,
-						telefone_error
+						telefone_error,
+                        descricao_error
 					},
 				},
 			});

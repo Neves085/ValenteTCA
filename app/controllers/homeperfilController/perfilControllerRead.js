@@ -1,16 +1,19 @@
-class perfilController {
-    returnPage(req, res) {
-        const token = req.session.token;
-        let usuarioLogado = false;
+const usuarioModel = require("../../models/Usuario");
+const jwt = require("jsonwebtoken");
 
-        if (token) {
-            usuarioLogado = true;
-        }
+class perfilController {
+    async returnPage(req, res) {
+        const token = req.session.token;
+        const {userId} = jwt.decode(token, process.env.SECRET);
+        let usuarioLogado = true;
+
+        const user = await usuarioModel.findUserById(userId);
 
         return res.render("pages/perfil.ejs", {
             data: {
                 page: "perfil",
-                usuarioLogado
+                usuarioLogado,
+                user
             }
         })
     }

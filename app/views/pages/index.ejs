@@ -278,19 +278,19 @@
                 <%- data.errors && data.errors.desabafo_error ? `<span class='erro-mensagem'>${data.errors.desabafo_error.msg}</span>` : "" %>
             </form>
         </div>
+        <% data.desabafos.forEach(desabafo => { %>
         <div class="posts">
-
             <div class="post">
                 <div class="post-user-info">
                     <div class="user-avatar"><img src="/images/fotos/image-removebg-preview (1).png"></div>
                     <div class="user1">
-                        <h4>Simone de Oliveira</h4>
-                        <span class="hora-post">- 20:24</span>
+                        <h4><%- data.userId && data.userId === desabafo.user.id ? "Você" : desabafo.user.nome %></h4>
+                        <span class="hora-post">- <%- `${String(new Date(desabafo.created_at).getHours()).padStart(2, "0")}:${String(new Date(desabafo.created_at).getMinutes()).padStart(2, "0")}` %></span>
                     </div>
                 </div>
                 <div class="post-content">
 
-                    <p class="post-text">Sempre procurei alguma plataforma q pudesse me ajudar a buscar por apoio psicológico, pois infelizmente não tenho condições financeiras de arcar com os valores das consultas, infelizmente fui diagnosticado a 2 meses com Depressão severa, e graças a vocês consegui buscar por apoio, me sinto bem melhor, mesmo não tendo muita condição fiz minha doação, para ajudar a manter o site e agradeço muito a vocês.</p>
+                    <p class="post-text"><%- desabafo.mensagem %></p>
                 </div>
                 <div class="post-icons">
                     <div class="like">
@@ -300,32 +300,7 @@
                 </div>
             </div>
         </div>
-
-
-        <div class="posts">
-
-            <div class="post">
-
-                <div class="post-user-info">
-                    <div class="user-avatar"><img src="/images/fotos/image-removebg-preview (1).png"></div>
-                    <div class="user1">
-                        <h4>Willian Carvalho</h4>
-                        <span class="hora-post">- 12:07</span>
-                    </div>
-                </div>
-                <div class="post-content">
-
-                    <p class="post-text">Realizei uma consulta com a doutora Elizângela e me sinto bem melhor, além de ser muito simpática ela se mostrou muito profissional, me ajudou muito!!
-                        Já fiz minha doação😁</p>
-                </div>
-                <div class="post-icons">
-                    <div class="like">
-                        <button id="curtido" class="curtido" onclick="toggleLike()"><i class="fa-solid fa-heart"></i></button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        <% }) %>
     </main>
     <%- include("../templates/footer.ejs") %>
 </body>

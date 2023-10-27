@@ -48,12 +48,11 @@ class Usuario {
         })
     }
 
-    async deleteUsuario(data, userId){
+    async deleteUsuario(userId){
         await prisma.usuario.delete({
             where:{
                 id: userId
             },
-            data
         })
     }
 

@@ -16,6 +16,7 @@ class EditarPerfilController {
 					nome: user.nome,
 					email: user.email,
 					telefone: user.telefone,
+                    descricao: user.descricao
 				},
                 usuarioLogado
 			},

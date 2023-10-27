@@ -2,67 +2,65 @@
 <html lang="pt-br">
 
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <%- include('../templates/head.ejs') %>
-  <link rel="stylesheet" href="/css/cadastro.css"/>
-  <script type="text/javascript" src="/js/cadastro.js"></script>
-  <title><%- data.page_name %></title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('../templates/head.ejs') %>
+    <link rel="stylesheet" href="/css/cadastro.css" />
+    <title><%- data.page_name %></title>
 </head>
 
 <body>
-  <%- include('../templates/header-logo.ejs') %>
+    <%- include('../templates/header.ejs') %>
 
-  <main>
+    <main>
 
         <div id="voltar">
-                <a href="/perfil-user">
+            <a href="/perfil-user">
                 <i class='bx bx-left-arrow-alt'></i>
-                </a>
+            </a>
         </div>
 
-    <h3>SEU CADASTRO</h3>
+        <h3>SEU CADASTRO</h3>
 
-    <form action="/editar-perfil" method="post">
-              <%- data.errors && data.errors.sistema_error ? `<span class='erro-mensagem'>${data.errors.sistema_error.msg}</span>` : "" %>
+        <form action="/editar-perfil" method="post">
+            <%- data.errors && data.errors.sistema_error ? `<span class='erro-mensagem'>${data.errors.sistema_error.msg}</span>` : "" %>
 
-              <label for="nome">NOME:</label>
-      <input type="text" placeholder="Insisa aqui..." name="nome" id="nome"
-              <%- data.input_values ? `value="${data.input_values.nome}"` : "" %>
-              <%- data.errors && data.errors.nome_error ? `class="erro"` : "" %>
-              /><br />
+            <label for="nome">NOME:</label>
+            <input type="text" placeholder="Insira aqui..." name="nome" id="nome" <%- data.input_values ? `value="${data.input_values.nome}"` : "" %> <%- data.errors && data.errors.nome_error ? `class="erro"` : "" %> /><br />
 
-              <%- data.errors && data.errors.nome_error ? `<span class='erro-mensagem'>${data.errors.nome_error.msg}</span>` : "" %>
-              <br />
+            <%- data.errors && data.errors.nome_error ? `<span class='erro-mensagem'>${data.errors.nome_error.msg}</span>` : "" %>
+            <br />
 
 
-      <label for="telefone">TELEFONE:</label>
-      <input type="tel" placeholder="(00) 99999-9999" maxlength="15"  name="telefone" id="telefone" onkeyup="handlePhone(event)"
-              <%- data.input_values ? `value="${data.input_values.telefone}"` : "" %>
-              <%- data.errors && data.errors.telefone_error ? `class="erro"` : "" %>
-              /><br />
+            <label for="telefone">TELEFONE:</label>
+            <input type="tel" placeholder="(00) 99999-9999" maxlength="15" name="telefone" id="telefone" onkeyup="handlePhone(event)" <%- data.input_values ? `value="${data.input_values.telefone}"` : "" %> <%- data.errors && data.errors.telefone_error ? `class="erro"` : "" %> /><br />
 
-              <%- data.errors && data.errors.telefone_error ? `<span class='erro-mensagem'>${data.errors.telefone_error.msg}</span>` : "" %>
-              <br />
+            <%- data.errors && data.errors.telefone_error ? `<span class='erro-mensagem'>${data.errors.telefone_error.msg}</span>` : "" %>
+            <br />
 
-      <label for="email">E-MAIL:</label>
-      <input type="email" placeholder="exemplo@email.com" name="email" id="email"
-              <%- data.input_values ? `value="${data.input_values.email}"` : "" %>
-              <%- data.errors && data.errors.email_error ? `class="erro"` : "" %>
-              /><br />
+            <label for="email">E-MAIL:</label>
+            <input type="email" placeholder="exemplo@email.com" name="email" id="email" <%- data.input_values ? `value="${data.input_values.email}"` : "" %> <%- data.errors && data.errors.email_error ? `class="erro"` : "" %> /><br />
 
-              <%- data.errors && data.errors.email_error ? `<span class='erro-mensagem'>${data.errors.email_error.msg}</span>` : "" %>
-              <br />
+            <%- data.errors && data.errors.email_error ? `<span class='erro-mensagem'>${data.errors.email_error.msg}</span>` : "" %>
+            <br />
 
-              <input type="submit" id="cadastre-se" value="ATUALIZAR"></input>
-    </form>
+            <label for="descricao">DESCRIÇÃO:</label>
+            <input type="descricao" placeholder="Um pouco sobre você" name="descricao" id="descricao" <%- data.input_values && data.input_values.descricao ? `value="${data.input_values.descricao}"` : "" %> <%- data.errors && data.errors.descricao_error ? `class="erro"` : "" %> /><br />
+
+            <%- data.errors && data.errors.descricao_error ? `<span class='erro-mensagem'>${data.errors.descricao_error.msg}</span>` : "" %>
+            <br />
+
+            <input type="submit" id="cadastre-se" value="ATUALIZAR"></input>
+        </form>
 
         <a href="/deletar-perfil" class="delete-perfil">
-        <i class='bx bxs-trash'></i><p>Deletar Perfil</p>
+            <i class='bx bxs-trash'></i>
+            <p>Deletar Perfil</p>
         </a>
-  </main>
+    </main>
 
-  <%- include("../templates/footer.ejs") %>
+    <%- include("../templates/footer.ejs") %>
 </body>
+
 </html>

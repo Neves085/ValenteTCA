@@ -9,17 +9,13 @@ class PerfilController {
                 return res.status(401).json({ error: "Token não fornecido" });
             }
 
-            const { userId } = jwt.verify(token, process.env.SECRET);
+            const { userId } = jwt.decode(token, process.env.SECRET);
 
-            const deletedUser = await prisma.usuario.delete({
-                where: { id: userId }
-            });
+            await usuarioModel.deleteUsuario(userId);
 
-            return res.render("pages/perfil.ejs", {
-                data: {
-                    page: "Perfil",
-                    deletedUser
-                }});
+            req.session.destroy();
+
+            return res.redirect("/")
         } catch (error) {
             console.error(error);
             return res.status(500).json({ error: "Erro ao excluir o usuário" });

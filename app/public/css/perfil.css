@@ -254,8 +254,14 @@ footer{
     vertical-align: middle;
     font-size: 1rem;
 }
+.botao-editar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-    .botao-editar{
+    .botao-editar button{
         cursor: pointer;
         width: 150px;
         height: 40px;
@@ -265,7 +271,7 @@ footer{
         color: white;
         background-color: #f7931e;
     }
-    .botao-editar:hover{
+    .botao-editar button:hover{
         opacity: 0.8;
     }
 

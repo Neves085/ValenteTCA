@@ -183,6 +183,10 @@ main h5{
     background-color: #c1272d;
 }
 
+.delete-perfil p{
+    text-align: center;
+}
+
 main .alternative{
     margin-top: 20px;
     margin-bottom: 15px;

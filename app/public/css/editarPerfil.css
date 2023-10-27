@@ -182,3 +182,32 @@ main h5{
     color: white;
     background-color: #c1272d;
 }
+
+main .alternative{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+main .alternative span{
+    font-weight: 400;
+    color: black;
+    position: relative;
+}
+main .alternative span::before{
+    position: absolute;
+    content: '';
+    height: 1px;
+    bottom: 50%;
+    width: 100px;
+    background: black;
+    right: 50px;
+
+}
+main .alternative span::after{
+    left: 50px;
+    position: absolute;
+    content: '';
+    height: 1px;
+    bottom: 50%;
+    width: 100px;
+    background: black;
+}

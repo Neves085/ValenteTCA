@@ -171,3 +171,14 @@ main h5{
 .conta-nova button:hover{
     opacity: 0.8;
 }
+
+.delete-perfil{
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    color: white;
+    background-color: #c1272d;
+}

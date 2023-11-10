@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%- data.page %></title>
+    <link rel="stylesheet" href="/css/cadastro-profissional.css" />
+    <%- include("../templates/head.ejs") %>
+
+    <script src="/js/imagem-criar-perfil.js" defer></script>
+</head>
+
+<body>
+    <%- include("../templates/header.ejs") %>
+    <main>
+        <h1>Faça login ou crie uma conta</h1>
+        <h2>Crie a sua conta como um psicólogo</h2>
+
+        <form action="/cadastro-profissional" method="post" enctype="multipart/form-data">
+            <%- data.errors && data.errors.sistema_error ? `<span class='erro-mensagem'>${data.errors.sistema_error.msg}</span>` : "" %>
+
+            <label id="foto-label"><span>Foto de perfil:</span></label>
+            <input type="file" name="foto_perfil" id="foto-perfil-input">
+            <label for="foto-perfil-input" id="foto-perfil" <%- data.errors && data.errors.imagem_perfil_error ? `class="erro"` : "" %>>
+            </label>
+
+            <%- data.errors && data.errors.imagem_perfil_error ? `<span class='erro-mensagem'>${data.errors.imagem_perfil_error.msg}</span>` : "" %>
+
+            <label for="name">
+                <span>Nome completo</span>
+                <input type="text" id="name" name="nome" placeholder="Insira o seu nome completo" <%- data.input_values ? `value="${data.input_values.nome}"` : "" %> <%- data.errors && data.errors.nome_error ? `class="erro"` : "" %> />
+            </label>
+
+            <%- data.errors && data.errors.nome_error ? `<span class='erro-mensagem'>${data.errors.nome_error.msg}</span>` : "" %>
+
+            <label for="email">
+                <span>E-mail</span>
+                <input type="email" id="email" name="email" placeholder="Ex: email@email.com" <%- data.input_values ? `value="${data.input_values.email}"` : "" %> <%- data.errors && data.errors.email_error ? `class="erro"` : "" %> />
+            </label>
+
+            <%- data.errors && data.errors.email_error ? `<span class='erro-mensagem'>${data.errors.email_error.msg}</span>` : "" %>
+
+            <label for="tel">
+                <span>Telefone</span>
+                <input type="tel" id="tel" name="telefone" placeholder="Ex: 12345678901" <%- data.input_values ? `value="${data.input_values.telefone}"` : "" %> <%- data.errors && data.errors.telefone_error ? `class="erro"` : "" %> />
+            </label>
+
+            <%- data.errors && data.errors.telefone_error ? `<span class='erro-mensagem'>${data.errors.telefone_error.msg}</span>` : "" %>
+
+            <label for="cpf">
+                <span>CPF</span>
+                <input type="number" id="cpf" name="cpf" placeholder="12345678901" <%- data.input_values ? `value="${data.input_values.cpf}"` : "" %> <%- data.errors && data.errors.cpf_error ? `class="erro"` : "" %> />
+            </label>
+
+            <%- data.errors && data.errors.cpf_error ? `<span class='erro-mensagem'>${data.errors.cpf_error.msg}</span>` : "" %>
+
+            <label for="password">
+                <span>Senha</span>
+                <input type="password" id="password" name="senha" placeholder="Insira uma senha forte" <%- data.input_values ? `value="${data.input_values.senha}"` : "" %> <%- data.errors && data.errors.senha_error ? `class="erro"` : "" %> />
+            </label>
+
+            <%- data.errors && data.errors.senha_error ? `<span class='erro-mensagem'>${data.errors.senha_error.msg}</span>` : "" %>
+
+            <label for="password">
+                <span>Confirmar senha</span>
+                <input type="password" id="password" name="confirmacao_senha" placeholder="Repita a sua senha" <%- data.input_values ? `value="${data.input_values.confirmacao_senha}"` : "" %> <%- data.errors && data.errors.confirmacao_senha_error ? `class="erro"` : "" %> />
+            </label>
+
+            <%- data.errors && data.errors.confirmacao_senha_error ? `<span class='erro-mensagem'>${data.errors.confirmacao_senha_error.msg}</span>` : "" %>
+
+            <input type="submit" value="Cadastrar" />
+        </form>
+        <p class="termos-privacidade">Ao se cadastrar o usuário concorda com os <a href="/termos">termos e condições</a> e as <a href="/privacidade">políticas de privacidade</a>!</p>
+        <div class="alternative">
+            <span>OU</span>
+        </div>
+
+        <div class="social-medias">
+            <a href="#">
+                <img src="/images/logos/facebook.png" />
+            </a>
+            <a href="#">
+                <img src="/images/logos/google.png" />
+            </a>
+            <a href="#">
+                <img src="/images/logos/linkedin.png" />
+            </a>
+        </div>
+        <div>
+            <h5>Ao acessar o usuário concorda com os <a href="/termos">termos e condições</a> e as <a href="/privacidade">políticas de privacidade</a>!</h5>
+        </div>
+        <div class="alternative">
+            <span>OU</span>
+        </div>
+        <div class="conta-nova">
+            <h2>Sou paciente</h2>
+            <button><a href="/cadastro">Crie uma</a></button>
+        </div>
+    </main>
+    <%- include("../templates/footer.ejs") %>
+</body>
+
+</html>

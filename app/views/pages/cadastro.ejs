@@ -4,25 +4,22 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Cadastro</title>
+		<title><%- data.page %></title>
 		<link rel="stylesheet" href="/css/cadastro.css" />
         <%- include("../templates/head.ejs") %>
 	</head>
 	<body>
         <%- include("../templates/header.ejs") %>
 		<main>
-			<!-- <div class="logo">
-				<img src="/images/fotos/logo_deitado-removebg-preview.png" />
-			</div> -->
 			<h1>Faça login ou crie uma conta</h1>
-			<h2>Acesse sua conta</h2> 
+			<h2>Crie a sua conta</h2> 
 
 			<form action="/cadastro" method="post">
                 <%- data.errors && data.errors.sistema_error ? `<span class='erro-mensagem'>${data.errors.sistema_error.msg}</span>` : "" %>
 
 				<label for="name">
 					<span>Nome completo</span>
-					<input type="text" id="name" name="nome"
+					<input type="text" id="name" name="nome" placeholder="Insira o seu nome completo"
                     <%- data.input_values ? `value="${data.input_values.nome}"` : "" %>
                     <%- data.errors && data.errors.nome_error ? `class="erro"` : "" %>
                     />
@@ -32,7 +29,7 @@
 
 				<label for="email">
 					<span>E-mail</span>
-					<input type="email" id="email" name="email"
+					<input type="email" id="email" name="email" placeholder="Ex: email@email.com"
                     <%- data.input_values ? `value="${data.input_values.email}"` : "" %>
                     <%- data.errors && data.errors.email_error ? `class="erro"` : "" %>
                     />
@@ -42,7 +39,7 @@
 
 				<label for="tel">
 					<span>Telefone</span>
-					<input type="tel" id="tel" name="telefone"
+					<input type="tel" id="tel" name="telefone" placeholder="12345678901"
                     <%- data.input_values ? `value="${data.input_values.telefone}"` : "" %>
                     <%- data.errors && data.errors.telefone_error ? `class="erro"` : "" %>
                     />
@@ -52,7 +49,7 @@
 
 				<label for="password">
 					<span>Senha</span>
-					<input type="password" id="password" name="senha"
+					<input type="password" id="password" name="senha" placeholder="Insira uma senha forte"
                     <%- data.input_values ? `value="${data.input_values.senha}"` : "" %>
                     <%- data.errors && data.errors.senha_error ? `class="erro"` : "" %>
                     />
@@ -62,7 +59,7 @@
 
 				<label for="password">
 					<span>Confirmar senha</span>
-					<input type="password" id="password" name="confirmacao_senha"
+					<input type="password" id="password" name="confirmacao_senha" placeholder="Repita a sua senha"
                     <%- data.input_values ? `value="${data.input_values.confirmacao_senha}"` : "" %>
                     <%- data.errors && data.errors.confirmacao_senha_error ? `class="erro"` : "" %>
                     />
@@ -72,7 +69,7 @@
 
 				<input type="submit" value="Cadastrar" />
 			</form>
-            <p>Ao se cadastrar o usuário concorda com os <a href="/termos">termos e condições</a> e as <a href="/privacidade">políticas de privacidade</a>!</p>
+            <p class="termos-privacidade">Ao se cadastrar o usuário concorda com os <a href="/termos">termos e condições</a> e as <a href="/privacidade">políticas de privacidade</a>!</p>
 			<div class="alternative">
 				<span>OU</span>
 			</div>
@@ -88,13 +85,13 @@
 					<img src="/images/logos/linkedin.png" />
 				</a>
 			</div>
-			<div><h5>Ao acessar você terá de acertar nossas politicas de privacidade e nossos termos de uso</h5></div>
+			<div><h5>Ao acessar o usuário concorda com os <a href="/termos">termos e condições</a> e as <a href="/privacidade">políticas de privacidade</a>!<</h5></div>
 			<div class="alternative">
 				<span>OU</span>
 			</div>
 			<div class="conta-nova">
 				<h2>Sou profissional</h2>
-				<button>Crie uma</button>
+				<button><a href="/cadastro-profissional">Crie uma</a></button>
 			</div>
 		</main>
         <%- include("../templates/footer.ejs") %>

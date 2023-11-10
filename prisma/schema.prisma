@@ -8,16 +8,39 @@ datasource db {
 }
 
 model Usuario {
-    id          String  @id @default(uuid())
-    customer_id String? @unique
-    nome        String  @db.VarChar(255)
-    email       String  @unique @db.VarChar(160)
-    telefone    String  @unique @db.Char(11)
-    senha       String  @db.Char(60)
-    descricao   String?  @db.VarChar(255)
+    id                 String  @id @default(uuid())
+    customer_id        String? @unique
+    nome               String  @db.VarChar(255)
+    email              String  @unique @db.VarChar(160)
+    telefone           String  @unique @db.Char(11)
+    senha              String  @db.Char(60)
+    descricao          String? @db.VarChar(255)
+    cargo              String  @default("user")
+    ativado            Int     @default(1) @db.TinyInt
+    imagem_perfil      Bytes?
+    tipo_imagem_perfil String?
 
     tokens    Token[]
     desabafos Desabafo[]
+}
+
+model Profissional {
+    id                 String  @id @default(uuid())
+    nome               String  @db.VarChar(255)
+    email              String  @unique @db.VarChar(160)
+    telefone           String  @unique @db.Char(11)
+    cpf                String  @db.Char(11)
+    senha              String  @db.Char(60)
+    descricao          String? @db.VarChar(255)
+    imagem_perfil      Bytes
+    tipo_imagem_perfil String
+    twitter            String?
+    facebook           String?
+    whatsapp           String?
+    cargo              String  @default("profissional")
+    ativado            Int     @default(1) @db.TinyInt
+
+    sessoes Sessao[]
 }
 
 model Token {
@@ -35,4 +58,27 @@ model Desabafo {
     created_at DateTime @default(now())
 
     user Usuario @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model Roda_De_Conversa {
+    id                 String @id @default(uuid())
+    nome               String @unique @db.VarChar(150)
+    imagem_banner      Bytes
+    tipo_imagem_banner String
+
+    sessoes Sessao[]
+}
+
+model Sessao {
+    id                 String @id @default(uuid())
+    nome               String @db.VarChar(150)
+    data_reuniao       Int
+    quantidade_pessoas Int
+    descricao          String @db.VarChar(255)
+    link_reuniao       String
+    tema               String
+    criador            String
+
+    roda_de_conversa Roda_De_Conversa @relation(fields: [tema], references: [nome], onDelete: Cascade, onUpdate: Cascade)
+    profissional     Profissional     @relation(fields: [criador], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }

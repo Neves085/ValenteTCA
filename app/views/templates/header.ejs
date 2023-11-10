@@ -1,46 +1,30 @@
 <header>
     <nav>
         <a href="/"><img class="logo" src="/images/fotos/logo_deitado-removebg-preview.png" /></a>
-        <button class="menu">&#9776;</button>
-        <ul class="menu-mobile">
-            <li><a href="/rodas-de-conversa">Rodas de conversas</a></li>
-            <li><a href="/perfil">Meu perfil</a></li>
-            <!-- <div class="usu" id="usu" style="display: 
-            block;"> -->
-            <% if (!data.usuarioLogado) { %>
+        <button class="menu" data-menu>&#9776;</button>
+    </nav>
+    <nav class="menu-nav">
+        <div class="menu-mobile-container" data-menu-mobile-container>
+            <ul class="menu-mobile">
+                <li><a href="/rodas-de-conversa">Rodas de conversas</a></li>
+                <% if (data.usuarioLogado) { %>
+                    <li><a href="/sair">Sair</a></li>
+                <% } %>
+                <% if (data.tipoUsuario === "user") { %>
+                    <li><a href="/perfil">Meu perfil</a></li>
+                <% } %>
+                <% if (data.tipoUsuario === "profissional") { %>
+                    <li><a href="/perfil-profissional">Meu perfil</a></li>
+                <% } %>
+
+                <% if (!data.usuarioLogado) { %>
                 <li><a href="/login">Login</a></li>
-            <% } %>
-            <% if (!data.usuarioLogado) { %>
+                <% } %>
+                <% if (!data.usuarioLogado) { %>
                 <li><a href="/cadastro">Cadastre-se</a></li>
-            <% } %>
-        <!-- </div> -->
-        </ul>
+                <% } %>
+
+            </ul>
+        </div>
     </nav>
 </header>
-<!-- <script>
-    const { PrismaClient } = require("@prisma/client")
-
-    // Função para buscar o valor de usuario.ativo no banco de dados
-async function buscarAtivoDoUsuario() {
-    try {
-        // Substitua 'idDoUsuario' pelo ID do usuário específico que você deseja consultar
-        const usuario = await prisma.usuario.findUnique({
-            where: {
-                id: userId
-            }
-        });
-
-        // Verifique o valor de usuario.ativo
-        if (usuario && usuario.ativo === 1) {
-            // Atualize o estilo do elemento HTML para 'block'
-            document.getElementById("usu").style.display = "none";
-        } else {
-            // Atualize o estilo do elemento HTML para 'none'
-            document.getElementById("usu").style.display = "block";
-        }
-    } catch (error) {
-        console.error("Erro na consulta ao banco de dados: " + error);
-    }
-}
-
-</script> -->

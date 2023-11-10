@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%- data.page %></title>
+
+    <%- include("../../templates/head.ejs") %>
+    <link rel="stylesheet" href="/css/rodas-de-conversa-admin.css">
+</head>
+
+<body>
+    <%- include("../../templates/header-admin.ejs") %>
+
+    <main>
+        <section id="rodas-de-conversa-admin">
+            <h1>Olá, administrador!</h1>
+
+            <a href="/criar-roda-de-conversa-admin" id="criar-roda-de-conversa-admin">
+                <i class="fa-solid fa-plus"></i> Criar uma nova roda de conversa</a>
+
+            <form method="get">
+                <input type="search" name="query" id="query" value="<%- data.query %>" placeholder="Pesquise uma roda de conversa por: ID ou nome">
+            </form>
+
+            <div id="rodas-de-conversa-lista">
+                <% data.rodasDeConversa.forEach(rodaDeConversa => { %>
+                <div class="roda-de-conversa">
+                    <img src="/images/fotos/rodas-de-conversa/<%- rodaDeConversa.id %>" alt="Capa roda de conversa">
+
+                    <p>ID: <%- rodaDeConversa.id %></p>
+
+                    <p>Nome: <%- rodaDeConversa.nome %></p>
+
+                    <div class="roda-de-conversa-actions">
+                        <a href="/deletar-roda-de-conversa-admin/<%- rodaDeConversa.id %>"><i class="fa-solid fa-trash"></i></a>
+
+                        <a href="/editar-roda-de-conversa-admin/<%- rodaDeConversa.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../../templates/footer.ejs") %>
+</body>
+
+</html>

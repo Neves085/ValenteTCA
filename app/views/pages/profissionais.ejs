@@ -1,91 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mais profissionais</title>
+    <title><%- data.page %></title>
+
+    <%- include("../templates/head.ejs") %>
     <link rel="stylesheet" href="/css/profissionais.css">
-    
-    
-    <script src="js/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    
+
     <%- include("../templates/header.ejs") %>
-    
+
     <main>
-        <div class="container">
-            <div class="card">
-            
-                <img class="foto-perfil" src="/images/fotos/image-removebg-preview (13).png" alt="foto de perfil">
-                
-            
-                <div class="content-text">
-                    <h1 class="nome">
-                        Sandro Henrique de Lima
-                    </h1>
-                    <h3 class="desc">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae est aliquam fugit, dignissimos incidunt architecto illo, ab suscipit nemo quia dolore repellendus possimus ex numquam veritatis sit hic assumenda facilis.
-                    </h3>
-                </div>
-                <div class="sociais">
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                     <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-                     <a href=""><i class="fa-brands fa-twitter"></i></a>
-                </div>
-            </div>
+        <section id="profissionais">
+            <h1>Profissionais</h1>
 
-            <div class="card">
-            
-                <img class="foto-perfil" src="/images/fotos/image-removebg-preview (12).png" alt="foto de perfil">
-                
-            
-                <div class="content-text">
-                    <h1 class="nome">
-                        Manoel Gomes
-                    </h1>
-                    <h3 class="desc">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae est aliquam fugit, dignissimos incidunt architecto illo, ab suscipit nemo quia dolore repellendus possimus ex numquam veritatis sit hic assumenda facilis.
-                    </h3>
-                </div>
-                <div class="sociais">
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                     <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-                     <a href=""><i class="fa-brands fa-twitter"></i></a>
-                </div>
-            </div>
+            <div id="profissionais-container">
+                <div class="profissional">
+                    <img src="/images/fotos/profissional.png" alt="Profissional">
 
-            <div class="card">
-            
-                <img class="foto-perfil" src="/images/fotos/image-removebg-preview (14).png" alt="foto de perfil">
-                
-            
-                <div class="content-text">
-                    <h1 class="nome">
-                        Sandra Castro
-                    </h1>
-                    <h3 class="desc">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae est aliquam fugit, dignissimos incidunt architecto illo, ab suscipit nemo quia dolore repellendus possimus ex numquam veritatis sit hic assumenda facilis.
-                    </h3>
+                    <h2>Sandro Henrique de Lima</h2>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sequi sunt numquam non quia soluta perspiciatis doloremque impedit, amet cupiditate adipisci! Perferendis error impedit labore culpa, delectus aperiam, ipsam provident perspiciatis nisi numquam odit! Excepturi, quos? Aliquam perferendis cupiditate eius, obcaecati optio, dignissimos, similique dolore magni vel delectus necessitatibus ad.</p>
+
+                    <div class="social-media">
+                        <a href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="sociais">
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                     <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-                     <a href=""><i class="fa-brands fa-twitter"></i></a>
+
+                <div class="profissional">
+                    <img src="/images/fotos/profissional.png" alt="Profissional">
+
+                    <h2>Sandro Henrique de Lima</h2>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sequi sunt numquam non quia soluta perspiciatis doloremque impedit, amet cupiditate adipisci! Perferendis error impedit labore culpa, delectus aperiam, ipsam provident perspiciatis nisi numquam odit! Excepturi, quos? Aliquam perferendis cupiditate eius, obcaecati optio, dignissimos, similique dolore magni vel delectus necessitatibus ad.</p>
+
+                    <div class="social-media">
+                        <a href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="profissional">
+                    <img src="/images/fotos/profissional.png" alt="Profissional">
+
+                    <h2>Sandro Henrique de Lima</h2>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sequi sunt numquam non quia soluta perspiciatis doloremque impedit, amet cupiditate adipisci! Perferendis error impedit labore culpa, delectus aperiam, ipsam provident perspiciatis nisi numquam odit! Excepturi, quos? Aliquam perferendis cupiditate eius, obcaecati optio, dignissimos, similique dolore magni vel delectus necessitatibus ad.</p>
+
+                    <div class="social-media">
+                        <a href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="profissional">
+                    <img src="/images/fotos/profissional.png" alt="Profissional">
+
+                    <h2>Sandro Henrique de Lima</h2>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sequi sunt numquam non quia soluta perspiciatis doloremque impedit, amet cupiditate adipisci! Perferendis error impedit labore culpa, delectus aperiam, ipsam provident perspiciatis nisi numquam odit! Excepturi, quos? Aliquam perferendis cupiditate eius, obcaecati optio, dignissimos, similique dolore magni vel delectus necessitatibus ad.</p>
+
+                    <div class="social-media">
+                        <a href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        
+        </section>
     </main>
 
     <%- include("../templates/footer.ejs") %>
 
-    
+
 </body>
 <script src="js/script.js"></script>
+
 </html>
-
-

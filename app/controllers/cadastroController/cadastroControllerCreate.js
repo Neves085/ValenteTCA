@@ -30,7 +30,7 @@ class CadastroController {
                 if (erro.meta.target === "Usuario_email_key") {
                     return res.render("pages/cadastro.ejs", {
                         data: {
-                            page_name: "Cadastro",
+                            page: "Cadastro",
                             input_values: {
                                 nome,
                                 email,
@@ -50,7 +50,7 @@ class CadastroController {
                 if (erro.meta.target === "Usuario_telefone_key") {
                     return res.render("pages/cadastro.ejs", {
                         data: {
-                            page_name: "Cadastro",
+                            page: "Cadastro",
                             input_values: {
                                 nome,
                                 email,
@@ -70,7 +70,7 @@ class CadastroController {
 
             return res.render("pages/cadastro.ejs", {
                 data: {
-                    page_name: "Cadastro",
+                    page: "Cadastro",
                     input_values: {
                         nome,
                         email,

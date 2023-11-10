@@ -6,8 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%- data.page %></title>
+    <script src="/js/swiper-bundle.min.js" defer></script>
+    <script src="/js/home.js" defer></script>
 
     <%- include("../templates/head.ejs") %>
+    <link rel="stylesheet" href="/css/home.css">
+
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -231,39 +236,18 @@
             <a href="/profissionais"><button>Outros profissionais</button></a>
         </div>
 
-
-
-
-
         <h2 class="roda-conversa-titulo">Rodas de conversas</h2>
 
         <div class="container-roda">
-
-            <button class="card-roda" href="">
-                <div class="card1">
+            <% data.rodasDeConversa.forEach(rodaDeConversa => { %>
+            <a href="/rodas-de-conversa-sessoes" class="card-roda">
+                <div class="card" <%- `style="background-image: url('images/fotos/rodas-de-conversa/${rodaDeConversa.id}');"` %>>
                     <div class="tema">
-                        <h1>Alcoolismo</h1>
+                        <h2><%- rodaDeConversa.nome %></h2>
                     </div>
                 </div>
-            </button>
-
-            <button class="card-roda">
-                <div class="card2">
-                    <div class="tema">
-                        <h1>Ansiedade</h1>
-                    </div>
-                </div>
-            </button>
-
-            <button class="card-roda">
-                <div class="card3">
-                    <div class="tema">
-                        <h1>Depressão</h1>
-                    </div>
-                </div>
-            </button>
-
-
+            </a>
+            <% }) %>
         </div>
 
         <div class="botao-ver-roda">
@@ -273,7 +257,7 @@
         <h2 class="desabafos">Desabafos</h2>
         <div class="desabafar">
             <div class="user-avatar"><img src="/images/fotos/image-removebg-preview (1).png"></div>
-            <form action="/cadastrar-desabafo" method="post">
+            <form action="/cadastrar-desabafo#cadastrar-desabafo" method="post" id="cadastrar-desabafo">
                 <input class="desabafar-text" name="desabafo" type="text" placeholder="Desabafe..." <%- data.input_values ? `value="${data.input_values.desabafo}"` : "" %> <%- data.errors && data.errors.desabafo_error ? `class="erro"` : "" %>>
                 <%- data.errors && data.errors.desabafo_error ? `<span class='erro-mensagem'>${data.errors.desabafo_error.msg}</span>` : "" %>
             </form>
@@ -283,20 +267,13 @@
             <div class="post">
                 <div class="post-user-info">
                     <div class="user-avatar"><img src="/images/fotos/image-removebg-preview (1).png"></div>
-                    <div class="user1">
-                        <h4><%- data.userId && data.userId === desabafo.user.id ? "Você" : desabafo.user.nome %></h4>
+                    <div class="user">
+                        <h4><%- data.userId && data.userId === desabafo.user.id ? "Você" : "Anônimo" %></h4>
                         <span class="hora-post">- <%- `${String(new Date(desabafo.created_at).getHours()).padStart(2, "0")}:${String(new Date(desabafo.created_at).getMinutes()).padStart(2, "0")}` %></span>
                     </div>
                 </div>
                 <div class="post-content">
-
                     <p class="post-text"><%- desabafo.mensagem %></p>
-                </div>
-                <div class="post-icons">
-                    <div class="like">
-                        <button id="curtido" class="curtido" onclick="toggleLike()"><i class="fa-solid fa-heart"></i></button>
-                    </div>
-
                 </div>
             </div>
         </div>

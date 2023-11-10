@@ -1,272 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,500;1,600&family=Righteous&family=Sarala:wght@700&display=swap');
-
-*{
-  padding: 0;
-  margin: 0;
-  border: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+#profissionais h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 30px 0;
 }
 
-body{
-    width: 100%;
-    
-    
+#profissionais-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, min(100%, 400px));
+    justify-content: center;
+    gap: 40px;
 }
 
-.logo{
-    width: 200px;
-}
-nav{
+#profissionais-container .profissional {
     background-color: #f8f2e9;
-    padding: 0 20px;
-    justify-content: space-between;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+#profissionais-container .profissional img {
+    width: 90px;
+    aspect-ratio: 1;
+    border: 5px solid #f7931e;
+    border-radius: 50%;
+}
+
+#profissionais-container .profissional h2 {
+    font-size: 1.5rem;
+}
+
+#profissionais-container .profissional .social-media {
+    display: flex;
+    gap: 20px;
     align-items: center;
 }
-ul{
-    list-style: none;
-    padding: 0;
-}
-a{
-    color: black;
-}
-nav, ul{
+
+#profissionais-container .profissional .social-media a {
     display: flex;
-    flex-direction: row;
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: 10px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 300ms ease;
 }
-li{
-    padding: 10px 20px;
-}
-nav li:hover, button:hover{
-    cursor: pointer;
-    opacity: 0.7;
-}
-nav li:last-child{
-    color: #fff;
-    background-color: #f7931e;
-    border-radius: 30px;
-    width: 182px;
-}
-nav ul li:last-child a{
-    color: #fff;
-}
-nav button{
-background: transparent;
-border: none;
-color: black;
-font-size: 30px;
-position: absolute;
-right: 20px;
-display: none;
-}
-.menu:focus ~ ul{
-    height: 190px;
-}
-.logo{
-    width: 200px;
-}
-@media screen and (max-width:1000px){
 
-    nav,ul{
-        flex-direction: column;
-        
-    }
-    .menu-mobile{
-        overflow: hidden;
-        height: 0;
-        margin: 0;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        transition: 0.5s;
-        
-    }
-    nav{
-        width: 100%;
-        align-items: flex-start;
-        padding: 0;
-    }
-    nav button{
-        display: flex;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
-    li, .menu-mobile{
-        width: 100%;
-    }
-    .logo{
-        margin: 10px;
-       margin-left: 20px;
-       margin-top: 10px;
-    }
-    .container{
-        flex-direction: column;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .card{
-        position: relative;
-        background-color: #f8f2e9;
-        width: 90%;
-        margin-top: 20px;
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .foto-perfil{
-        object-fit: cover;
-        position: relative;
-        margin-top: 15px;
-        background-color: #fff;
-        width: 120px;
-        border-radius: 50%;
-        border: #f7931e 5px solid;
-    }
-
-    .content-text{
-        
-        padding: 15px;
-        margin-top: -10px;
-    }
-    h1.nome{
-        margin-bottom: 10px;
-        text-align: center;
-        font-size: 25px;
-
-    }
-    h3.desc{
-        text-align: center;
-        font-size: 16px;
-        font-weight: 400;
-    }
-    .sociais{
-        display: flex;
-        gap: 20px;
-        font-size: 25px;
-        padding-bottom: 15px;
-        transition: all 3s;
-    }
-    .sociais a:hover{
-        opacity: 0.5;
-        transform: scale(110%);
-    }
-
-    footer{
-        margin-top:20px ;
-        background-color: #f8f2e9;
-    }
-    
-    .logo-fot{
-        padding-top:20px ;
-        width: 200px;
-    }
-    .logo-fot img{
-        width: 100%;
-    }
-    .fot-content{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-        border-top: solid 2px white;
-    }
-    .medias-fot{
-        font-size: 32px;
-        justify-content: center;
-        align-items: center;
-        padding-top: 10px;
-        display: flex;
-        flex-direction: row;
-        gap: 38px;
-    }
-    .medias-fot a{
-        width: 30px;
-        height: 30px;
-    }
-    
-    .medias-fot a img{
-        width: 100%;
-        height: 100%;
-    }
-    .botao-fot{
-        padding: 20px;
-    }
-    
-    .button-fot button{
-        padding: 10px 14px;
-        border: none;
-        font-size: 16px;
-        color: white;
-        background-color: #c1272d;
-        margin-top: 30px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3 ease;
-    }
-    .botao-fot:hover{
-        opacity: 0.9;
-    }
-    .fot-email{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 200px;
-        justify-items: center;
-        text-align: center;
-    }
-    .infos-fot{
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .infos-fot a{
-        font-size: 13px;
-        text-align: center;
-    }
-    
-    .sobre-nos::backdrop{
-        background-color: rgb(0 0 0 / .6);
-    }
-    
-    .sobre-nos{
-        padding: 25px;
-        flex-direction: column;
-        margin: auto;
-        
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-        box-shadow: 0 0 1em rgb(0 0 0 / .3);
-        border: none;
-        border-radius: 10px;
-        background-color: #f8f2e9;
-    }
-    .sobre-content{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-    
-    .sobre-nos .fechar-botao{
-        margin-top: 20px;
-        
-        width: 100px;
-    }
-    .sobre-nos h1, p{
-        text-align: center;
-    }
-
-
-
-
+#profissionais-container .profissional .social-media a:hover {
+    background-color: hsl(36, 52%, 80%);
 }

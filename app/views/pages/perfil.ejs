@@ -5,22 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title><%- data.page %></title>
+
+    <%- include("../templates/head.ejs") %>
     <link rel="stylesheet" href="/css/perfil.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
 </head>
 
 <body>
-    <header>
-        <%- include("../templates/header.ejs") %>
-    </header>
+    <%- include("../templates/header.ejs") %>
 
     <main class="main-perfil">
         <div class="perfil-container">
             <div class="perfil-usuario">
                 <div class="perfil-avatar">
-                    <img src="/images/fotos/image-removebg-preview (13).png" alt="imagem-avatar">
+                    <img src="<%- data.user.imagem_perfil ? `/images/fotos/${data.user.id}` : "/images/fotos/profissional.png" %>" alt="Imagem perfil">
                 </div>
             </div>
         </div>
@@ -36,19 +34,65 @@
                         <li><%- data.user.email %></li>
                     </div>
                     <div class="dados">
-                        <li><a class="botao-editar" href="/editar-perfil"><i  style="color: #000000;"><button></i>Editar perfil</button></a></li>
+                        <li><a class="botao-editar" href="/editar-perfil"><i style="color: #000000;"><button></i>Editar perfil</button></a></li>
                     </div>
 
                 </div>
             </div>
 
         </div>
+        <div id="agenda">
+            <h1>Sua agenda</h1>
 
+            <div id="agenda-container">
+                <div class="consulta">
+                    <h2>Psicológo: Vinícius Gonçalves</h2>
+                    <p>Agendado para: 16/11/2023</p>
+                    <p>Preço: 50R$</p>
+                    <p>Status: Pendente</p>
+
+                    <a href="/cancelar-consulta" class="cancelar">Cancelar consulta</a>
+                </div>
+                <div class="consulta">
+                    <h2>Psicológo: Vinícius Gonçalves</h2>
+                    <p>Agendado para: 16/11/2023</p>
+                    <p>Preço: 50R$</p>
+                    <p>Status: Pendente</p>
+
+                    <a href="/cancelar-consulta" class="cancelar">Cancelar consulta</a>
+                </div>
+                <div class="consulta">
+                    <h2>Psicológo: Vinícius Gonçalves</h2>
+                    <p>Agendado para: 16/11/2023</p>
+                    <p>Preço: 50R$</p>
+                    <p>Status: Pendente</p>
+
+                    <a href="/cancelar-consulta" class="cancelar">Cancelar consulta</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="salas">
+            <h2>Sessões agendadas</h2>
+
+            <div id="salas-container">
+                <div class="sala">
+                    <h2>Título da Roda de Conversa</h2>
+
+                    <h3>6 de 12 pessoas</h3>
+
+                    <div class="sala-info">
+                        <p>Data: 05/12</p>
+
+                        <p>Preço: R$50,00</p>
+                    </div>
+
+                    <a href="/sessao">Ver mais</a>
+                </div>
+            </div>
+        </div>
     </main>
-    <footer>
-        <%- include("../templates/footer.ejs") %>
-    </footer>
-
+    <%- include("../templates/footer.ejs") %>
 </body>
 
 </html>

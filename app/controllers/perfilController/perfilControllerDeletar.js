@@ -15,7 +15,7 @@ class PerfilController {
 
             req.session.destroy();
 
-            return res.redirect("/")
+            return res.redirect("/");
         } catch (error) {
             console.error(error);
             return res.status(500).json({ error: "Erro ao excluir o usuário" });

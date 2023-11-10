@@ -1,327 +1,119 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,500;1,600&family=Righteous&family=Roboto:wght@100;300;400;500;700&family=Sarala:wght@700&display=swap");
-* {
-	margin: 0;
-	padding: 0;
-    
-	font-family: "Poppins", sans-serif;
+.alternative {
+	margin-top: 20px;
+	margin-bottom: 15px;
 }
-body{
-    text-align: center;
-}
-  
-  .container {
-    position: relative;
-    background-color: #f8f2e9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    width: 50%;
-  }
-  .overlay{
-    height: 20%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f7931e;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius:10px;
-  }
-  
-  h1 {
-    margin-top: 20px;
-    color: #333;
-  }
-  #confirmation{color: #000;
-    padding: 10px;
-    margin: 20px auto;
-    width: 70%;
-    background-color: #f8f2e9;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 10px;
-    border: none;
-  }
-  .esc-data{
-    margin: 0 auto;
-    color: #fff;
-    position: relative;
-    top: 11px;
-    text-align: center;
-  }
-  h2 {
-    text-align: center;
-    color: #666;
-  }
-  
-  input, select, .agendar {
-    
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  input{
-    margin-top:67px ;
-  }
-  
-  .agendar {
-    border: none;
-    background-color: #f7931e;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .agendar:hover {
-    opacity: 0.7;;
-  }
-  .alternative{
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-.alternative span{
-    font-weight: 400;
-    color: black;
-    position: relative;
-}
-.alternative span::before{
-    position: absolute;
-    content: '';
-    height: 1px;
-    bottom: 50%;
-    width: 100px;
-    background: black;
-    right: 50px;
-
-}
-.alternative span::after{
-    left: 50px;
-    position: absolute;
-    content: '';
-    height: 1px;
-    bottom: 50%;
-    width: 100px;
-    background: black;
-}
-.whats{
-    cursor: pointer;
-    margin: 0 auto;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    gap: 5px;
-    font-size: 15px;
-    border: none;
-    background-color: #f7931e;
-    padding: 10px;
-    border-radius: 5px;
-}
-.whats i {
-    font-size: 25px;
-}
-
-  .logo {
-	width: 200px;
-}
-nav {
-	background-color: #f8f2e9;
-	padding: 0 20px;
-	justify-content: space-between;
-	align-items: center;
-}
-ul {
-	list-style: none;
-	padding: 0;
-}
-a {
+.alternative span {
+	font-weight: 400;
 	color: black;
+	position: relative;
 }
-nav,
-ul {
-	display: flex;
-	flex-direction: row;
-}
-li {
-	padding: 10px 20px;
-}
-nav li:hover,
-button:hover {
-	cursor: pointer;
-	opacity: 0.7;
-}
-nav li:last-child {
-	color: #fff;
-	background-color: #f7931e;
-	border-radius: 30px;
-	width: 182px;
-}
-nav ul li:last-child a {
-	color: #fff;
-}
-nav button {
-	background: transparent;
-	border: none;
-	color: black;
-	font-size: 30px;
+.alternative span::before {
 	position: absolute;
-	right: 20px;
-	display: none;
+	content: "";
+	height: 1px;
+	bottom: 50%;
+	width: 100px;
+	background: black;
+	right: 50px;
 }
-.menu:focus ~ ul {
-	height: 190px;
+.alternative span::after {
+	left: 50px;
+	position: absolute;
+	content: "";
+	height: 1px;
+	bottom: 50%;
+	width: 100px;
+	background: black;
 }
 
-footer{
-    margin-top:20px ;
-    background-color: #f8f2e9;
+#agendamento h1 {
+	text-align: center;
+	font-size: 2rem;
+	margin: 30px 0;
 }
 
-.logo-fot{
-    padding-top:20px ;
-    width: 200px;
+#agendamento-container {
+	max-width: 600px;
+	margin-inline: auto;
+	background-color: #fff8e9;
 }
-.logo-fot img{
+
+#agendamento-header {
+	background-color: #f7931e;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 25px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+#agendamento-header p {
+	font-weight: bold;
+	font-size: 1.3rem;
+}
+
+#agendamento-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    padding: 20px 60px;
+}
+
+#agendamento-body form {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
     width: 100%;
 }
-.fot-content{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    border-top: solid 2px white;
-}
-.medias-fot{
-    font-size: 32px;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: row;
-    gap: 38px;
-}
-.medias-fot a{
-    width: 30px;
-    height: 30px;
-}
 
-.medias-fot a img{
+#agendamento-body form input {
     width: 100%;
-    height: 100%;
-}
-.botao-fot{
-    padding: 20px;
-}
-
-.button-fot button{
-    padding: 10px 14px;
-    border: none;
-    font-size: 16px;
-    color: white;
-    background-color: #c1272d;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    height: 40px;
+    border: 2px solid black;
     border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3 ease;
 }
-.botao-fot:hover{
-    opacity: 0.9;
-}
-.fot-email{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 200px;
-    justify-items: center;
-    text-align: center;
-}
-.infos-fot{
-    width: 200px;
+
+#agendamento-body form #horario {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.infos-fot a{
-    font-size: 13px;
-    text-align: center;
+
+#agendamento-body form #horario h2 {
+    color: gray;
+    font-size: 1.3rem;
+    margin: 10px 0;
 }
 
-.sobre-nos::backdrop{
-    background-color: rgb(0 0 0 / .6);
+#agendamento-body form #horario select {
+    width: 100%;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-inline-start: 10px;
 }
 
-.sobre-nos{
-    padding: 25px;
-    flex-direction: column;
-    margin: auto;
-    
+#agendamento-body form #horario button {
+    width: 100%;
+    height: 40px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
-    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    border-radius: 5px;
+    background-color: #f7931e;
     border: none;
-    border-radius: 10px;
-    background-color: #f8f2e9;
-}
-.sobre-content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    color: white;
+    margin-top: 10px;
+    font-size: 1rem;
 }
 
-.sobre-nos .fechar-botao{
-    margin-top: 20px;
-    
-    width: 100px;
+#whatsapp {
+	background-color: #f7931e;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
 }
-.sobre-nos h1, p{
-    text-align: center;
-}
-
-@media screen and (max-width: 950px) {
-	nav,
-	ul {
-		flex-direction: column;
-	}
-	.menu-mobile {
-		overflow: hidden;
-		height: 0;
-		margin: 0;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		transition: 0.5s;
-	}
-	nav {
-		align-items: flex-start;
-		padding: 0;
-	}
-	nav button {
-		display: flex;
-		position: absolute;
-		right: 20px;
-		top: 20px;
-	}
-	li,
-	.menu-mobile {
-		width: 100%;
-	}
-	.logo {
-		margin: 10px;
-		margin-left: 20px;
-		margin-top: 10px;
-	}
-}
-
-@media screen and (max-width: 500px){
-    .container{
-        width: 70%;
-    }
-}
-  

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%- data.page %></title>
+
+    <%- include("../templates/head.ejs") %>
+    <link rel="stylesheet" href="/css/rodas-de-conversa-sessoes.css" />
+</head>
+
+<body>
+    <%- include("../templates/header.ejs") %>
+    <main>
+        <section id="sessoes">
+            <h1>Sessões: depressão</h1>
+
+            <% if (data.tipoUsuario === "profissional") { %>
+                <a href="/criar-sessao" id="criar-sessao">Criar sessão</a>
+            <% } %>
+
+            <form action="#" method="get">
+                <input type="search" name="query" id="query" placeholder="Pesquise por uma sala">
+            </form>
+
+            <div id="sessoes-container">
+                <div class="sessao">
+                    <h2>Título da Roda de Conversa</h2>
+
+                    <h3>6 de 12 pessoas</h3>
+
+                    <div class="sessao-info">
+                        <p>Data: 05/12</p>
+
+                        <p>Preço: R$50,00</p>
+                    </div>
+
+                    <a href="#">Ver mais</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include("../templates/footer.ejs") %>
+</body>
+</html>

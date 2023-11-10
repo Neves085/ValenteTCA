@@ -8,7 +8,9 @@
     <%- include('../templates/head.ejs') %>
     <link rel="stylesheet" href="/css/cadastro.css" />
     <link rel="stylesheet" href="/css/editarPerfil.css" />
-    <title><%- data.page_name %></title>
+
+    <script src="/js/imagem-perfil.js" defer></script>
+    <title><%- data.page %></title>
 </head>
 
 <body>
@@ -24,14 +26,21 @@
 
         <h3>SEU CADASTRO</h3>
 
-        <form action="/editar-perfil" method="post">
+        <form action="/editar-perfil" method="post" enctype="multipart/form-data">
             <%- data.errors && data.errors.sistema_error ? `<span class='erro-mensagem'>${data.errors.sistema_error.msg}</span>` : "" %>
+
+            <label>FOTO DE PERFIL:</label>
+            <input type="file" name="foto_perfil" id="foto-perfil-input">
+            <label for="foto-perfil-input" id="foto-perfil" <%- data.errors && data.errors.imagem_perfil_error ? `class="erro"` : "" %>>
+                <img id="foto-perfil-preview" src="<%- data.input_values.imagem_perfil ? `/images/fotos/${data.input_values.id}` : "/images/fotos/profissional.png" %>" alt="Imagem perfil">
+            </label>
+
+            <%- data.errors && data.errors.imagem_perfil_error ? `<span class='erro-mensagem'>${data.errors.imagem_perfil_error.msg}</span>` : "" %>
 
             <label for="nome">NOME:</label>
             <input type="text" placeholder="Insira aqui..." name="nome" id="nome" <%- data.input_values ? `value="${data.input_values.nome}"` : "" %> <%- data.errors && data.errors.nome_error ? `class="erro"` : "" %> /><br />
 
             <%- data.errors && data.errors.nome_error ? `<span class='erro-mensagem'>${data.errors.nome_error.msg}</span>` : "" %>
-            <br />
 
 
             <label for="telefone">TELEFONE:</label>

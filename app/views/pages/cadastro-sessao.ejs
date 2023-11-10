@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%- data.page %></title>
+
+    <%- include("../templates/head.ejs") %>
+    <link rel="stylesheet" href="/css/rodas-de-conversa-sessoes.css" />
+</head>
+
+<body>
+    <%- include("../templates/header.ejs") %>
+    <main>
+        <section id="cadastrar-sessao">
+            <h1>Cadastrar sessão</h1>
+
+            <form action="/cadastrar-sessao" method="post">
+                <label for="nome">Nome da sala</label>
+                <input type="text" name="nome" id="nome" placeholder="Informe o nome da sala">
+
+                <label for="quantidade-pessoas">Quantidade de pessoas</label>
+                <input type="number" name="quantidade_pessoas" id="quantidade-pessoas" placeholder="Informe o limite de pessoas na sala">
+
+                <label for="descricao">Descrição</label>
+                <input type="text" name="descricao" id="descricao" placeholder="Descreva a sua sala">
+
+                <label for="data-reuniao">Data</label>
+                <input type="text" name="data_reuniao" id="data-reuniao" placeholder="DD/MM/AAAA">
+
+                <label for="link-reuniao">Link da reunião</label>
+                <input type="text" name="link_reuniao" id="link-reuniao" placeholder="Informe o link para participar da reunião">
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+    <%- include("../templates/footer.ejs") %>
+</body>
+</html>

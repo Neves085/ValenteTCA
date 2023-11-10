@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%- data.page %></title>
     <link rel="stylesheet" href="/css/agendamento.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <%- include("../templates/head.ejs") %>
 </head>
+
 <body>
 
     <%- include("../templates/header.ejs") %>
 
-    <h1>Agendamento</h1>
-    <div class="container">
-        <div class="overlay"></div>
-      <div class="calendar">
-        <h2 class="esc-data">Escolha uma data:</h2>
-        <input type="date" id="datePicker">
-      </div>
-      <div class="time-slots">
-        <h2 class="esc-hor">Escolha um horário:</h2>
-        <select id="timeSlot">
-          <option value="09:00">09:00</option>
-          <option value="10:00">10:00</option>
-          <option value="11:00">11:00</option>
-          <option value="14:00">14:00</option>
-          <option value="15:00">15:00</option>
-          <option value="16:00">16:00</option>
-        </select>
-      </div>
-      <button class="agendar" onclick="agendar()">Agendar</button>
-      <div class="alternative">
-        <span>OU</span>
-    </div>
-    <button class="whats"><i class="fa-brands fa-whatsapp"></i>Fale direto com o profissional</button>
-    </div>
-    <div id="confirmation"></div>
+    <main>
+        <section id="agendamento">
+            <h1>Agendamento</h1>
+
+            <div id="agendamento-container">
+                <div id="agendamento-header">
+                    <p>Escolha uma data:</p>
+                </div>
+
+                <div id="agendamento-body">
+                    <form>
+                        <input type="date" name="data-agendamento" id="data-agendamento">
+
+                        <div id="horario">
+                            <h2>Escolha um horário:</h2>
+
+                            <select name="horario-agendamento" id="horario-agendamento">
+                                <option selected disabled>Selecione um horário</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                            </select>
+
+                            <button formaction="/agendar-consulta" formmethod="post">Agendar</button>
+                        </div>
+                    </form>
+
+                    <div class="alternative">
+                        <span>OU</span>
+                    </div>
+
+                    <a href="#" id="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Fale diretamente com o profissional
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <%- include("../templates/footer.ejs") %>
-    
-    <script src="script.js"></script>
-  </body>
-  <script src="js/script.js"></script>
-  </html>
- 
-  
+</body>
+
 </html>

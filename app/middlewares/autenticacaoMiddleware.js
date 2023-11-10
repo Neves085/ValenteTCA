@@ -22,7 +22,7 @@ class Autenticacao {
 
             return res.render("pages/cadastro", {
                 data: {
-                    page_name: "Cadastro",
+                    page: "Cadastro",
                     input_values: {
                         nome,
                         email,
@@ -44,6 +44,55 @@ class Autenticacao {
         req.session.loginRedirectUrl = req.url;
 
         if (!token) {
+            return res.redirect("/login");
+        }
+
+        try {
+            jwt.verify(token, process.env.SECRET);
+
+            return next();
+        } catch (erro) {
+            console.log(erro);
+
+            return res.redirect("/login");
+        }
+    }
+
+    validateJWTProfissional(req, res, next) {
+        const token = req.session.token;
+        req.session.loginRedirectUrl = req.url;
+
+        if (!token) {
+            return res.redirect("/login");
+        }
+
+        const {userType} = jwt.decode(token, process.env.SECRET);
+
+        if (userType !== "profissional") {
+            return res.redirect("/login");
+        }
+
+        try {
+            jwt.verify(token, process.env.SECRET);
+
+            return next();
+        } catch (erro) {
+            console.log(erro);
+
+            return res.redirect("/login");
+        }
+    }
+
+    validateTokenAdmin(req, res, next) {
+        const token = req.session.token;
+
+        if (!token) {
+            return res.redirect("/login");
+        }
+
+        const {userType} = jwt.decode(token, process.env.SECRET);
+
+        if (userType !== "admin") {
             return res.redirect("/login");
         }
 

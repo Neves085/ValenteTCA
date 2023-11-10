@@ -1,0 +1,73 @@
+#sessoes h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 30px 0;
+}
+
+#criar-sessao {
+    height: 40px;
+    background-color: #f7931e;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 5px;
+    max-width: 350px;
+    margin: 30px auto;
+}
+
+#sessoes form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#sessoes form input {
+    width: 100%;
+    max-width: 350px;
+    height: 40px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+#sessoes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, min(100%, 400px));
+    gap: 40px;
+    justify-content: center;
+}
+
+#sessoes-container .sessao {
+    background-color: #f8f2e9;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+#sessoes-container .sessao h2 {
+    font-size: 1.3rem;
+}
+
+#sessoes-container .sessao h3 {
+    font-size: 1rem;
+    font-weight: medium;
+}
+
+#sessoes-container .sessao .sessao-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+#sessoes-container .sessao a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #f7931e;
+    height: 40px;
+    margin-top: 20px;
+}

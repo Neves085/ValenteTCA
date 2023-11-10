@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('../../templates/head.ejs') %>
+    <link rel="stylesheet" href="/css/cadastro.css" />
+    <link rel="stylesheet" href="/css/editarPerfil.css" />
+
+    <script src="/js/imagem-perfil.js" defer></script>
+    <title><%- data.page %></title>
+</head>
+
+<body>
+    <%- include('../../templates/header-admin.ejs') %>
+
+    <main>
+
+        <div id="voltar">
+            <a href="/perfil-user">
+                <i class='bx bx-left-arrow-alt'></i>
+            </a>
+        </div>
+
+        <h3>SEU CADASTRO</h3>
+
+        <form action="/editar-profissional-admin/<%- data.input_values.id %>" method="post" enctype="multipart/form-data">
+            <%- data.errors && data.errors.sistema_error ? `<span class='erro-mensagem'>${data.errors.sistema_error.msg}</span>` : "" %>
+
+            <label>FOTO DE PERFIL:</label>
+            <input type="file" name="foto_perfil" id="foto-perfil-input">
+            <label for="foto-perfil-input" id="foto-perfil" <%- data.errors && data.errors.imagem_perfil_error ? `class="erro"` : "" %>>
+                <img id="foto-perfil-preview" src="<%- data.input_values.imagem_perfil ? `/images/fotos/profissionais/${data.input_values.id}` : "/images/fotos/profissional.png" %>" alt="Imagem perfil">
+            </label>
+
+            <%- data.errors && data.errors.imagem_perfil_error ? `<span class='erro-mensagem'>${data.errors.imagem_perfil_error.msg}</span>` : "" %>
+
+            <label for="nome">NOME:</label>
+            <input type="text" placeholder="Insira aqui..." name="nome" id="nome" <%- data.input_values ? `value="${data.input_values.nome}"` : "" %> <%- data.errors && data.errors.nome_error ? `class="erro"` : "" %> /><br />
+
+            <%- data.errors && data.errors.nome_error ? `<span class='erro-mensagem'>${data.errors.nome_error.msg}</span>` : "" %>
+
+
+            <label for="telefone">TELEFONE:</label>
+            <input type="tel" placeholder="00999999999" name="telefone" id="telefone" <%- data.input_values ? `value="${data.input_values.telefone}"` : "" %> <%- data.errors && data.errors.telefone_error ? `class="erro"` : "" %> /><br />
+
+            <%- data.errors && data.errors.telefone_error ? `<span class='erro-mensagem'>${data.errors.telefone_error.msg}</span>` : "" %>
+            <br />
+
+            <label for="cpf">CPF:</label>
+            <input type="number" placeholder="12345678901" name="cpf" id="cpf" <%- data.input_values ? `value="${data.input_values.cpf}"` : "" %> <%- data.errors && data.errors.cpf_error ? `class="erro"` : "" %> /><br />
+
+            <%- data.errors && data.errors.cpf_error ? `<span class='erro-mensagem'>${data.errors.cpf_error.msg}</span>` : "" %>
+            <br />
+
+            <label for="email">E-MAIL:</label>
+            <input type="email" placeholder="exemplo@email.com" name="email" id="email" <%- data.input_values ? `value="${data.input_values.email}"` : "" %> <%- data.errors && data.errors.email_error ? `class="erro"` : "" %> /><br />
+
+            <%- data.errors && data.errors.email_error ? `<span class='erro-mensagem'>${data.errors.email_error.msg}</span>` : "" %>
+            <br />
+
+            <label for="descricao">DESCRIÇÃO:</label>
+            <input type="descricao" placeholder="Um pouco sobre você" name="descricao" id="descricao" <%- data.input_values && data.input_values.descricao ? `value="${data.input_values.descricao}"` : "" %> <%- data.errors && data.errors.descricao_error ? `class="erro"` : "" %> /><br />
+
+            <%- data.errors && data.errors.descricao_error ? `<span class='erro-mensagem'>${data.errors.descricao_error.msg}</span>` : "" %>
+            <br />
+
+            <input type="submit" id="cadastre-se" value="ATUALIZAR"></input>
+        </form>
+
+        <div class="alternative">
+            <span>OU</span>
+        </div>
+
+        <a href="/deletar-perfil-profissional" class="delete-perfil">
+            <i class='bx bxs-trash'></i>
+            <p>Deletar Perfil</p>
+        </a>
+    </main>
+
+    <%- include("../../templates/footer.ejs") %>
+</body>
+
+</html>

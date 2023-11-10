@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Roda de conversa</title>
-		<link rel="stylesheet" href="/css/rodadecnvs.css" />
-        <%- include("../templates/head.ejs") %>
-	</head>
-	<body>
-        <%- include("../templates/header.ejs") %>
-		<main>
-			<div class="container">
-				<button href="index.html"><div class="card1">
-					<div class="tema">
-						<h1>Alcoolismo</h1>
-					</div>
-				</div></button>
-	
-				<div class="card2">
-					<div class="tema">
-						<h1>Ansiedade</h1>
-					</div>
-				</div>
-	
-				<div class="card3">
-					<div class="tema">
-						<h1>Depressão</h1>
-					</div>
-				</div>
-	
-				
-		
-			</div>
-		</main>
-        <%- include("../templates/footer.ejs") %>
-	</body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%- data.page %></title>
+
+    <%- include("../templates/head.ejs") %>
+    <link rel="stylesheet" href="/css/roda-de-conversa.css" />
+</head>
+
+<body>
+    <%- include("../templates/header.ejs") %>
+    <main>
+        <section id="rodas-de-conversa">
+            <h1>Rodas de conversa</h1>
+
+            <div id="rodas-de-conversa-container">
+                <% data.rodasDeConversa.forEach(rodaDeConversa => { %>
+                <a href="/rodas-de-conversa-sessoes" class="card-roda">
+                    <div class="card" <%- `style="background-image: url('images/fotos/rodas-de-conversa/${rodaDeConversa.id}')";` %>>
+                        <div class="tema">
+                            <h2><%- rodaDeConversa.nome %></h2>
+                        </div>
+                    </div>
+                </a>
+                <% }) %>
+            </div>
+        </section>
+    </main>
+    <%- include("../templates/footer.ejs") %>
+</body>
+
 </html>

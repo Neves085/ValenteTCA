@@ -1,0 +1,64 @@
+#usuarios-admin h1 {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 2rem;
+}
+
+#usuarios-admin form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#usuarios-admin form input {
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 350px;
+}
+
+#usuarios-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, min(100%, 400px));
+    gap: 30px;
+    justify-content: center;
+}
+
+#usuarios-lista .user {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 50px 10px 10px;
+}
+
+#usuarios-lista .user > * {
+    padding: 5px;
+    font-size: .9rem;
+    text-align: start;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+#usuarios-lista .user-actions {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#usuarios-lista .user-actions a {
+    font-size: 1.1rem;
+    transition: color 200ms ease;
+}
+
+#usuarios-lista .user-actions a:hover {
+    color: #f7931e;
+}

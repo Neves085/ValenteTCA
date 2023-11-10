@@ -1,6 +1,34 @@
 const prisma = require("../../server/database/prismaClient");
 
 class Usuario {
+    async findAllUsers(userId, query) {
+        return await prisma.usuario.findMany({
+            where: {
+                NOT: {
+                    id: userId
+                },
+                ativado: 1,
+                OR: [
+                    {
+                        id: {
+                            contains: query
+                        }
+                    },
+                    {
+                        email: {
+                            contains: query
+                        }
+                    },
+                    {
+                        nome: {
+                            contains: query
+                        }
+                    }
+                ]
+            }
+        })
+    }
+
     async findUserById(userId) {
         const user = await prisma.usuario.findUnique({
             where: {
@@ -49,13 +77,27 @@ class Usuario {
     }
 
     async deleteUsuario(userId){
-        await prisma.usuario.delete({
-            where:{
+        await prisma.usuario.update({
+            where: {
                 id: userId
             },
+            data: {
+                ativado: 0
+            }
         })
     }
 
+    async getUserImage(userId) {
+        return await prisma.usuario.findUnique({
+            where: {
+                id: userId
+            },
+            select: {
+                imagem_perfil: true,
+                tipo_imagem_perfil: true
+            }
+        })
+    }
 }
 
 const usuarioModel = new Usuario();

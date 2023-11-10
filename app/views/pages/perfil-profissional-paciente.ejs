@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- data.page %></title>
+
+    <%- include("../templates/head.ejs") %>
+    <link rel="stylesheet" href="/css/perfil.css">
+</head>
+
+<body>
+    <%- include("../templates/header.ejs") %>
+
+    <main class="main-perfil">
+        <div class="perfil-container">
+            <div class="perfil-usuario">
+                <div class="perfil-avatar">
+                    <img src="<%- `/images/fotos/profissionais/${data.profissional.id}` %>" alt="Imagem perfil">
+                </div>
+            </div>
+        </div>
+        <div class="perfil-body">
+            <div class="perfil-bio">
+                <h3 class="nome"><%- data.profissional.nome %></h3>
+                <p class="texto-bio"><%- data.profissional.descricao ? data.profissional.descricao : "Sem descrição ainda!" %></p>
+                <div class="perfil-info">
+                    <div class="dados">
+                        <li><i style="color: #000000;"></i>Tel: <%- data.profissional.telefone %></li>
+                    </div>
+                    <div class="dados">
+                        <li><%- data.profissional.email %></li>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="salas">
+            <h2>Sessões agendadas</h2>
+
+            <div id="salas-container">
+                <div class="sala">
+                    <h2>Título da Roda de Conversa</h2>
+
+                    <h3>6 de 12 pessoas</h3>
+
+                    <div class="sala-info">
+                        <p>Data: 05/12</p>
+
+                        <p>Preço: R$50,00</p>
+                    </div>
+
+                    <a href="/sessao">Ver mais</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include("../templates/footer.ejs") %>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%- data.page %></title>
+
+    <%- include("../../templates/head.ejs") %>
+    <link rel="stylesheet" href="/css/criar-roda-de-conversa-admin.css">
+    <script src="/js/imagem-criar-capa-roda-de-conversa.js" defer></script>
+</head>
+
+<body>
+    <%- include("../../templates/header-admin.ejs") %>
+
+    <main>
+        <section id="roda-de-conversa-admin">
+            <h1>Criar uma nova roda de conversa</h1>
+
+            <form action="/criar-roda-de-conversa-admin" method="post" enctype="multipart/form-data">
+                <label>FOTO DE CAPA:</label>
+                <input type="file" name="foto_capa" id="foto-capa-input">
+                <label for="foto-capa-input" id="foto-capa" <%- data.errors && data.errors.imagem_capa_error ? `class="erro"` : "" %>>
+
+                </label>
+
+                <%- data.errors && data.errors.imagem_capa_error ? `<span class='erro-mensagem'>${data.errors.imagem_capa_error.msg}</span>` : "" %>
+
+                <label for="nome">NOME DA RODA:</label>
+                <input type="text" placeholder="Informe o nome da roda" name="nome" id="nome" <%- data.input_values ? `value="${data.input_values.nome}"` : "" %> <%- data.errors && data.errors.nome_error ? `class="erro"` : "" %> /><br />
+
+                <%- data.errors && data.errors.nome_error ? `<span class='erro-mensagem'>${data.errors.nome_error.msg}</span>` : "" %>
+
+                <input type="submit" id="cadastre-se" value="CRIAR"></input>
+            </form>
+        </section>
+    </main>
+
+    <%- include("../../templates/footer.ejs") %>
+</body>
+
+</html>

@@ -23,6 +23,33 @@ const regrasValidacao = {
         .withMessage("Use uma senha forte com números, letras (maiúsculas e minúsculas), e símbolos (!, $, %, ...). Mínimo de 8 caracteres.")
     ],
 
+    cadastroProfissionalValidationRules: [
+        body("nome")
+        .trim()
+        .isLength({min: 3, max: 255})
+        .withMessage("Insira seu nome completo!"),
+        body("email")
+        .isEmail()
+        .withMessage("Insira seu email completo!"),
+        body("telefone")
+        .isLength({min: 11, max: 11})
+        .withMessage("Insira seu número de telefone! (Apenas números!)"),
+        body("cpf")
+        .isInt()
+        .withMessage("Insira apenas os números do seu CPF!")
+        .isLength({min: 11, max: 11})
+        .withMessage("Insire o seu CPF completo. (Apenas números!)"),
+        body("senha")
+        .isStrongPassword({
+            minLength: 8,
+            minLowercase: 1,
+            minUppercase: 1,
+            minNumbers: 1,
+            minSymbols: 1
+        })
+        .withMessage("Use uma senha forte com números, letras (maiúsculas e minúsculas), e símbolos (!, $, %, ...). Mínimo de 8 caracteres.")
+    ],
+
     editarPerfilValidationRules: [
         body("nome")
         .trim()
@@ -44,12 +71,46 @@ const regrasValidacao = {
         .withMessage("Sua descrição não pode ter mais de 255 caracteres!")
     ],
 
+    editarProfissionalValidationRules: [
+        body("nome")
+        .trim()
+        .isLength({min: 3, max: 255})
+        .withMessage("Insira seu nome completo!"),
+        body("email")
+        .isEmail()
+        .withMessage("Insira seu email completo!"),
+        body("telefone")
+        .isLength({min: 11, max: 11})
+        .withMessage("Insira seu número de telefone! (Apenas números!)"),
+        body("cpf")
+        .isInt()
+        .withMessage("Insira apenas os números do seu CPF!")
+        .isLength({min: 11, max: 11})
+        .withMessage("Insire o seu CPF completo. (Apenas números!)"),
+        body("descricao")
+        .optional({values: "falsy"})
+        .trim()
+        .isLength({min: 3})
+        .withMessage("Sua descrição deve ter pelo menos 3 caracteres!")
+        .isLength({max: 255})
+        .withMessage("Sua descrição não pode ter mais de 255 caracteres!")
+    ],
+
     desabafoValidationRules: [
         body("desabafo")
         .trim()
         .isLength({min: 3})
         .withMessage("Por favor escreva pelo menos 3 caracteres.")
     ],
+
+    rodaDeConversaValidationRules: [
+        body("nome")
+        .trim()
+        .isLength({min: 3})
+        .withMessage("O nome da roda de conversa deve ter no mínimo 3 caracteres!")
+        .isLength({max: 150})
+        .withMessage("O nome da roda de conversa deve ter no máximo 150 caracteres!")
+    ]
 }
 
 

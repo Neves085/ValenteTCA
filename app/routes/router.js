@@ -25,6 +25,10 @@ const profissionaisControllerRead = require("../controllers/profissionaisControl
 const rodaConversaControllerRead = require("../controllers/rodaConversaController/rodaConversaControllerRead");
 const rodaConversaSessoesControllerRead = require("../controllers/rodasDeConversaSessoes/rodasDeConversaSessoesControllerRead.js");
 const sessaoControllerRead = require("../controllers/sessaoController/sessaoControllerControllerRead.js");
+const criarSessaoControllerRead = require("../controllers/sessaoController/criarSessaoControllerRead.js");
+const criarSessaoControllerCreate = require("../controllers/sessaoController/criarSessaoControllerCreate.js");
+
+const inscreveUsuarioControllerCreate = require("../controllers/sessaoController/inscreverUsuarioControllerCreate.js");
 
 const autenticacaoMiddleware = require("../middlewares/autenticacaoMiddleware");
 const regrasValidacaoMiddleware = require("../middlewares/regrasValidacaoMiddleware");
@@ -105,13 +109,27 @@ router.get("/rodas-de-conversa",
 autenticacaoMiddleware.validateJWT,
 rodaConversaControllerRead.returnPage);
 
-router.get("/rodas-de-conversa-sessoes",
+router.get("/rodas-de-conversa-sessoes/:nomeRoda",
 autenticacaoMiddleware.validateJWT,
 rodaConversaSessoesControllerRead.returnPage);
 
-router.get("/sessao",
+router.get("/sessao/:sessaoId",
 autenticacaoMiddleware.validateJWT,
 sessaoControllerRead.returnPage);
+
+router.get("/criar-sessao/:nomeRoda",
+autenticacaoMiddleware.validateJWTProfissional,
+criarSessaoControllerRead.returnPage);
+
+router.post("/criar-sessao/:nomeRoda",
+autenticacaoMiddleware.validateJWTProfissional,
+regrasValidacaoMiddleware.sessaoValidationRules,
+validacaoFormulariosMiddleware.validacaoCriarSessao,
+criarSessaoControllerCreate.createSessao);
+
+router.get("/inscrever-usuario/:sessaoId",
+autenticacaoMiddleware.validateJWT,
+inscreveUsuarioControllerCreate.inscreverUsuario);
 
 router.get("/cadastro", cadastroControllerRead.returnPage);
 router.post("/cadastro",

@@ -1,10 +1,14 @@
 const jwt = require("jsonwebtoken");
+const rodaDeConversaModel = require("../../models/RodaDeConversa");
 
 class RodaDeConversaSessoesController {
-    returnPage(req, res) {
+    async returnPage(req, res) {
         const token = req.session.token;
         let usuarioLogado = false;
         let tipoUsuario = undefined;
+        const nomeRoda = req.params.nomeRoda;
+
+        const rodaDeConversa = await rodaDeConversaModel.findRodaDeConversaByNome(nomeRoda);
 
         if (token) {
             usuarioLogado = true;
@@ -16,7 +20,8 @@ class RodaDeConversaSessoesController {
             data: {
                 page: "Sessões roda de conversa",
                 usuarioLogado,
-                tipoUsuario
+                tipoUsuario,
+                rodaDeConversa
             }
         })
     }

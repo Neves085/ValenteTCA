@@ -17,6 +17,7 @@ class ValidacaoFormularios {
 		this.validacaoDesabafo = this.validacaoDesabafo.bind(this);
         this.validacaoCriarRodaDeConversa = this.validacaoCriarRodaDeConversa.bind(this);
         this.validacaoEditarRodaDeConversa = this.validacaoEditarRodaDeConversa.bind(this);
+        this.validacaoCriarSessao = this.validacaoCriarSessao.bind(this);
 	}
 
 	async validacaoDesabafo(req, res, next) {
@@ -463,6 +464,45 @@ class ValidacaoFormularios {
 						nome_error,
                         imagem_capa_error
 					},
+				},
+			});
+		}
+
+		return next();
+    }
+
+    async validacaoCriarSessao(req, res, next) {
+        const errors = validationResult(req);
+
+		if (!errors.isEmpty()) {
+			const { nome, quantidade_pessoas, descricao, data_reuniao, link_reuniao } = req.body;
+
+            const nomeRoda = req.params.nomeRoda;
+
+			const nome_error = errors.errors.find((error) => error.path === "nome");
+            const quantidade_pessoas_error = errors.errors.find((error) => error.path === "quantidade_pessoas");
+            const descricao_error = errors.errors.find((error) => error.path === "descricao");
+            const data_reuniao_error = errors.errors.find((error) => error.path === "data_reuniao");
+            const link_reuniao_error = errors.errors.find((error) => error.path === "link_reuniao");
+
+			return res.render("pages/criar-sessao.ejs", {
+				data: {
+					page: "Criar sessão",
+					input_values: {
+						nome,
+                        quantidade_pessoas,
+                        descricao,
+                        data_reuniao,
+                        link_reuniao
+					},
+					errors: {
+						nome_error,
+                        quantidade_pessoas_error,
+                        descricao_error,
+                        data_reuniao_error,
+                        link_reuniao_error
+					},
+                    nomeRoda
 				},
 			});
 		}

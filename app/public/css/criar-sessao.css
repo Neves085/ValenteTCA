@@ -1,0 +1,53 @@
+main {
+    background-color: #fff8e9;
+}
+
+#cadastrar-sessao h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 30px 0;
+}
+
+#cadastrar-sessao form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-inline: auto;
+}
+
+#cadastrar-sessao form button {
+    background-color: #f7931e;
+    border: none;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    width: min-content;
+    padding-inline: 20px;
+    margin-inline: auto;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    margin-top: 30px;
+}
+
+#cadastrar-sessao form input {
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+#cadastrar-sessao form label {
+    margin-bottom: 10px;
+}
+
+#cadastrar-sessao form input.erro {
+    border-color: red;
+    color: red;
+}
+
+#cadastrar-sessao form .erro-mensagem {
+    color: red;
+    font-size: .9rem;
+}

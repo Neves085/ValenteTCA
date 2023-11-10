@@ -19,31 +19,30 @@
             <div id="header-laranja"></div>
 
             <div id="sessao-container">
-                <h1>Nome da sala</h1>
+                <h1><%- data.sessao.nome %></h1>
 
-                <p>Nome do profissional: </p>
+                <p>Nome do profissional: <%- data.sessao.profissional.nome %></p>
 
-                <p>Descrição da sala: </p>
+                <p>Descrição da sala: <%- data.sessao.descricao %></p>
 
                 <div class="sessao-info">
                     <div>
                         <i class="fa-regular fa-calendar-days"></i>
                         <p>
-                            Data: 08/12/2023 <br>
-                            Horário: Das 13h às 15h
+                            Data: <%- `${String(new Date(data.sessao.data_reuniao * 1000).getDate()).padStart(2, "0")}/${String(new Date(data.sessao.data_reuniao * 1000).getMonth() + 1).padStart(2, "0")}/${new Date(data.sessao.data_reuniao * 1000).getFullYear()}` %>
                         </p>
                     </div>
 
                     <div>
                         <i class="fa-solid fa-user"></i>
-                        <p>6 de 12 pessoas</p>
+                        <p>6 de <%- data.sessao.quantidade_pessoas %> pessoas</p>
                     </div>
                 </div>
 
-                <a href="/">Garantir vaga</a>
+                <a href="/inscrever-usuario/<%- data.sessao.id %>">Garantir vaga</a>
             </div>
 
-            <a href="#">Ver perfil do profissional</a>
+            <a href="/perfil-profissional/<%- data.sessao.profissional.id %>">Ver perfil do profissional</a>
         </section>
     </main>
 

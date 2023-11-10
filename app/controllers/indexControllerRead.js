@@ -1,5 +1,6 @@
 const desabafoModel = require("../models/Desabafos");
 const rodaDeConversaModel = require("../models/RodaDeConversa");
+const profissionalModel = require("../models/Profissional");
 const jwt = require("jsonwebtoken");
 
 class IndexController {
@@ -18,6 +19,7 @@ class IndexController {
 
         const desabafos = await desabafoModel.findAllDesabafos();
         const rodasDeConversa = await rodaDeConversaModel.findSomeRodasDeConvesa();
+        const profissionais = await profissionalModel.findAllProfissionais(userId, "");
 
         return res.render("pages/index.ejs", {
             data: {
@@ -26,7 +28,8 @@ class IndexController {
                 desabafos,
                 rodasDeConversa,
                 userId,
-                tipoUsuario
+                tipoUsuario,
+                profissionais
             }
         })
     }

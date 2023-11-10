@@ -15,10 +15,10 @@
     <%- include("../templates/header.ejs") %>
     <main>
         <section id="sessoes">
-            <h1>Sessões: depressão</h1>
+            <h1>Sessões: <%- data.rodaDeConversa.nome %></h1>
 
             <% if (data.tipoUsuario === "profissional") { %>
-                <a href="/criar-sessao" id="criar-sessao">Criar sessão</a>
+            <a href="/criar-sessao/<%- data.rodaDeConversa.nome %>" id="criar-sessao">Criar sessão</a>
             <% } %>
 
             <form action="#" method="get">
@@ -26,22 +26,23 @@
             </form>
 
             <div id="sessoes-container">
+                <% data.rodaDeConversa.sessoes.forEach(sessao => { %>
                 <div class="sessao">
-                    <h2>Título da Roda de Conversa</h2>
+                    <h2><%- sessao.nome %></h2>
 
-                    <h3>6 de 12 pessoas</h3>
+                    <h3>6 de <%- sessao.quantidade_pessoas %> pessoas</h3>
 
                     <div class="sessao-info">
-                        <p>Data: 05/12</p>
-
-                        <p>Preço: R$50,00</p>
+                        <p>Data: <%- `${String(new Date(sessao.data_reuniao * 1000).getDate()).padStart(2, "0")}/${String(new Date(sessao.data_reuniao * 1000).getMonth() + 1).padStart(2, "0")}` %></p>
                     </div>
 
-                    <a href="#">Ver mais</a>
+                    <a href="/sessao/<%- sessao.id %>">Ver mais</a>
                 </div>
+                <% }) %>
             </div>
         </section>
     </main>
     <%- include("../templates/footer.ejs") %>
 </body>
+
 </html>

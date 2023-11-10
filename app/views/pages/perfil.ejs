@@ -41,54 +41,24 @@
             </div>
 
         </div>
-        <div id="agenda">
-            <h1>Sua agenda</h1>
-
-            <div id="agenda-container">
-                <div class="consulta">
-                    <h2>Psicológo: Vinícius Gonçalves</h2>
-                    <p>Agendado para: 16/11/2023</p>
-                    <p>Preço: 50R$</p>
-                    <p>Status: Pendente</p>
-
-                    <a href="/cancelar-consulta" class="cancelar">Cancelar consulta</a>
-                </div>
-                <div class="consulta">
-                    <h2>Psicológo: Vinícius Gonçalves</h2>
-                    <p>Agendado para: 16/11/2023</p>
-                    <p>Preço: 50R$</p>
-                    <p>Status: Pendente</p>
-
-                    <a href="/cancelar-consulta" class="cancelar">Cancelar consulta</a>
-                </div>
-                <div class="consulta">
-                    <h2>Psicológo: Vinícius Gonçalves</h2>
-                    <p>Agendado para: 16/11/2023</p>
-                    <p>Preço: 50R$</p>
-                    <p>Status: Pendente</p>
-
-                    <a href="/cancelar-consulta" class="cancelar">Cancelar consulta</a>
-                </div>
-            </div>
-        </div>
 
         <div id="salas">
             <h2>Sessões agendadas</h2>
 
             <div id="salas-container">
+                <% data.sessoes.forEach(sessao => { %>
                 <div class="sala">
-                    <h2>Título da Roda de Conversa</h2>
+                    <h2><%- sessao.nome %></h2>
 
-                    <h3>6 de 12 pessoas</h3>
+                    <h3>6 de <%- sessao.quantidade_pessoas %> pessoas</h3>
 
                     <div class="sala-info">
-                        <p>Data: 05/12</p>
-
-                        <p>Preço: R$50,00</p>
+                        <p>Data: <%- `${String(new Date(sessao.data_reuniao * 1000).getDate()).padStart(2, "0")}/${String(new Date(sessao.data_reuniao * 1000).getMonth() + 1).padStart(2, "0")}` %></p>
                     </div>
 
-                    <a href="/sessao">Ver mais</a>
+                    <a href="/sessao/<%- sessao.id %>">Ver mais</a>
                 </div>
+                <% }) %>
             </div>
         </div>
     </main>

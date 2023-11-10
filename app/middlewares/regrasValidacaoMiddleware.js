@@ -110,6 +110,32 @@ const regrasValidacao = {
         .withMessage("O nome da roda de conversa deve ter no mínimo 3 caracteres!")
         .isLength({max: 150})
         .withMessage("O nome da roda de conversa deve ter no máximo 150 caracteres!")
+    ],
+
+    sessaoValidationRules: [
+        body("nome")
+        .isLength({min: 3})
+        .withMessage("O nome da sessão deve ter no mínimo 3 caracteres!")
+        .isLength({max: 150})
+        .withMessage("O nome da sessão não deve ultrapassar os 150 caracteres!"),
+        body("data_reuniao")
+        .isLength({min: 10, max: 10})
+        .withMessage("Insira sua data de nascimento no padrão DD/MM/YYYY")
+        .matches(/^(((0[1-9]|[12][0-9]|3[01])[- /.](0[13578]|1[02])|(0[1-9]|[12][0-9]|30)[- /.](0[469]|11)|(0[1-9]|1\d|2[0-8])[- /.]02)[- /.]\d{4}|29[- /.]02[- /.](\d{2}(0[48]|[2468][048]|[13579][26])|([02468][048]|[1359][26])00))$/)
+        .withMessage("Insira sua data de nascimento no padrão DD/MM/YYYY"),
+        body("quantidade_pessoas")
+        .isInt({min: 2})
+        .withMessage("A sua sala deve ter você e pelo menos mais uma pessoa!")
+        .isInt({max: 12})
+        .withMessage("A sua sala não deve ter mais de 12 pessoas contando com você!"),
+        body("descricao")
+        .isLength({min: 3})
+        .withMessage("A descrição deve ter no minímo 3 caracteres!")
+        .isLength({max: 255})
+        .withMessage("A descrição deve ter no minímo 255 caracteres!"),
+        body("link_reuniao")
+        .isURL()
+        .withMessage("O link da reunião deve ser em formato URL!"),
     ]
 }
 

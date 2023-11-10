@@ -80,6 +80,7 @@ CREATE TABLE `Sessao` (
     `link_reuniao` VARCHAR(191) NOT NULL,
     `tema` VARCHAR(191) NOT NULL,
     `criador` VARCHAR(191) NOT NULL,
+    `participante` VARCHAR(191) NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -95,3 +96,6 @@ ALTER TABLE `Sessao` ADD CONSTRAINT `Sessao_tema_fkey` FOREIGN KEY (`tema`) REFE
 
 -- AddForeignKey
 ALTER TABLE `Sessao` ADD CONSTRAINT `Sessao_criador_fkey` FOREIGN KEY (`criador`) REFERENCES `Profissional`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `Sessao` ADD CONSTRAINT `Sessao_participante_fkey` FOREIGN KEY (`participante`) REFERENCES `Usuario`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;

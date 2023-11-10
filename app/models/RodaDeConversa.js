@@ -15,6 +15,17 @@ class RodaDeConversa {
         })
     }
 
+    async findRodaDeConversaByNome(nomeRodaDeConversa) {
+        return await prisma.roda_De_Conversa.findUnique({
+            where: {
+                nome: nomeRodaDeConversa
+            },
+            include: {
+                sessoes: true
+            }
+        })
+    }
+
     async findAllRodasDeConversa(query) {
         return await prisma.roda_De_Conversa.findMany({
             where: {

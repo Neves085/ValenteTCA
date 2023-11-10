@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%- data.page %></title>
+
+    <%- include("../templates/head.ejs") %>
+    <link rel="stylesheet" href="/css/criar-sessao.css" />
+</head>
+
+<body>
+    <%- include("../templates/header.ejs") %>
+    <main>
+        <section id="cadastrar-sessao">
+            <h1>Cadastrar sessão</h1>
+
+            <form action="/criar-sessao/<%- data.nomeRoda %>" method="post">
+                <%- data.errors && data.errors.sistema_error ? `<span class='erro-mensagem'>${data.errors.sistema_error.msg}</span>` : "" %>
+
+                <label for="nome">Nome da sala</label>
+                <input type="text" name="nome" id="nome" placeholder="Informe o nome da sala"
+                <%- data.input_values ? `value="${data.input_values.nome}"` : "" %>
+                <%- data.errors && data.errors.nome_error ? `class="erro"` : "" %>>
+
+                <%- data.errors && data.errors.nome_error ? `<span class='erro-mensagem'>${data.errors.nome_error.msg}</span>` : "" %>
+
+                <label for="quantidade-pessoas">Quantidade de pessoas</label>
+                <input type="number" name="quantidade_pessoas" id="quantidade-pessoas" placeholder="Informe o limite de pessoas na sala"
+                <%- data.input_values ? `value="${data.input_values.quantidade_pessoas}"` : "" %>
+                <%- data.errors && data.errors.quantidade_pessoas_error ? `class="erro"` : "" %>>
+
+                <%- data.errors && data.errors.quantidade_pessoas_error ? `<span class='erro-mensagem'>${data.errors.quantidade_pessoas_error.msg}</span>` : "" %>
+
+                <label for="descricao">Descrição</label>
+                <input type="text" name="descricao" id="descricao" placeholder="Descreva a sua sala"
+                <%- data.input_values ? `value="${data.input_values.descricao}"` : "" %>
+                <%- data.errors && data.errors.descricao_error ? `class="erro"` : "" %>>
+
+                <%- data.errors && data.errors.descricao_error ? `<span class='erro-mensagem'>${data.errors.descricao_error.msg}</span>` : "" %>
+
+                <label for="data-reuniao">Data</label>
+                <input type="text" name="data_reuniao" id="data-reuniao" placeholder="DD/MM/AAAA"
+                <%- data.input_values ? `value="${data.input_values.data_reuniao}"` : "" %>
+                <%- data.errors && data.errors.data_reuniao_error ? `class="erro"` : "" %>>
+
+                <%- data.errors && data.errors.data_reuniao_error ? `<span class='erro-mensagem'>${data.errors.data_reuniao_error.msg}</span>` : "" %>
+
+                <label for="link-reuniao">Link da reunião</label>
+                <input type="text" name="link_reuniao" id="link-reuniao" placeholder="Informe o link para participar da reunião"
+                <%- data.input_values ? `value="${data.input_values.link_reuniao}"` : "" %>
+                <%- data.errors && data.errors.link_reuniao_error ? `class="erro"` : "" %>>
+
+                <%- data.errors && data.errors.link_reuniao_error ? `<span class='erro-mensagem'>${data.errors.link_reuniao_error.msg}</span>` : "" %>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+    <%- include("../templates/footer.ejs") %>
+</body>
+</html>

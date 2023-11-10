@@ -19,7 +19,7 @@
 
             <div id="rodas-de-conversa-container">
                 <% data.rodasDeConversa.forEach(rodaDeConversa => { %>
-                <a href="/rodas-de-conversa-sessoes" class="card-roda">
+                <a href="/rodas-de-conversa-sessoes/<%- rodaDeConversa.nome %>" class="card-roda">
                     <div class="card" <%- `style="background-image: url('images/fotos/rodas-de-conversa/${rodaDeConversa.id}')";` %>>
                         <div class="tema">
                             <h2><%- rodaDeConversa.nome %></h2>

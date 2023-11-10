@@ -1,32 +1,29 @@
 const jwt = require("jsonwebtoken");
-const sessaoModel = require("../../models/Sessao");
 
-class SessoesController {
-    async returnPage(req, res) {
+class CriarSessoesController {
+    returnPage(req, res) {
         const token = req.session.token;
         let usuarioLogado = false;
         let tipoUsuario = undefined;
-        const sessaoId = req.params.sessaoId;
+        const nomeRoda = req.params.nomeRoda;
 
         if (token) {
             const tokenInfo = jwt.decode(token, process.env.SECRET);
             usuarioLogado = true;
-            tipoUsuario = tokenInfo.userType
+            tipoUsuario = tokenInfo.userType;
         }
 
-        const sessao = await sessaoModel.findSessaoById(sessaoId);
-
-        return res.render("pages/sessao.ejs", {
+        return res.render("pages/criar-sessao.ejs", {
             data: {
                 page: "Sessão",
                 usuarioLogado,
                 tipoUsuario,
-                sessao
+                nomeRoda
             }
         })
     }
 }
 
-const sessoesControllerRead = new SessoesController();
+const criarSessoesControllerRead = new CriarSessoesController();
 
-module.exports = sessoesControllerRead;
+module.exports = criarSessoesControllerRead;

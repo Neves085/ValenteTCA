@@ -20,19 +20,19 @@
 			<form action="">
 				<label for="name">
 					<span>Nome completo</span>
-					<input type="text" id="name" name="name" />
+					<input type="text" id="name" name="name" required title="Insira o nome completo!"/>
 				</label>
 				<label for="email">
 					<span>E-mail</span>
-					<input type="email" id="email" name="email" />
+					<input type="email" id="email" name="email" required title="Insira o email!" />
 				</label>
 				<label for="CPF">
 					<span>CPF</span>
-					<input type="number" id="number" name="CPF" />
+					<input type="number" id="number" name="CPF" required title="Informe o CPF!" />
 				</label>
 				<label for="tel">
 					<span>Telefone</span>
-					<input type="tel" id="tel" name="tel" />
+					<input type="tel" id="tel" name="tel" required title="Informe o telefone!"/>
 				</label>
 
 				<h2>Pagamento</h2>
@@ -44,23 +44,23 @@
 
 				<label for="numbe-rcard">
 					<span>Número do cartão</span>
-					<input type="number" id="numbercard" maxlength="16" name="name" />
+					<input type="number" id="numbercard" maxlength="16" name="name"  required title="Informe o número do cartão!"/>
 				</label>
 				<label for="valor">
 					<span>Nome do Titular</span>
-					<input type="text" id="Titular" name="name" />
+					<input type="text" id="Titular" name="name" required title="Informe o títular do cartão!" />
 				</label>
 				<label for="valor">
 					<span>Validade</span>
-					<input type="number" id="Validade" name="name" />
+					<input type="number" id="Validade" name="name" required title="Informe a validade do cartão" />
 				</label>
 				<label for="valor">
 					<span>CVV</span>
-					<input type="number" id="Cvv" maxlength="4" name="name" />
+					<input type="number" id="Cvv" maxlength="4" name="name" required title="Informe o CVV" />
 				</label>
 				<label for="valor">
 					<span>Valor da contribuição</span>
-					<input type="number" id="contribuição" name="name" />
+					<input type="number" id="contribuição" name="name" required title="Informe o valor da contribuição" />
 				</label>
 
 				<input type="submit" value="Doar" />
